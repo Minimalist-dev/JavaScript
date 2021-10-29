@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Chat | Neury</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <!-- CSS -->
+    <link rel='stylesheet' href='/i_css/i/root.css' />
+    <link rel='stylesheet' href='/i_css/chat/chat.css' />
+</head>
+<body>
+    <h1>Chat</h1>
+    
+    <ul id="messages"></ul>
+    
+    <form method="POST" name="insertar" id="insertar">
+        <input id="input" autocomplete="off" />
+        <button  type="submit">Send</button>
+    </form>
+
+<script src="/l/chat/l/frontend.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+var socket      = io();
+var messages    = document.getElementById('messages');
+//var form        = document.getElementById('insertar');
+//var input       = document.getElementById('input');
+
+/*form.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    if (input.value) {
+        socket.emit('chat message', input.value);
+
+        input.value = '';
+    }
+});*/
+socket.on('chat message', function(msg) { console.log(msg);
+    /*if(msg === 'mgs') {
+        Sistema.colocar();
+    }*/
+    var item = document.createElement('li');
+
+    item.textContent = msg;
+
+    messages.appendChild(item);
+    
+    window.scrollTo(0, document.body.scrollHeight);
+});
+</script>
+</body>
+</html>
+

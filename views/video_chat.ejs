@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+    <title>Video Chat</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="../i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <!-- CSS -->
+    <link rel='stylesheet' href='/i_css/i/root.css' />
+    <link rel="stylesheet" href="/i_css/chat/video_chat.css" />
+    <!-- JS -->
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <script>
+        const SALA_ID = "<%= sala %>";
+    </script>
+</head>
+<body>
+    <header>
+        <section>
+            <h1>Video Chat</h1>
+        </section>
+    </header>  
+    <section class="main">  
+        <section class="izquierda">
+            <div class="usuarios">
+                <div id="usuarios">
+
+                </div>
+            </div>
+            <section class="menu">
+                <section class="menu_izquierdo">
+                    <button id="pausar_video" class="boton"><i class="fa fa-video-camera"></i></button>
+                    <button id="pausar_audio" class="boton"><i class="fa fa-microphone"></i></button>
+               </section>
+                <section class="menu_derecho">
+                    <button id="enlace_de_sala" class="boton"><i class="fas fa-user-plus"></i></button>
+                </section>
+            </section>
+        </section>
+        <aside>
+            <section class="charla">
+                <section id="charla">
+
+                </section>
+            </section>
+            <section class="emisor">
+                <input type="text" id="chat_message" autocomplete="off" placeholder="Ingrasar mensaje...">
+                <button id="enviar" class="boton">
+                    <i class="fa fa-plus"></i>
+                </button>
+            </section>
+        </aside>
+    </section>
+<script src="/socket.io/socket.io.js"></script>
+<script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+<script src="../l/chat/l/video_chat.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+- Referencias
+https://webrtc.org/
+https://es.wikipedia.org/wiki/WebRTC
+
+- npm install socket.io
+https://socket.io/
+
+- npm install peer
+https://www.npmjs.com/package/peer
+https://peerjs.com/
+
+npm install uuid
+
+- Tarea:
+- A continuación, se muestran algunas ideas para mejorar la aplicación:
+
+    echo - Transmita un mensaje a los usuarios conectados cuando alguien se conecte o se desconecte.
+    echo - Agregue soporte para apodos.
+    echo - No envíe el mismo mensaje al usuario que lo envió. En su lugar, agregue el mensaje directamente tan pronto como presione Intro.
+    echo - Agregue la funcionalidad "{usuario} está escribiendo".
+    No necesario con los (IDs) de las bases de datos - Muestre quién está en línea.
+    NO necesario con los (IDs) de las bases de datos - Agrega mensajes privados.
+    - ¡Comparte tus mejoras! 

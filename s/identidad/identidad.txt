@@ -1,0 +1,31 @@
+https://www.npmjs.com/package/node-os-utils
+https://www.w3schools.com/nodejs/ref_os.asp
+https://nodejs.org/api/os.html
+https://nodejs.dev/learn/the-nodejs-os-module
+npm install os
+process
+
+https://www.tutorialspoint.com/nodejs/nodejs_os_module.htm
+https://www.geeksforgeeks.org/node-js-os-platform-method/
+https://www.geeksforgeeks.org/node-js-os/
+https://tutorial.techaltum.com/nodejs-os-module.html
+
+
+
+
+
+
+
+    <div>
+        <% for(let i = 0; i < Objeto.length; i++) { %>
+            <div>
+                <div>
+                    <div>
+                        <p><b>ID: </b><%= Objeto[i].id %></p>
+                        <p><b>Publicación: </b><%= Objeto[i].publicacion %>, </p>
+                        <p><b>Fecha: </b><%= Objeto[i].fecha %></p>
+                    </div>
+                </div>
+            </div>
+        <% } %>
+    </div>

@@ -1,0 +1,13 @@
+/* 
+    Created on : 27 jul. 2021, 7:35:19 p. m.
+    Author     : neury-dev
+*/
+/*footer
+--------------------------------------------------------------------------------*/
+.n-grid > .area-5 > footer {
+    text-align: center;
+    padding: 3em 0em 1em;
+}
+.n-grid > .area-5 > footer > p {
+    margin: 0;
+}

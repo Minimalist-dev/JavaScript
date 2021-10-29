@@ -1,0 +1,140 @@
+/* 
+    Created on : 10 ago. 2021, 5:53:49 p. m.
+    Author     : neury-dev
+*/
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    height: 100%;
+    overflow-y: auto;
+    border-right: 1px solid var(--n-color-dos);
+}
+/* nav section (1)
+--------------------------------------------------------------------------------*/
+nav > .uno {
+    display: flex;
+    flex-direction: column;
+    margin: 64px 0px 0px 0px;
+}
+nav > .uno > button {
+    background-color: var(--n-color);
+    text-align: left;
+    margin: 24px auto 0px 48px;
+    border: none;
+}
+nav > section > button:hover {
+    color: var(--n-color-tres);
+    font-weight: bold;
+}
+nav > section > button.categoria-activa {
+    color: var(--n-color-tres);
+    font-weight: bold;
+}
+nav > section > button.categoria-activa:before {
+    content: '\2717';/*2573, 2613, 2612, 2715, 2716, 2717, 2718*/
+    color: var(--n-color-rojo);
+}
+/* nav section (2)
+--------------------------------------------------------------------------------*/
+nav > .dos {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    bottom: 8.50em;
+} 
+nav > .dos > button {
+    background-color: var(--n-color);
+    font-size: 0.75em;
+    text-align: left;
+    margin: 12px auto 0px 48px;
+    border: none;
+}
+/* Grupo de categoria
+--------------------------------------------------------------------------------*/
+aside { font-size: 0.90em; padding-left: 48px; }
+div.grupo > h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 15vmin;
+}
+div.grupo {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 250px;
+    bottom: 0;
+    width: 750px;
+    height: 100%;
+    border-right: 1px solid var(--n-color-dos);
+}
+/* Grupo de categoria: pantalones
+--------------------------------------------------------------------------------*/
+div.grupo > aside.pantalones {
+    display: flex;
+    flex-flow: row wrap;
+    position: absolute;
+    top: 0;
+    background-image: linear-gradient(to right, var(--n-color), var(--n-color), var(--n-color-dos));
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+div.grupo > aside > section { width: 12.80em; padding: 7.50em 3em 0em 0em; }
+div.grupo > aside > section > h2 { font-weight: bold; }
+div.grupo > aside > section > h3 > a { color: var(--n-color-dos); font-weight: bold; }
+div.grupo > aside > section > h3 > a:hover { color: var(--n-color); text-shadow: var(--n-sombra-de-texto-dos); }
+div.grupo > aside > section > ol { list-style: none; padding: 0; }
+div.grupo > aside > section > ol > li > a { color: var(--n-color-dos); }
+div.grupo > aside > section > ol > li > a:hover { color: var(--n-color-tres); font-weight: bold; }
+/* Grupo de categoria: boletín informativo y suscribir
+-------------------------------------------------------------------------------*/
+div#grupo7 > aside.formulario, 
+div#grupo8 > aside.formulario {
+    background-image: linear-gradient(to right, var(--n-color), var(--n-color), var(--n-color-dos));
+    width: 750px;
+    height: 100%;
+    overflow: auto;
+}
+div#grupo7 > aside > h2, 
+div#grupo8 > aside > h2 {
+    font-weight: bold;
+}
+div#grupo7 > aside > p, 
+div#grupo8 > aside > p {
+    width: 24em;
+}
+div.grupo > aside > form > p > input { 
+    caret-color: var(--n-color-dos); 
+    width: 24em;
+    border: 0.10em solid var(--n-color-dos);
+    border-radius: var(--n-radio);
+    padding: var(--n-relleno);
+}
+::placeholder { color: var(--n-color-tres); }
+div.grupo > aside > form > p > input:valid {
+    color: var(--n-color);
+    background: var(--n-color-dos);
+}
+div.grupo > aside > form > p > input:invalid {
+    color: var(--n-color-rojo);
+    background: var(--n-color);
+}
+div.grupo > aside > form > button {
+    color: var(--n-color);
+    background-color: var(--n-color-dos);
+    font-weight: bold;
+    width: 21.28em;
+    border: none;
+    border-radius: var(--n-radio);
+    padding: var(--n-relleno);
+}
+div.grupo > aside > form > button:hover {
+    color: var(--n-color-dos);
+    background-color: var(--n-color-tres);
+    text-shadow: var(--n-sombra-de-texto);
+}

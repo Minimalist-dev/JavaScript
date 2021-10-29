@@ -1,0 +1,182 @@
+/* 
+    Created on : 28 jul. 2021, 8:57:45 p. m.
+    Author     : neury-dev
+*/
+/* Habilidades
+--------------------------------------------------------------------------------*/
+.n-grid > .area-2 {
+    display: flex;
+    justify-content: space-between;
+    
+/*    position: absolute;
+    top: 50px;*/
+    margin: 4.50em 3em;
+}
+.n-grid > .area-2 > section {
+    width: 50%;
+    /*border: 1px solid white;*/
+}
+.n-grid > .area-2 > section > main {
+    width: 100%;
+    /*border: 1px solid white;*/
+}
+.n-grid > .area-2 > section > main > .skills {
+    float: left;
+    background-clip: border-box;
+    width: 300px;
+    height: 300px;
+    border-right: 1px dotted var(--n-color);
+    border-radius: 50%;
+    padding: 2em 0em 0em 0.50em;
+    clip-path: circle(50% at 50% 50%);
+    shape-outside: circle(50% at 50% 50%);
+}
+.n-grid > .area-2 > section > main > .skills > h2 {
+    color: var(--n-color-dos);
+    font-size: 6em;
+    font-family: var(--n-fuente);
+    filter: 
+        drop-shadow(-3px -3px 2px rgba(255, 255, 255, 0.3)) 
+        drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))
+        drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+}
+.n-grid > .area-2 > section > main > .skills > div,
+.n-grid > .area-2 > section > main > .skills > p { 
+    display: none;
+}
+.n-grid > .area-2 > section > main > .skills > div {
+    position: relative;
+    top: -60px;
+    border-radius: 16px;
+}
+.n-grid > .area-2 > section > main:hover .skills > div {
+    animation-name: linea;
+    animation-duration: 1s;  
+    animation-fill-mode: forwards;
+}
+@keyframes linea {
+    from {
+        width: 0px;
+        height: 4px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 1));
+    } to {
+        width: 250px;
+        height: 4px;
+        background-image: linear-gradient(to right, rgba(255, 255, 255, 1), rgba(255, 255, 255, 1));
+    }
+}
+.n-grid > .area-2 > section > main > .skills > p {
+    position: relative;
+    top: -163px;
+    left: 120px;
+    color: var(--n-color-dos);
+    font-size: 0.75em;
+    writing-mode: sideways-lr;
+}
+.n-grid > .area-2 > section > main:hover .skills > p {
+    left: 110px;
+    color: var(--n-color);
+    font-weight: bold;
+    
+    animation-name: fullStack;
+    animation-duration: 1s;  
+    animation-fill-mode: forwards;
+}
+@keyframes fullStack {
+    from {
+        transform: rotate(0deg);
+        font-size: 0.75em;
+    } to {
+        transform: rotate(90deg);
+        font-size: 1.50em;
+    }
+}
+.n-grid > .area-2 > section > main > p {
+    font-size: 0.90em;
+    transition: var(--n-transicion);
+    cursor: pointer;
+}
+.n-grid > .area-2 > section > main > p:hover {
+    color: var(--n-color-tres);
+}
+/* Habilidades: diseño
+--------------------------------------------------------------------------------*/
+.n-grid > .area-2 > .niveles {
+    display: flex;
+    align-items: flex-end;
+    width: 50%;
+    height: 320px;
+}
+.n-grid > .area-2 > .niveles > svg {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 24vw;
+    /*border: 1px solid red;*/
+}
+/*.n-grid > .area-2 > .niveles > svg > path {
+    stroke-dasharray: 1000;
+}
+.n-grid > .area-2 > .niveles:hover svg > path {
+    stroke: red;
+    animation: ruta 1s linear forwards;
+}
+@keyframes ruta {
+    from {
+        stroke-dashoffset: 1000;
+    } to {
+        stroke-dashoffset: 0;
+    }
+}*/
+.n-grid > .area-2 > .niveles > svg > g > .nivel { display: none; }
+.mirar {
+    animation-name: mirar;
+    animation-delay: 1s;
+    animation-duraction: 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes mirar {
+    from {
+        transform: translateX(0px);
+    } to {
+        transform: translateX(2px);
+    }
+}
+/*.n-grid > .area-2 > .niveles > svg > #texto {
+    fill: var(--n-color-dos);
+    stroke: var(--n-color);
+    background-color: var(--n-color);
+}*/
+/* Maquetado
+--------------------------------------------------------------------------------*/
+@media screen and (max-width: 900px) { 
+    .n-grid > .area-2 {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-gap:0.625em;
+    }
+    .n-grid > .area-2 > .main { grid-area: 2 / 1 / 3 / 1; }
+    .n-grid > .area-2 > .niveles { grid-area: 1 / 1 / 2 / 1; }
+    /* Habilidades
+    --------------------------------------------------------------------------------*/
+    .n-grid > .area-2 > section { width: 100%; }
+    .n-grid > .area-2 > section > main { width: 100%; }
+    .n-grid > .area-2 > section > main > .skills {
+        width: 100%;
+        max-height: 100px;
+        border-right: none;
+        padding: 0em;
+        clip-path: none;
+        shape-outside: none;
+    }
+    .n-grid > .area-2 > section > main > .skills > h2 { font-size: 4em; }
+    .n-grid > .area-2 > section > main > p {
+        display: inline-block;
+        font-size: 0.80em;
+        padding: 0.20em 0.50em 0em 0.50em;
+    }
+    /* Habilidades: diseño
+    --------------------------------------------------------------------------------*/
+    .n-grid > .area-2 > .niveles { width: 100%; }
+    .n-grid > .area-2 > .niveles > svg { height: 34vw; }
+}

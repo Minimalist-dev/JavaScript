@@ -1,0 +1,159 @@
+/* 
+    Created on : 7 oct. 2021, 9:18:14 p. m.
+    Author     : neury-dev
+*/
+body {
+/*    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    margin: 0;*/
+    padding: 0;
+}
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--n-color-dos);
+    width: 100%;
+    height: 8vh;
+}
+h1 { color: var(--n-color); }
+.main {
+    display: flex;
+    height: 92vh;
+    overflow: hidden;
+}
+.izquierda {
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+}
+.usuarios {
+    display: flex;
+    flex-grow: 1;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--n-color-tres);
+    padding: 1rem;
+}
+.menu {
+    display: flex;
+    background-color: var(--n-color-dos);
+    padding: 1rem;
+}
+.menu_izquierdo { display: flex; }
+.menu_derecho { margin-left: auto; }
+.boton {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    color: var(--n-color-dos);
+    background-color: var(--n-color);
+    font-size: 1.2rem;
+    width: 50px;
+    height: 50px;
+    margin: 0 0.5rem;
+    border: 1px solid var(--n-color-dos);
+    border-radius: 5px;
+}
+aside {
+    display: flex;
+    flex: 0.5;
+    flex-direction: column;
+    
+    background-color: var(--n-color-tres);
+    border-left: 1px solid var(--n-color);
+}
+.charla {
+    flex-grow: 1;
+    
+    padding: 1em;
+    overflow-y: scroll;
+}
+.charla::-webkit-scrollbar {
+    display: none;
+}
+#charla {
+    display: flex;
+    flex-direction: column;
+    
+    margin: 1.5rem;
+}
+.message { display: flex; flex-direction: column; }
+.message > b {
+    display: flex;
+    align-items: center;
+    
+    color: var(--n-color);
+    text-transform: capitalize;
+}
+.message > b > i { font-size: 1.5rem; margin-right: 0.7rem; }
+.message > span {
+    color: var(--n-color);
+    margin: 1rem 0;
+    border-radius: 5px;
+    padding: 1rem;
+}
+.estado_de_redaccion { color: var(--n-color); text-align: center; }
+.emisor > section:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    background-color: var(--n-color-dos);
+    padding: 0.56rem;
+}
+.emisor > section { float: none; clear: both; }
+form {
+    display: flex;
+
+    height: 4rem;
+    padding: 0.25rem;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+}
+form > textarea { flex-grow: 1; }
+form > textarea { border-radius: 2rem; padding: 0.50em 1rem; }
+form > button {
+    color: var(--n-color);
+    background-color: var(--n-color-verde);
+    font-weight: bold;
+    margin: 0.25rem;
+    border-radius: 3px;
+    padding: 0 1rem;
+}
+#user,
+#chat {
+    float: left;
+    list-style-type: none;
+    width: 40%;
+    margin: 0;
+    padding: 0;
+}
+#user,
+#chat > li {
+    padding: 0.5rem 1rem;
+}
+#user,
+#chat > li:nth-child(odd) {
+    background-color: #efefef;
+}
+.emojis-contenidos {
+    display: none;
+    height: 200px;
+    overflow-y: auto;
+}
+.emojis-contenidos > section {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    
+    background-color: var(--n-color);
+}
+.emojis-contenidos > section > .emoji {
+    background-color: var(--n-color);
+    font-size: 1.50em;
+    width: 50px;
+    margin-bottom: 2px;
+}

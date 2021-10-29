@@ -1,0 +1,19 @@
+/* 
+    Created on : 11 oct. 2021, 7:06:12 p. m.
+    Author     : neury-dev
+*/
+body {
+    height: 3000px;
+}
+svg { position: fixed; } 
+rect,
+circle,
+ellipse,
+line, 
+polygon,
+polyline,
+path {
+    fill: white;
+    stroke: var(--n-color-dos);
+    stroke-width: 4;
+}

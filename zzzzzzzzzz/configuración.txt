@@ -1,0 +1,38 @@
+- Paquetes necesarios
+    - npm install express --save
+        - npm install express --no-save
+    - sudo npm install express-generator -g
+    - express --view=ejs
+
+    - npm install --save-dev nodemon
+    - npm install nodemon -D
+
+    - npm install mysql
+    - npm install express-myconnection
+    - npm install mongodb
+
+    - npm install morgan
+
+    - npm install
+
+    - npm install path
+
+    - npm install node-fetch --save
+    - npm install form-data
+
+- Paquetes necesarios para aplicación en tiempo real
+    - Referencias
+    https://webrtc.org/
+    https://es.wikipedia.org/wiki/WebRTC
+
+    - npm install socket.io
+    https://socket.io/
+
+    - npm install peer
+    https://www.npmjs.com/package/peer
+    https://peerjs.com/
+    https://peerjs.com/docs.html#start
+
+    npm install uuid
+
+    

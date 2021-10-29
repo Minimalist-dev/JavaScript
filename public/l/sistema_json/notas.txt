@@ -1,0 +1,13 @@
+- Los ID: se tienen que utilizarse solo para identificar, preferible.
+- Los ID: se tienen que mantener inarterables.
+- LOs ID: se tienen que mantener en orden, preferible sin cuerpo vacios.
+
+- Tipos de datos
+
+    string
+    number
+    object
+    array
+    boolean
+    null
+

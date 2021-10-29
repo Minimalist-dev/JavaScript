@@ -1,0 +1,185 @@
+/* 
+    Created on : 9 dic. 2020, 17:29:39
+    Author     : desarrollador
+*/
+/* Maquetado 
+--------------------------------------------------------------------------------*/
+.n-grid {
+    display: grid;
+    grid-template-columns: auto 80%;
+    grid-gap: 1.50em;
+    margin: 0em 3em 3em 3em;
+}
+/*.n-grid > section { background: red; }*/
+.n-grid > .area-1 { grid-area: 2 / 1 / span 1 / span 1; }
+.n-grid > .area-2 { grid-area: 3 / 1 / span 1 / span 1; }
+.n-grid > .area-3 { grid-area: 2 / 2 / span 1 / span 1; }
+.n-grid > .area-4 { grid-area: 3 / 2 / span 1 / span 1; }
+
+/* Formulario
+--------------------------------------------------------------------------------*/
+.n-grid > .area-1 > h3 { text-align: center; font-weight: bold; }
+.n-grid > .area-2 { margin-top: -2em; }
+.n-grid > .area-2 > form > label, 
+.n-grid > .area-2 > form > input { 
+    width: 100%; 
+}
+.n-grid > .area-2 > form > input, 
+.n-grid > .area-3 > form input { 
+    margin-bottom: 0.50em; 
+    border: none;
+    border-radius: var(--n-radio);
+    padding: var(--n-relleno);
+}
+.n-grid > .area-2 > form > input:focus, 
+.n-grid > .area-3 > form input:focus {
+    color: var(--n-color);
+    background-color: var(--n-color-tres);
+    outline: none;
+}
+.n-grid > .area-2 > form > input[type='submit'],
+.n-grid > .area-2 > form > input[type='reset'] {
+    color: var(--n-color);
+    background-color: var(--n-color-dos);
+    font-weight: bold;
+    width: 100%;
+    border: none;
+    border-radius: var(--n-radio);
+    padding: var(--n-relleno);
+    cursor: pointer;
+}
+.n-grid > .area-2 > form > input[type=submit]:hover,
+.n-grid > .area-2 > form > input[type=reset]:hover {
+    color: var(--n-color-dos);
+    background-color: var(--n-color-tres);
+    text-shadow: var(--n-sombra-de-texto);
+}
+
+/* Busqueda
+--------------------------------------------------------------------------------*/
+
+/* Busqueda: Autocompletar
+--------------------------------------------------------------------------------*/
+.n-grid > .area-3 > form .autocompletar {
+    display: inline-block;
+    position: relative;
+    width: 300px;
+}
+.n-grid > .area-3 > form .elementos {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    border-width: 0px 1px;
+    border-style: solid;
+    border-color: var(--n-color-dos);;
+}
+.n-grid > .area-3 > form .elementos div {
+    background-color: var(--n-color);
+    border-bottom: 1px solid var(--n-color-dos);
+    padding: 10px;
+    cursor: pointer;
+}
+.n-grid > .area-3 > form .elementos div:hover {
+    color: var(--n-color);
+    background-color: var(--n-color-tres);
+}
+.n-grid > .area-3 > form .activo {
+    color: var(--n-color);
+    background-color: var(--n-color-tres) !important;
+}
+
+/* Respuesta
+--------------------------------------------------------------------------------*/
+.n-grid > .area-3 > #res { color: var(--n-color-verde); text-align: center; }
+.n-grid > .area-3 > #res > span { color: var(--n-color-rojo); }
+
+/* Tabla
+--------------------------------------------------------------------------------*/
+table {
+    table-layout: fixed;
+    width: 100%;
+    border: 0.0625em solid #f2f2f2;
+    border-collapse: collapse;
+}
+/*caption { text-align: center; font-weight: bold; }*/
+th {
+    color: var(--n-color);
+    background-color: var(--n-color-dos);
+    height: 2.50em;
+    border: 0.0625em solid var(--n-color-dos);
+    vertical-align: middle;
+}
+th, td { padding: var(--n-relleno); }
+tr:nth-child(even) { background-color: #f2f2f2; }
+tr:hover { color: var(--n-color); background-color: var(--n-color-tres); }
+td {
+    text-align: center;
+    vertical-align: middle;
+    height: 2em;
+}
+td:nth-child(4), 
+td:nth-child(5) {
+    text-align: left; 
+} 
+td:nth-child(6) { text-align: right; }
+table > tbody > tr > td > button {
+    background-color: var(--n-color);
+    font-weight: bold;
+    width: 100%;
+    border: none;
+    border: 0.10em solid var(--n-color);
+    border-radius: var(--n-radio);
+    padding: var(--n-relleno);
+}
+table > tbody > tr > td > button:hover {
+    color: var(--n-color-dos);
+    background-color: var(--n-color-tres);
+    text-shadow: var(--n-sombra-de-texto);
+}
+tfoot > tr > td {
+    background-color: var(--n-color-dos);
+    height: 2em;
+    margin: 0;
+    padding: 0;
+}
+tfoot> tr > td { height: 3em; border-top: 0.10em solid var(--n-color); }
+tfoot> tr > td > form {
+    display: inline-block;
+    vertical-align: middle;
+    padding: 0.50em 0em 0.50em 0em;
+}
+tfoot> tr > td > form  > label { color: var(--n-color); }
+tfoot> tr > td > form  > select {
+    color: var(--n-color);
+    background-color: var(--n-color-dos);
+    border: 0.10em solid var(--n-color) !important;
+    border-radius: var(--n-radio);
+    padding: var(--n-relleno);
+}
+/*tfoot> tr > td > label,*/
+tfoot> tr > td > span { 
+    color: var(--n-color);
+}
+tfoot> tr > td > button#ordenar {
+    color: var(--n-color);
+    background-color: var(--n-color-dos);
+    font-weight: normal;
+    margin: 0em;
+    border: 0.10em solid var(--n-color);
+}
+tfoot> tr > td > button {
+    display: inline-block;
+    background-color: var(--n-color);
+    font-weight: bold;
+    margin: 0.30em 0em 0.30em 0em;
+    border: none;
+    border: 0.10em solid var(--n-color-dos);
+    border-radius: var(--n-radio);
+    padding: var(--n-relleno);
+}
+tfoot> tr > td > button:hover {
+    color: var(--n-color);
+    background-color: var(--n-color-tres);
+    border: 0.10em solid var(--n-color);
+}

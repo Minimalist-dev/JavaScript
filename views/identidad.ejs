@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <style>
+        li {
+            font-weight: bold;
+        }
+        li span {
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+    <section>
+        <ol>
+            <li>Fecha: <span id="fecha"></span></li>
+            <li>Hora: <span id="hora"></span></li>
+            <li><b id="tema">Navegador</b>
+                <ol>
+                    <li>AppCodeName: <span id="appCodeName"></span></li>
+                    <li>AppName: <span id="appName"></span></li>
+                    <li>AppVersion: <span id="appVersion"></span></li>
+                    <li>CookieEnabled: <span id="cookieEnabled"></span></li>
+                    <li>Language: <span id="language"></span></li>
+                    <li>OnLine: <span id="onLine"></span></li>
+                    <li>Platform: <span id="platform"></span></li>
+                    <li>PserAgent: <span id="userAgent"></span></li>
+                </ol>
+            </li>
+            <!--li><b id="tema">Dispositivo</b>
+                <ol>
+                    <li>Sistema operativo: <span></span></li>
+                    <li>IP: <span></span></li>
+                    <li>PC: <span></span></li>
+                    <li>Usuario: <span></span></li>
+                </ol>
+            </li-->
+        </ol>
+    </section>
+    <div>
+        <% for(let i in Objeto) { %>
+            <div>
+                <% for(let ii in Objeto[i].cpu) { %>
+                    <p><b>CPU <%= Number(ii) + 1 %>: </b><%= Objeto[i].cpu[ii].model %></p>
+                    <p><b>Velocidad <%= Number(ii) + 1 %>: </b><%= Objeto[i].cpu[ii].speed %></p>
+                    <p><b>User <%= Number(ii) + 1 %>: </b><%= Objeto[i].cpu[ii].times.user %></p>
+                    <p><b>Nice <%= Number(ii) + 1 %>: </b><%= Objeto[i].cpu[ii].times.nice %></p>
+                    <p><b>Sys <%= Number(ii) + 1 %>: </b><%= Objeto[i].cpu[ii].times.sys %></p>
+                    <p><b>Idle <%= Number(ii) + 1 %>: </b><%= Objeto[i].cpu[ii].times.idle %></p>
+                    <p><b>Irq <%= Number(ii) + 1 %>: </b><%= Objeto[i].cpu[ii].times.irq %></p>
+                <% } %>
+                <p><b>Plataforma: </b><%= Objeto[i].plataforma %></p>
+                <p><b>Tipo: </b><%= Objeto[i].tipo %></p>
+                <p><b>Version: </b><%= Objeto[i].version %></p>
+                <p><b>PC: </b><%= Objeto[i].pc %></p>
+                <p><b>Usuario: </b><%= Objeto[i].usuario %></p>
+            </div>
+        <% } %>
+    </div>
+<script>
+let fecha       = new Date();
+let opciones    = { hour: 'numeric', minute: 'numeric', second: 'numeric' };
+
+document.querySelector('#fecha').innerHTML = new Intl.DateTimeFormat('es').format(fecha); 
+document.querySelector('#hora').innerHTML = new Intl.DateTimeFormat('es', opciones).format(fecha); 
+
+/* Navegador
+--------------------------------------------------------------------------------*/
+document.querySelector('#appCodeName').innerHTML = navigator.appCodeName;  
+document.querySelector('#appName').innerHTML = navigator.appName; 
+document.querySelector('#appVersion').innerHTML = navigator.appVersion;
+document.querySelector('#cookieEnabled').innerHTML = navigator.cookieEnabled;
+document.querySelector('#language').innerHTML = navigator.language;
+document.querySelector('#onLine').innerHTML = navigator.onLine;
+document.querySelector('#platform').innerHTML = navigator.platform;
+document.querySelector('#userAgent').innerHTML = navigator.userAgent;
+
+/* Dispositivo
+--------------------------------------------------------------------------------*/
+//document.querySelector('#appCodeName').innerHTML = navigator.appCodeName;  
+//document.querySelector('#appName').innerHTML = navigator.appName; 
+//document.querySelector('#appVersion').innerHTML = navigator.appVersion;
+//document.querySelector('#cookieEnabled').innerHTML = navigator.cookieEnabled;
+//document.querySelector('#language').innerHTML = navigator.language;
+//document.querySelector('#onLine').innerHTML = navigator.onLine;
+//document.querySelector('#platform').innerHTML = navigator.platform;
+//document.querySelector('#userAgent').innerHTML = navigator.userAgent;
+</script>
+</body>
+</html>

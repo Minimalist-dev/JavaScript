@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JS | Navegación</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <!-- CSS -->
+    <link rel='stylesheet' href='../i_css/i/root.css' />
+    <link rel='stylesheet' href='../i_css/navegacion/navegacion.css' />
+    <!-- Iconos -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+<!------------------------------------------------------------------------------
+nav
+------------------------------------------------------------------------------->
+<nav>
+    <section class="uno">
+        <button class="categoria n1"> Camisetas</button>
+        <button class="categoria n2"> Vestidos</button>
+        <button class="categoria n3"> Pantalones</button>
+        <button class="categoria n4"> Chaquetas</button>
+        <button class="categoria n5"> Deportivas</button>
+        <button class="categoria n6"> Zapatos</button>
+    </section>
+    <section class="dos">
+        <button class="categoria n7"> Boletin informativo</button>
+        <button class="categoria n8"> Subscribir</button>
+    </section>
+</nav>
+<!------------------------------------------------------------------------------
+aside
+------------------------------------------------------------------------------->
+<div id="grupo1" class="grupo"><h2>Camisetas</h2></div>
+<div id="grupo2" class="grupo"><h2>Vestidos</h2></div>
+<div id="grupo3" class="grupo">
+    <aside class="pantalones">
+        <section>
+            <h2>Masculinos</h2>
+            <hr>
+            <h3><a href="">Para hombres</a></h3>
+            <ol>
+                <li><a href="">APC</a></li>
+                <li><a href="">Acne Studios</a></li>
+                <li><a href="">Tom Ford</a></li>
+                <li><a href="">Prada</a></li>
+                <li><a href="">Polo Ralph Lauren</a></li>
+                <li><a href="">Nudie Jeans</a></li>
+                <li><a href="">Levi’s</a></li>
+                <li><a href="">Ksubi</a></li>
+                <li><a href="">Hugo Boss</a></li>
+                <li><a href="">Gucci</a></li>
+                <li><a href="">G-Star Raw</a></li>
+                <li><a href="">Givenchy</a></li>
+                <li><a href="">Fendi</a></li>
+                <li><a href="">Dolce Gabbana</a></li>
+                <li><a href="">DSquared2</a></li>
+                <li><a href="">Diesel</a></li>
+                <li><a href="">Calvin Klein</a></li>
+                <li><a href="">Balenciaga</a></li>
+                <li><a href="">AG Jeans</a></li>
+            </ol>
+        </section>
+        <section>
+            <h2>Femeninos</h2>
+            <hr>
+            <h3><a href="">Para mujeres</a></h3>
+            <ol>
+                <li><a href="">Levi's</a></li>
+                <li><a href="">Lee</a></li>
+                <li><a href="">Wrangler</a></li>
+                <li><a href="">Topshop</a></li>
+                <li><a href="">Paige</a></li>
+                <li><a href="">Madewell</a></li>
+                <li><a href="">Pepe Jeans</a></li>
+                <li><a href="">Calvin Klein</a></li>
+                <li><a href="">Zara</a></li>
+                <li><a href="">RE/DONE</a></li>
+                <li><a href="">Dolce & Gabbana</a></li>
+                <li><a href="">GUESS</a></li>
+                <li><a href="">B SIDES</a></li>
+                <li><a href="">Askk NY</a></li>
+                <li><a href="">The Feel Studio Inc</a></li>
+                <li><a href="">Reiko Jeans</a></li>
+                <li><a href="">Neuw Denim</a></li>
+                <li><a href="">One Teaspoon</a></li>
+                <li><a href="">J Brand Jeans</a></li>
+            </ol>
+        </section>
+    </aside>
+</div>
+<div id="grupo4" class="grupo"><h2>Chaquetas</h2></div>
+<div id="grupo5" class="grupo"><h2>Deportivas</h2></div>
+<div id="grupo6" class="grupo"><h2>Zapatos</h2></div>
+<div id="grupo7" class="grupo">
+    <aside class="formulario">
+        <h2>Boletín informativo</h2>
+        <p>Únase a nuestra lista de correo para recibir actualizaciones sobre recién llegados y ofertas especiales.</p>
+        <form action="">
+            <label for="correo" hidden="">Correo</label>
+            <p><input type="email" name="correo" id="correo" placeholder="Ingresar correo" required=""
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninvalid="alert('El Correo es Invalido.');"></p>
+            <button type="submit" name="unirse">Unirse</button>
+        </form>
+    </aside>
+</div>
+<div id="grupo8" class="grupo">
+    <aside class="formulario">
+        <h2>Suscribir</h2>
+        <p>Para recibir ofertas especiales y trato VIP:</p>
+        <form action="">
+            <label for="correo" hidden="">Correo</label>
+            <p><input type="email" name="correo" id="correo" placeholder="Ingresar correo" required=""
+            pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" oninvalid="alert('El Correo es Invalido.');"></p>
+            <button type="submit" name="suscribir">Suscribir</button>
+        </form>
+    </aside>
+</div>
+<script src="../l/navegacion/navegacion.js"></script> 
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <!-- CSS -->
+    <link rel='stylesheet' href='/i_css/i/root.css' />
+    <link rel="stylesheet" href="i_css/sistema_json/sistema_JSON.css">
+</head>
+<body>
+    <section class="n-grid">
+        <section class="area-1">
+            <h3>Entrada de datos</h3>
+            <p><!--  ................................  --></p>
+        </section>
+        <section class="area-2">
+            <form method="POST" name="insertar" id="insertar">
+                <!--label for="id">ID</label-->
+                <input type="text" name="id" id="id" disabled="" style="text-align: center;">
+                <label for="marca">Marca</label>
+                    <input type="text" name="marca" id="marca" placeholder="Ingresar marca" required="">
+                <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Ingresar nombre" required="">
+                <label for="precio">Precio</label>
+                    <input type="number" name="precio" id="precio" placeholder="Ingresar precio" required="">
+                <input type="submit" name="submit" id="submit" value="Crear">
+                <input type="reset">
+            </form>
+        </section>
+        <section class="area-3">
+            <form method="POST" id="busqueda" autocomplete="off">
+                <label for="buscar">Buscar:</label>
+                <div class="autocompletar">
+                    <input type="text" id="buscar" placeholder="Ingresar termino de busqueda...">
+                    <input type="submit" value="Buscar">
+                </div>
+            </form>
+            <div id="res"></div>
+        </section>
+        <section class="area-4">
+            <div>
+            <table>
+                <caption><b>Salida de datos</b></caption>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th>Marca</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th colspan="2">Gestionar</th>
+                    </tr>
+                </thead>
+                <tbody id="consulta">
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="8">
+                            <form method="POST">
+                                <label for="cantidad">Cantidad</label>
+                                <select id="cantidad">
+                                    <option value="">...</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </form>
+                            <form method="POST">
+                                <label for="por">Por</label>
+                                <select id="por" name="por">
+                                    <option value="">...</option>
+                                    <option value="id">ID</option>
+                                    <option value="nombre">Nombre</option>
+                                    <option value="marca">Marca</option>
+                                    <option value="precio">Precio</option>
+                                    <option value="fecha">Fecha</option>
+                                </select>
+                            </form>
+                            <label for="ordenar">Ordenar</label>
+                            <button id="ordenar">Ascendente</button>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td colspan="8">
+                            <button id="anterior" style="visibility: hidden;">Anterior</button>
+                            <form method="POST" id="paginacion">
+                                <label for="inicia-y-termina" hidden="">
+                                    <input type="number" id="inicia-y-termina" value="0" min="0" >
+                                    <input type="number" id="pagina" value="1" min="1" >
+                                </label>
+                            </form>
+                            <span id="paginaciones"></span>
+                            <button id="siguiente">Siguiente</button>
+                        </td>
+                    </tr>
+                 </tfoot>
+            </table>
+            </div>
+        </section>
+    </section>
+<script src="/l/sistema_json/l/frontend.js"></script>
+</body>
+</html>

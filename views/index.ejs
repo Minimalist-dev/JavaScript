@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="icon" href="i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <!-- CSS -->
+    <link rel='stylesheet' href='/i_css/i/root.css' />
+    <link rel='stylesheet' href='/i_css/i/index.css' />
+    <link rel='stylesheet' href='/i_css/i/header.css' />
+    <link rel='stylesheet' href='/i_css/i/main.css' />
+    <link rel='stylesheet' href='/i_css/i/article.css' />
+    <link rel='stylesheet' href='/i_css/i/footer.css' />
+    <!-- Iconos -->
+    <!--script src='https://kit.fontawesome.com/a076d05399.js'></script-->
+</head>
+<body>
+<section class="n-grid">
+<!------------------------------------------------------------------------------
+header
+------------------------------------------------------------------------------->
+<section class="area-1">  
+    <header>
+        <section>
+            <h1 class="titulo"><%= title %></h1>
+        </section>
+        <section>
+            <ul class="maximo-oculto">
+                <li><a href="#habilidades" class="enlace">Habilidades</a>
+                    <div class="cubrir">
+                        <a href="#habilidades" class="con">Habilidades</a>
+                    </div>
+                </li>
+                <li><a href="#sobre-mi" class="enlace">Sobre mi</a>
+                    <div class="cubrir">
+                        <a href="#sobre-mi" class="con">Sobre mi</a>
+                    </div>
+                </li>
+                <li><a href="#desarrollos" class="enlace">Desarrollos</a>
+                    <div class="cubrir">
+                        <a href="#desarrollos" class="con">Desarrollos</a>
+                    </div>
+                </li>
+                <li><a href="#contacto" class="enlace">Contacto</a>
+                    <div class="cubrir">
+                        <a href="#contacto" class="con">Contacto</a>
+                    </div>
+                </li>
+            </ul>
+            <section class="mediano-oculto">
+                <ul>
+                    <li><a href="#habilidades" class="enlace">Habilidades</a>
+                        <div class="cubrir">
+                            <a href="#habilidades" class="con">Habilidades</a>
+                        </div>
+                    </li>
+                    <li><a href="#desarrollos" class="enlace">Desarrollos</a>
+                        <div class="cubrir">
+                            <a href="#desarrollos" class="con">Desarrollos</a>
+                        </div>
+                    </li>
+                    <li><a href="javascript:void(0);" class="enlace" onclick="mediano()">&#9776;</a>
+                        <div class="cubrir">
+                            <a href="javascript:void(0);" class="con " onclick="mediano()">&#9776;</a>
+                        </div>
+                    </li>
+                </ul>
+                <section class="mediano">
+                    <ul>
+                        <li>
+                            <a href="#sobre-mi" class="enlace">Sobre mi</a>
+                            <div class="cubrir">
+                                <a href="#sobre-mi" class="con">Sobre mi</a>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="#contacto" class="enlace">Contacto</a>
+                            <div class="cubrir">
+                                <a href="#contacto" class="con">Contacto</a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+            <section class="minimo-oculto">
+                <a href="javascript:void(0);" onclick="minimo()">&#9776;</a>
+                <section class="minimo">
+                    <ul>
+                        <li><a href="#habilidades" class="enlace">Habilidades</a>
+                            <div class="cubrir">
+                                <a href="#habilidades" class="con">Habilidades</a>
+                            </div>
+                        </li>
+                        <li><a href="#sobre-mi" class="enlace">Sobre mi</a>
+                            <div class="cubrir">
+                                <a href="#sobre-mi" class="con">Sobre mi</a>
+                            </div>
+                        </li>
+                        <li><a href="#desarrollos" class="enlace">Desarrollos</a>
+                            <div class="cubrir">
+                                <a href="#desarrollos" class="con">Desarrollos</a>
+                            </div>
+                        </li>
+                        <li><a href="#contacto" class="enlace">Contacto</a>
+                            <div class="cubrir">
+                                <a href="#contacto" class="con">Contacto</a>
+                            </div>
+                        </li>
+                    </ul>
+                </section>
+            </section>
+        </section>
+    </header>
+</section>
+<!------------------------------------------------------------------------------
+main
+------------------------------------------------------------------------------->
+<section class="area-2" id="habilidades">
+    <section class="main">
+        <main>
+            <div class="skills">
+                <h2 class="titulo">Skills</h2>
+                <div></div>
+                <p>Full Stack Developer</p>
+            </div>
+
+            <p class="titulo" onmouseover="Habilidades.mostrar('html')">HTML</p>
+            <p class="titulo" onmouseover="Habilidades.mostrar('css')">CSS</p>
+            <p class="titulo" onmouseover="Habilidades.mostrar('js')">JavaScript Full Stack</p>
+            <p class="titulo" onmouseover="Habilidades.mostrar('java')">Java Full Stack</p>
+            <p class="titulo" onmouseover="Habilidades.mostrar('php')">PHP</p>
+            <p class="titulo" onmouseover="Habilidades.mostrar('sql')">SQL</p>
+            <p class="titulo" onmouseover="Habilidades.mostrar('json')">JSON</p>
+            <p class="titulo" onmouseover="Habilidades.mostrar('nosql')">MongoDB</p>
+            <p class="titulo" onmouseover="Habilidades.mostrar('fetch')">Fetch y AJAX</p>
+            <p class="titulo" onmouseover="Habilidades.mostrar('aria')">ARIA</p>
+            <p class="titulo" onmouseover="Habilidades.mostrar('svg')">SVG</p>
+            <p class="titulo" onmouseover="Habilidades.mostrar('netbeans')">Apache NetBeans</p>
+        </main>
+    </section>
+    <section class="niveles"><!--img src="i_svg/i/niveles.svg" alt="niveles"/-->
+        <svg xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+            viewBox="0 0 380 260" tabIndex="0">
+        
+            <title>Niveles de las habilidades</title>
+            <metadata>Gráficos y código de Neury Eleasar</metadata>
+            <desc>Curva de aprendizaje del opositor. Se trata de una representación gráfica de las diferentes fases que se 
+            suceden en el proceso de aprendizaje de cualquier materia.</desc>
+            
+            <path d="M 0 350 l 100 -200 q 50 -100 100 0 q 50 100 100 0 l 100 -200" stroke="white" stroke-width="3" fill="none" />
+            <g stroke="black" stroke-width="3" fill="white">
+                <circle id="pointA" cx="365" cy="18" r="6" class="nivel html" />
+                <circle id="pointB" cx="363" cy="23" r="6" class="nivel css" />
+                <circle id="pointC" cx="325" cy="101" r="6" class="nivel js"/>
+                <circle id="pointA" cx="150" cy="101" r="6" class="nivel java" />
+                <circle id="pointB" cx="322" cy="106" r="6" class="nivel php" />
+                <circle id="pointC" cx="340" cy="70" r="6" class="nivel sql"/>
+                <circle id="pointA" cx="338" cy="75" r="6" class="nivel json" />
+                <circle id="pointB" cx="335" cy="80" r="6" class="nivel nosql" />
+                <circle id="pointC" cx="350" cy="49" r="6" class="nivel fetch"/>
+                <circle id="pointA" cx="360" cy="29" r="6" class="nivel aria" />
+                <circle id="pointB" cx="278" cy="186" r="6" class="nivel svg" />
+                <circle id="pointC" cx="128" cy="110" r="6" class="nivel netbeans"/>
+            </g>
+            <g>
+                <g class="nivel html">
+                    <g fill="white" stroke="none" >
+                        <ellipse ry="7" rx="5" cx="340" cy="15" />
+                        <ellipse ry="7" rx="5" cx="350" cy="15"/>
+                    </g>
+                    <g fill="#1c1d22" stroke="#373538" stroke-width="0.5" class="mirar">
+                        <ellipse ry="3" rx="2.5" cx="340" cy="18"/>
+                        <ellipse ry="3" rx="2.5" cx="350" cy="18"/>
+                    </g>
+                </g>
+                <g class="nivel css">
+                    <g fill="white" stroke="none" >
+                        <ellipse ry="7" rx="5" cx="337" cy="18" />
+                        <ellipse ry="7" rx="5" cx="347" cy="18"/>
+                    </g>
+                    <g fill="#1c1d22" stroke="#373538" stroke-width="0.5" class="mirar">
+                        <ellipse ry="3" rx="2.5" cx="337" cy="21"/>
+                        <ellipse ry="3" rx="2.5" cx="347" cy="21"/>
+                    </g>
+                </g>
+                <g class="nivel js">
+                    <g fill="white" stroke="none" >
+                        <ellipse ry="7" rx="5" cx="302" cy="92" />
+                        <ellipse ry="7" rx="5" cx="312" cy="92"/>
+                    </g>
+                    <g fill="#1c1d22" stroke="#373538" stroke-width="0.5" class="mirar">
+                        <ellipse ry="3" rx="2.5" cx="302" cy="95"/>
+                        <ellipse ry="3" rx="2.5" cx="312" cy="95"/>
+                    </g>
+                </g>
+                <g class="nivel java">
+                    <g fill="white" stroke="none" >
+                        <ellipse ry="7" rx="5" cx="127" cy="90" />
+                        <ellipse ry="7" rx="5" cx="137" cy="90"/>
+                    </g>
+                    <g fill="#1c1d22" stroke="#373538" stroke-width="0.5" class="mirar">
+                        <ellipse ry="3" rx="2.5" cx="127" cy="93"/>
+                        <ellipse ry="3" rx="2.5" cx="137" cy="93"/>
+                    </g>
+                </g>
+                <g class="nivel php">
+                    <g fill="white" stroke="none" >
+                        <ellipse ry="7" rx="5" cx="299" cy="97" />
+                        <ellipse ry="7" rx="5" cx="309" cy="97"/>
+                    </g>
+                    <g fill="#1c1d22" stroke="#373538" stroke-width="0.5" class="mirar">
+                        <ellipse ry="3" rx="2.5" cx="299" cy="100"/>
+                        <ellipse ry="3" rx="2.5" cx="309" cy="100"/>
+                    </g>
+                </g>
+                <g class="nivel sql">
+                    <g fill="white" stroke="none" >
+                        <ellipse ry="7" rx="5" cx="315" cy="65" />
+                        <ellipse ry="7" rx="5" cx="325" cy="65" />
+                    </g>
+                    <g fill="#1c1d22" stroke="#373538" stroke-width="0.5" class="mirar">
+                        <ellipse ry="3" rx="2.5" cx="315" cy="68"/>
+                        <ellipse ry="3" rx="2.5" cx="325" cy="68"/>
+                    </g>
+                </g>
+                <g class="nivel json">
+                    <g fill="white" stroke="none" >
+                        <ellipse ry="7" rx="5" cx="312" cy="70" />
+                        <ellipse ry="7" rx="5" cx="322" cy="70" />
+                    </g>
+                    <g fill="#1c1d22" stroke="#373538" stroke-width="0.5" class="mirar">
+                        <ellipse ry="3" rx="2.5" cx="312" cy="73"/>
+                        <ellipse ry="3" rx="2.5" cx="322" cy="73"/>
+                    </g>
+                </g>
+                <g class="nivel nosql">
+                    <g fill="white" stroke="none" >
+                        <ellipse ry="7" rx="5" cx="309" cy="75" />
+                        <ellipse ry="7" rx="5" cx="319" cy="75" />
+                    </g>
+                    <g fill="#1c1d22" stroke="#373538" stroke-width="0.5" class="mirar">
+                        <ellipse ry="3" rx="2.5" cx="309" cy="78"/>
+                        <ellipse ry="3" rx="2.5" cx="319" cy="78"/>
+                    </g>
+                </g>
+                <g class="nivel fetch">
+                    <g fill="white" stroke="none" >
+                        <ellipse ry="7" rx="5" cx="324" cy="44" />
+                        <ellipse ry="7" rx="5" cx="334" cy="44"/>
+                    </g>
+                    <g fill="#1c1d22" stroke="#373538" stroke-width="0.5" class="mirar">
+                        <ellipse ry="3" rx="2.5" cx="324" cy="47"/>
+                        <ellipse ry="3" rx="2.5" cx="334" cy="47"/>
+                    </g>
+                </g>
+                <g class="nivel aria">
+                    <g fill="white" stroke="none" >
+                        <ellipse ry="7" rx="5" cx="334" cy="24" />
+                        <ellipse ry="7" rx="5" cx="344" cy="24"/>
+                    </g>
+                    <g fill="#1c1d22" stroke="#373538" stroke-width="0.5" class="mirar">
+                        <ellipse ry="3" rx="2.5" cx="334" cy="27"/>
+                        <ellipse ry="3" rx="2.5" cx="344" cy="27"/>
+                    </g>
+                </g>
+                <g class="nivel svg">
+                    <g fill="white" stroke="none" >
+                        <ellipse ry="7" rx="5" cx="254" cy="179" />
+                        <ellipse ry="7" rx="5" cx="264" cy="179"/>
+                    </g>
+                    <g fill="#1c1d22" stroke="#373538" stroke-width="0.5" class="mirar">
+                        <ellipse ry="3" rx="2.5" cx="254" cy="182"/>
+                        <ellipse ry="3" rx="2.5" cx="264" cy="182"/>
+                    </g>
+                </g>
+                <g class="nivel netbeans">
+                    <g fill="white" stroke="none" >
+                        <ellipse ry="7" rx="5" cx="107" cy="100" />
+                        <ellipse ry="7" rx="5" cx="117" cy="100"/>
+                    </g>
+                    <g fill="#1c1d22" stroke="#373538" stroke-width="0.5" class="mirar">
+                        <ellipse ry="3" rx="2.5" cx="107" cy="103"/>
+                        <ellipse ry="3" rx="2.5" cx="117" cy="103"/>
+                    </g>
+                </g>
+            </g>
+
+            <!-- Label the points -->
+            <!--g id="texto" font-size="8" font-family="sans-serif" text-anchor="middle">
+                <text x="350" y="20" dx="0" dy="-10" class="nivel html">HTML</text>
+                <text x="400" y="100" dy="-10" class="nivel css">CSS</text>
+                <text x="400" y="300" dx="30" class="nivel js">JavaScript</text>
+                <text x="100" y="300" dx="-30" class="nivel java">Java</text>
+                <text x="400" y="100" dy="-10" class="nivel php">PHP</text>
+                <text x="400" y="300" dx="30" class="nivel sql">SQL</text>
+                <text x="100" y="300" dx="-30" class="nivel json">JSON</text>
+                <text x="400" y="100" dy="-10" class="nivel nosql">MongoDB</text>
+                <text x="400" y="300" dx="30" class="nivel fetch">Fetch y AJAX</text>
+                <text x="100" y="300" dx="-30" class="nivel aria">ARIA</text>
+                <text x="400" y="100" dy="-10" class="nivel svg">svg</text>
+                <text x="400" y="300" dx="30" class="nivel netbeans">Apache NetBeans</text>
+            </g-->
+        </svg>
+    </section>
+</section>
+<!------------------------------------------------------------------------------
+aside
+------------------------------------------------------------------------------->
+<section class="area-3" id="sobre-mi">
+    <section>
+        <div>
+            <h4 class="titulo enlace">Sobre mi</h4>
+            <div class="cubrir">
+                <p><a href="i_archivos/i/Neury-dev.pdf" class="con" target="_blank">
+                    Neury-dev.pdf
+                </a></p>
+            </div>
+        </div>
+    </section>
+</section>
+<!------------------------------------------------------------------------------
+desarrollos
+------------------------------------------------------------------------------->
+<section class="area-4" id="desarrollos">
+    <section>
+        <article>
+            <div>
+                <h4 class="titulo enlace">Video chat</h4>
+                <div class="cubrir">
+                    <!--p><a href="/i/video_chat" class="con"-->
+                    <p><a href="/video_chat" class="con">
+                        /i/video_chat.html
+                    </a></p>
+                </div>
+            </div>
+            <p>14/10/2021 - 26/10/2021</p>
+        </article>
+        <article>
+            <div>
+                <h4 class="titulo enlace">Gráficos</h4>
+                <div class="cubrir">
+                    <p><a href="/i/graficos" class="con">
+                        /i/graficos.html
+                    </a></p>
+                </div>
+            </div>
+            <p>11/10/2021 - 11/10/2021</p>
+        </article>
+        <article>
+            <div>
+                <h4 class="titulo enlace">Chat</h4>
+                <div class="cubrir">
+                    <p><a href="/i/chat" class="con">
+                        /i/chat.html
+                    </a></p>
+                </div>
+            </div>
+            <p>06/10/2021 - 08/10/2021</p>
+        </article>
+        <article>
+            <div>
+                <h4 class="titulo enlace">Identidad</h4>
+                <div class="cubrir">
+                    <p><a href="/identidad" class="con">
+                        /identidad
+                    </a></p>
+                </div>
+            </div>
+            <p>02/10/2021 - 02/10/2021</p>
+        </article>
+        <article>
+            <div>
+                <h4 class="titulo enlace">Sistema JSON</h4>
+                <div class="cubrir">
+                    <p><a href="/sistema_JSON" class="con">
+                        /sistema_JSON
+                    </a></p>
+                </div>
+            </div>
+            <p>14/08/2021 - 25/09/2021</p>
+        </article>
+        <article>
+            <div>
+                <h4 class="titulo enlace">Navegación</h4>
+                <div class="cubrir">
+                    <p><a href="/i/navegacion" class="con">
+                        /i/navegacion.html
+                    </a></p>
+                </div>
+            </div>
+            <p>10/08/2021 - 11/08/2021</p>
+        </article>
+        <article>
+            <div>
+                <h4 class="titulo enlace">Diapositivas</h4>
+                <div class="cubrir">
+                    <p><a href="/i/diapositivas" class="con">
+                        /i/diapositivas.html
+                    </a></p>
+                </div>
+            </div>
+            <p>03/08/2021 - 05/08/2021</p>
+        </article>
+        <article>
+            <div>
+                <h4 class="titulo enlace">AllInOne</h4>
+                <div class="cubrir">
+                    <p><a href="https://github.com/Neury-dev/AllInOne.git" class="con" target="_blank">
+                        github.com/Neury-dev/AllInOne
+                    </a></p>
+                </div>
+            </div>
+            <p>04/07/2020 - 22/04/2021</p>
+        </article>
+        <article>
+            <div>
+                <h4 class="titulo enlace">IteradorMatematico</h4>
+                <div class="cubrir">
+                    <p><a href="https://github.com/Neury-dev/IteradorMatematico.git" class="con" target="_blank">
+                        github.com/Neury-dev/IteradorMatematico
+                    </a></p>
+                </div>
+            </div>
+            <p>07/10/2019 - 12/01/2020</p>
+        </article>
+    </section>
+</section>
+<!------------------------------------------------------------------------------
+footer
+------------------------------------------------------------------------------->
+<section class="area-5">
+    <footer>
+        <p>2021 Desarrollado de Neury</p>
+        <p>neury.eleasar@outlook.es</p>
+    </footer>
+</section>
+</section>
+<!------------------------------------------------------------------------------
+Resolución no acta
+------------------------------------------------------------------------------->
+<section class="no-acta">
+    <i class='fas fa-tv'></i> 
+    <h3 class="titulo"><i class='fas fa-exclamation-circle'></i> Resolución no acta</h3>
+    <p>Amplie la pantalla o cumuniquese con: <strong>neury.eleasar@outlook.es</strong></p>
+</section>
+<script src="l/i/header.js"></script>
+<script src="l/i/index.js"></script>
+</body>
+</html>

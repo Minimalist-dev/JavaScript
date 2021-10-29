@@ -1,0 +1,166 @@
+/* 
+    Created on : 25 jul. 2021, 4:13:09 p. m.
+    Author     : neury-dev
+*/
+/* header
+--------------------------------------------------------------------------------*/
+.n-grid > .area-1 > header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+    position: fixed;
+    width: 100%;
+    padding: 1.50em 3em 1.50em 3em;
+    transition: var(--n-transicion);
+}
+.n-grid > .area-1 > header,
+.n-grid > .area-1 > header > section > section > section {
+    background-color: var(--n-color-dos);
+    z-index: 1;
+}
+.n-grid > .area-1 > header {
+    border-bottom: 1px solid var(--n-color-tres);
+}
+.n-grid > .area-1 > header > section > *,
+.n-grid > .area-1 > header > section > section > * { margin: 0; }
+.n-grid > .area-1 > header > section > h1 {
+    font-family: var(--n-fuente-dos);
+    font-size: 1.50em;
+    transition: var(--n-transicion);
+}
+.n-grid > .area-1 > header > :nth-child(2) {
+    display: flex;
+    align-items: flex-end;
+}
+.n-grid > .area-1 > header > section > ul,
+.n-grid > .area-1 > header > section > section > ul,
+.n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul,
+.n-grid > .area-1 > header > section > .minimo-oculto > .minimo > ul {
+    list-style: none;
+    padding: 0;
+}
+.n-grid > .area-1 > header > section > ul > :nth-child(1),
+.n-grid > .area-1 > header > section > section > ul > :nth-child(1),
+.n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > :nth-child(1) {
+    padding-left: 0.70em;
+}
+.n-grid > .area-1 > header > section > ul > li, 
+.n-grid > .area-1 > header > section > section > ul > li,
+.n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li {
+    display: inline;
+    font-weight: bold;
+}
+.n-grid > .area-1 > header > section > .minimo-oculto > .minimo > ul > li {
+    font-weight: bold;
+    margin: 0.50em 0em;
+}
+.n-grid > .area-1 > header > section > ul > li+li:before, 
+.n-grid > .area-1 > header > section > section > ul > li+li:before,
+.n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li+li:before {
+    color: var(--n-color-tres);
+    content: "/\00a0";
+}
+.n-grid > .area-1 > header > section > ul > li,
+.n-grid > .area-1 > header > section > section > ul > li,
+.n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li,
+.n-grid > .area-1 > header > section > .minimo-oculto > .minimo > ul > li {
+    position: relative;
+}
+.n-grid > .area-1 > header > section > ul > li > a,
+.n-grid > .area-1 > header > section > section > ul > li > a,
+.n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li > a,
+.n-grid > .area-1 > header > section > .minimo-oculto > .minimo > ul > li > a {
+    position: relative;
+    color: var(--n-color);
+}
+.n-grid > .area-1 > header > section > ul > li > .cubrir,
+.n-grid > .area-1 > header > section > section > ul > li > .cubrir,
+.n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li > .cubrir {
+    position: absolute;
+    left: 0.70em;
+    bottom: 1.20em;
+    overflow: hidden;
+    height: 0;
+}
+.n-grid > .area-1 > header > section > .minimo-oculto > .minimo > ul > li > .cubrir {
+    position: absolute;
+    bottom: 1.20em;
+    overflow: hidden;
+    height: 0;
+}
+.n-grid > .area-1 > header > section > ul >  li > .cubrir > .con,
+.n-grid > .area-1 > header > section > section > ul >  li > .cubrir > .con,
+.n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li > .cubrir > .con,
+.n-grid > .area-1 > header > section > .minimo-oculto > .minimo > ul > li > .cubrir > .con {
+    color: var(--n-color-tres);
+}
+.n-grid > .area-1 > header > section > ul > li:hover .cubrir,
+.n-grid > .area-1 > header > section > section > ul > li:hover .cubrir,
+.n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li:hover .cubrir,
+.n-grid > .area-1 > header > section > .minimo-oculto > .minimo > ul > li:hover .cubrir {
+    overflow: visible;
+    animation: cubrir 1s ease-in-out 2 alternate forwards;
+}
+@keyframes cubrir {
+    0%   { clip: rect(0px, 0px, 200px, 0px);   }
+    25%  { clip: rect(0px, 25px, 200px, 0px);  }
+    50%  { clip: rect(0px, 50px, 200px, 0px);  }
+    75%  { clip: rect(0px, 75px, 200px, 0px);  }
+    100% { clip: rect(0px, 100px, 200px, 0px); }
+}
+.n-grid > .area-1 > header > section > ul > li:hover .enlace,
+.n-grid > .area-1 > header > section > section > ul > li:hover .enlace,
+.n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li:hover .enlace,
+.n-grid > .area-1 > header > section > .minimo-oculto > .minimo > ul > li:hover .enlace { 
+    animation: enlace 1.00s forwards; 
+}
+@keyframes enlace {
+    0%   { opacity: 0.75;               }
+    25%  { opacity: 0.50;               }
+    50%  { opacity: 0.25;               }
+    75%  { opacity: 0.00;               }
+    100% { color: var(--n-color-tres);  }
+}
+/* Maquetado
+--------------------------------------------------------------------------------*/
+@media screen and (miwidth: 1200px) {
+    /*............................*/
+}
+@media screen and (min-width: 600px) and (max-width: 1199px) {
+    /*.....................................................*/
+}
+@media screen and (min-width: 400px) and (max-width: 600px) {
+    .n-grid > .area-1 > header > section > .mediano-oculto > .mediano {
+        display: none;
+        position: fixed;
+        top: 62px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border-bottom: 1px solid var(--n-color-tres);
+        padding: 0em 3em;
+        transition: var(--n-transicion);
+    }
+}
+@media screen and (max-width: 400px) {
+    .n-grid > .area-1 > header > section > .minimo-oculto > a {
+        color: var(--n-color);
+    }
+    /*.n-grid > .area-1 > header > section > .minimo-oculto >*/ 
+    .minimo { 
+        display: none;
+        position: fixed;
+        top: 62px;
+        left: 0;
+        right: 0;
+        border: 1px solid var(--n-color);
+        padding: 0em 3em;
+        transition: var(--n-transicion);
+    }
+}
+@media screen and (min-width: 400px) { .minimo-oculto { display: none; } }
+@media screen and (max-width: 400px), (min-width: 600px) { .mediano-oculto { display: none; } }
+@media screen and (max-width: 600px) { .maximo-oculto { display: none; } }
+
+/*.display { display: block; }*/

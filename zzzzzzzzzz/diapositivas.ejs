@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <!-- CSS -->
+    <link rel='stylesheet' href='/i_css/i/root.css' />
+    <link rel='stylesheet' href='/i_css/diapositivas/diapositivas.css' />
+</head>
+<body>
+<!------------------------------------------------------------------------------
+main
+------------------------------------------------------------------------------->
+<main>
+    <div class="diapositiva desvanecerse">
+        <img src="i_img/diapositivas/diapositiva-1.jpg" alt="">
+    </div>
+    <div class="diapositiva desvanecerse">
+        <img src="i_img/diapositivas/diapositiva-2.jpg" alt="">
+    </div>
+    <div class="diapositiva desvanecerse">
+        <img src="i_img/diapositivas/diapositiva-3.jpg" alt="">
+    </div>
+    <div class="diapositiva desvanecerse">
+        <img src="i_img/diapositivas/diapositiva-4.jpg" alt="">
+    </div>
+    <div class="diapositiva desvanecerse">
+        <img src="i_img/diapositivas/diapositiva-5.jpg" alt="">
+    </div>
+    <div class="diapositiva desvanecerse">
+        <img src="i_img/diapositivas/diapositiva-6.jpg" alt="">
+    </div>
+    <button class="anterior" onclick="Diapositivas.mas(-1);">&#10094;</button>
+    <section class="puntos-contenedor">
+        <button class="punto d1"><span class="actual">1/6</span></button>
+        <button class="punto d2"><span class="actual">2/6</span></button>
+        <button class="punto d3"><span class="actual">3/6</span></button>
+        <button class="punto d4"><span class="actual">4/6</span></button>
+        <button class="punto d5"><span class="actual">5/6</span></button>
+        <button class="punto d6"><span class="actual">6/6</span></button>
+    </section>
+    <button class="siguiente" onclick="Diapositivas.mas(1);">&#10095;</button>
+</main>
+<script src="l/diapositivas/diapositivas.js"></script>
+</body>
+</html>
