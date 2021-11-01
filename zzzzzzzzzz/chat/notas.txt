@@ -1,6 +1,7 @@
 - Referencias
 https://webrtc.org/
 https://es.wikipedia.org/wiki/WebRTC
+https://developer.mozilla.org/es/
 
 - npm install socket.io
 https://socket.io/
@@ -20,4 +21,4 @@ npm install uuid
     echo - Agregue la funcionalidad "{usuario} está escribiendo".
     No necesario con los (IDs) de las bases de datos - Muestre quién está en línea.
     NO necesario con los (IDs) de las bases de datos - Agrega mensajes privados.
-    - ¡Comparte tus mejoras! 
+    echo - ¡Comparte tus mejoras! 

@@ -61,7 +61,7 @@ video {
     padding: 9px;
 }
 .menu_izquierdo { display: flex; }
-.menu_derecho { margin-left: auto; }
+.menu_derecho { display: flex; margin-left: auto; }
 .boton {
     display: flex;
     justify-content: center;

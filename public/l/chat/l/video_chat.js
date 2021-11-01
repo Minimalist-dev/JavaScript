@@ -18,13 +18,30 @@ let user = prompt("Enter your name");
 
 let socket = io('/');
 
+/* Video Chat
+--------------------------------------------------------------------------------*/
+class VideoChat {
+    constructor() {
+        
+    }
+    static
+    mirar() {
+        
+    }
+    static
+    conectar() {
+        
+    }
+}
+new VideoChat();
+
 peer = new Peer(null, { debug: 2 });
 
 /* Crear conexión con el par de destino especificado en el campo de entrada
 --------------------------------------------------------------------------------*/
 conn = peer.connect(SALA_ID, { reliable: true });
 
-peer.on("open", function() {
+peer.on('open', function() {
     // Workaround for peer.reconnect deleting previous id
 //    if (peer.id === null) {//console.log('Received null id from peer open');
 //        peer.id = lastPeerId;
@@ -34,12 +51,13 @@ peer.on("open", function() {
     
     socket.emit('join-room', SALA_ID, peer.id, user)
 });
-peer.on('connection', function (c) { console.log(c);
+peer.on('connection', function (conexion) {
     // Disallow incoming connections
-    c.on('open', function () {
-        c.send("Sender does not accept incoming connections");
+    conexion.on('open', function () {
+        conexion.send("Sender does not accept incoming connections");
+        
         setTimeout(function () {
-            c.close();
+            conexion.close();
         }, 500);
     });
 });
@@ -53,8 +71,6 @@ navigator.mediaDevices.getUserMedia({
     transmisionLocal = stream;
     
     agregarVideo(video, stream);
-    
-//    transmisionLocal.getAudioTracks()[0].enabled = false;
 
     socket.on('user-connected', function(usuarioID) {
         llamar(usuarioID, stream);
@@ -73,15 +89,24 @@ navigator.mediaDevices.getUserMedia({
 
 /* Transmisión: chat
 --------------------------------------------------------------------------------*/
-socket.on('createMessage', function(message, userName) {
+socket.on('createMessage', function(nombre, mensaje) {
     charla.innerHTML = charla.innerHTML +
     `<div class="message">
-        <b><i class="far fa-user-circle"></i> <span> ${ userName === user ? "me" : userName }</span></b>
-        <span>${message}</span>
+        <b><i class="far fa-user-circle"></i> <span> ${ nombre === user ? "me" : nombre }</span></b>
+        <span>${ mensaje }</span>
     </div>`;
 });
-peer.on('disconnected', function () {//console.log('Connection lost. Please reconnect');
-    alert('Connection lost. Please reconnect');
+
+/* Desconexión
+--------------------------------------------------------------------------------*/
+peer.on('close', function () {   
+    conn = null;
+//    console.log('[close] Connection destroyed');
+    alert('[close] Connection destroyed');
+});
+peer.on('disconnected', function () {
+    console.log('[disconnected] Connection lost. Please reconnect');
+    alert('[disconnected] Connection lost. Please reconnect');
 
     // Workaround for peer.reconnect deleting previous id
 //    peer.id = lastPeerId;
@@ -90,26 +115,23 @@ peer.on('disconnected', function () {//console.log('Connection lost. Please reco
 //    console.log(peer._lastServerId, lastPeerId);
     peer.reconnect();
 });
-peer.on('close', function () {
-    conn = null;
-    alert('Connection destroyed. Please refresh');
-    console.log('Connection destroyed');
-});
-peer.on('error', function (err) {
-    console.log(err);
-    alert('Error capturado: ' + err);
+peer.on('error', function (error) {
+    console.log('Error capturado: ' + error);
+    alert('Error capturado: ' + error);
 });
 
-function llamar(usuarioID, stream) {
+function 
+llamar(usuarioID, stream) {
     let call    = peer.call(usuarioID, stream);
     let video   = document.createElement('video');
     
     call.on('stream', function(remoteStream) {
         agregarVideo(video, remoteStream);
     });
-//    call.on('close', () => {
-//        video.remove();
-//    });
+    call.on('close', function () {
+        video.remove();
+        peer.destroy();
+    });
 };
 let agregarVideo = function(video, stream) {
     video.srcObject = stream;
