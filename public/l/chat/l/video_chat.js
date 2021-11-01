@@ -42,14 +42,7 @@ peer = new Peer(null, { debug: 2 });
 conn = peer.connect(SALA_ID, { reliable: true });
 
 peer.on('open', function() {
-    // Workaround for peer.reconnect deleting previous id
-//    if (peer.id === null) {//console.log('Received null id from peer open');
-//        peer.id = lastPeerId;
-//    } else {
-//        lastPeerId = peer.id;
-//    }  
-    
-    socket.emit('join-room', SALA_ID, peer.id, user)
+    socket.emit('join-room', SALA_ID, peer.id, user);
 });
 peer.on('connection', function (conexion) {
     // Disallow incoming connections
@@ -87,6 +80,9 @@ navigator.mediaDevices.getUserMedia({
     });
 });
 
+socket.on('user-disconnected', function(usuarioID) {
+    alert('usuario desconectado: ' + usuarioID);
+});
 /* Transmisión: chat
 --------------------------------------------------------------------------------*/
 socket.on('createMessage', function(nombre, mensaje) {
@@ -99,24 +95,19 @@ socket.on('createMessage', function(nombre, mensaje) {
 
 /* Desconexión
 --------------------------------------------------------------------------------*/
-peer.on('close', function () {   
+peer.on('close', function (evento) {   
     conn = null;
 //    console.log('[close] Connection destroyed');
-    alert('[close] Connection destroyed');
+    alert('[close] Connection destroyed'+ evento);
 });
-peer.on('disconnected', function () {
-    console.log('[disconnected] Connection lost. Please reconnect');
-    alert('[disconnected] Connection lost. Please reconnect');
-
-    // Workaround for peer.reconnect deleting previous id
-//    peer.id = lastPeerId;
-//    console.log(peer.id, lastPeerId);
-//    peer._lastServerId = lastPeerId;
-//    console.log(peer._lastServerId, lastPeerId);
+peer.on('disconnected', function (evento) {
+//    console.log('[disconnected] Connection lost. Please reconnect');
+    alert('[disconnected] Connection lost. Please reconnect' + evento);
+    
     peer.reconnect();
 });
 peer.on('error', function (error) {
-    console.log('Error capturado: ' + error);
+//    console.log('Error capturado: ' + error);
     alert('Error capturado: ' + error);
 });
 

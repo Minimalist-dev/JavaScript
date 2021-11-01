@@ -60,7 +60,7 @@ io.on('connection', function(socket) {
         
         socket.on('disconnect', function() {
             console.log('Disconnect: ', usuarioID);
-//            socket.to(salaID).emit('user-disconnected', usuarioID);
+            socket.to(salaID).emit('user-disconnected', usuarioID);
 //            socket.broadcast.emit('user-disconnected', usuarioID);
         });
     });
