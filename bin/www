@@ -59,7 +59,7 @@ io.on('connection', function(socket) {
         });
         
         socket.on('disconnect', function() {
-            socket.to(salaID).emit('user-disconnected', usuarioID);
+            socket.to(salaID).emit('user-disconnected', nombre);
 //            socket.broadcast.emit('user-disconnected', usuarioID);
         });
     });

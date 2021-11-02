@@ -2,6 +2,8 @@
 https://webrtc.org/
 https://es.wikipedia.org/wiki/WebRTC
 https://developer.mozilla.org/es/
+https://developer.mozilla.org/es/docs/Web/API/MediaStreamTrack
+https://developer.mozilla.org/es/docs/Web/API/HTMLMediaElement
 
 - npm install socket.io
 https://socket.io/

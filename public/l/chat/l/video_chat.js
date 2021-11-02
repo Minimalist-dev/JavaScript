@@ -101,7 +101,9 @@ class VideoChat {
             transmisionLocal = stream;
 
             VideoChat.agregarVideo(video, stream);
-
+            
+//            transmisionLocal.getAudioTracks()[0].enabled = false;
+//            console.log(transmisionLocal.getAudioTracks()[0].enabled);
             socket.on('user-connected', function(usuarioID) {
                 VideoChat.llamar(usuarioID, stream);
             });
@@ -128,9 +130,7 @@ class VideoChat {
     };
     static
     estadoDeVideo() {
-        let estadoDeVideo = transmisionLocal.getVideoTracks()[0].enabled;
-    
-        if (estadoDeVideo) {
+        if (transmisionLocal.getVideoTracks()[0].enabled) {
             transmisionLocal.getVideoTracks()[0].enabled = false;
             generarVideo.classList.toggle("pausa");
             generarVideo.innerHTML = `<i class="fas fa-video-slash"></i>`;
@@ -142,9 +142,7 @@ class VideoChat {
     }
     static
     estadoDeAudio() {
-        let estadoDeAudio = transmisionLocal.getAudioTracks()[0].enabled;
-    
-        if (estadoDeAudio) {
+        if (transmisionLocal.getAudioTracks()[0].enabled) {
             transmisionLocal.getAudioTracks()[0].enabled = false;
             generarAudio.classList.toggle("pausa");
             generarAudio.innerHTML = `<i class="fas fa-microphone-slash"></i>`;
@@ -160,7 +158,7 @@ VideoChat.mirar();
 VideoChat.conectar();
 VideoChat.respuesta();
 
-/* Transmisión: chat
+/* Socket: Transmisión de chat
 --------------------------------------------------------------------------------*/
 socket.on('createMessage', function(nombre, mensaje) {
     charla.innerHTML = charla.innerHTML +
@@ -169,24 +167,12 @@ socket.on('createMessage', function(nombre, mensaje) {
         <span>${ mensaje }</span>
     </div>`;
 });
-socket.on('user-disconnected', function(usuarioID) {
-    alert('usuario desconectado: ' + usuarioID);
+socket.on('user-disconnected', function(nombre) {
+    alert("[" + nombre + "]" + " se ha desconectado");
 });
 
 /* Disparadores de eventos
 --------------------------------------------------------------------------------*/
-enviar.onclick = function() {
-    if (mensaje.value.length !== 0) {
-        socket.emit('message', mensaje.value);
-        mensaje.value = '';
-    }
-};
-mensaje.onkeydown = function(evento) {
-    if (evento.key === 'Enter' && mensaje.value.length !== 0) {
-        socket.emit('message', mensaje.value);
-        mensaje.value = '';
-    }
-};
 generarVideo.onclick = function() {
     VideoChat.estadoDeAudio();
 };
@@ -198,6 +184,18 @@ enlaceDeSala.onclick = function() {
         "Copy this link and send it to people you want to meet with",
         window.location.href
     );
+};
+enviar.onclick = function() {
+    if (mensaje.value.length !== 0) {
+        socket.emit('message', mensaje.value);
+        mensaje.value = '';
+    }
+};
+mensaje.onkeydown = function(evento) {
+    if (evento.key === 'Enter' && mensaje.value.length !== 0) {
+        socket.emit('message', mensaje.value);
+        mensaje.value = '';
+    }
 };
 cerrar.onclick = function() {
     window.history.back();
