@@ -1,12 +1,11 @@
-let transmisionLocal;
-
-var peer            = null; // own peer object
-var conn            = null;
-var ultimoID        = null;
+let peer            = null; // own peer object
+let conn            = null;
+let ultimoID        = null;
+let pistas          = null;
 let usuarios        = document.querySelector('#usuarios');
 let video           = document.createElement('video');
-let generarVideo    = document.querySelector('#pausar_video');
-let generarAudio    = document.querySelector('#pausar_audio');
+let estadoDeVideo   = document.querySelector('#pausar_video');
+let estadoDeAudio   = document.querySelector('#pausar_audio');
 let enlaceDeSala    = document.querySelector('#enlace_de_sala');
 let charla          = document.querySelector('#charla');
 let mensaje         = document.querySelector('#chat_message');
@@ -98,12 +97,10 @@ class VideoChat {
             video: true,
             audio: true
         }).then(function(stream) {
-            transmisionLocal = stream;
-
-            VideoChat.agregarVideo(video, stream);
+            pistas = stream;
             
-//            transmisionLocal.getAudioTracks()[0].enabled = false;
-//            console.log(transmisionLocal.getAudioTracks()[0].enabled);
+            VideoChat.agregarVideo(video, stream);
+
             socket.on('user-connected', function(usuarioID) {
                 VideoChat.llamar(usuarioID, stream);
             });
@@ -116,40 +113,46 @@ class VideoChat {
                 call.on('stream', function(remoteStream) {
                     VideoChat.agregarVideo(video, remoteStream);
                 });
-            });
+            });  
+        }).then(function() {
+            if(pistas) {
+                setTimeout(function() { 
+                    VideoChat.estadoDeAudio();
+                }, 500);
+            }
         });
     }
     static
     agregarVideo(video, stream) {
         video.srcObject = stream;
 
-        video.addEventListener("loadedmetadata", function() {
+        video.addEventListener('loadedmetadata', function() {
             video.play();
             usuarios.append(video);
         });
     };
     static
     estadoDeVideo() {
-        if (transmisionLocal.getVideoTracks()[0].enabled) {
-            transmisionLocal.getVideoTracks()[0].enabled = false;
-            generarVideo.classList.toggle("pausa");
-            generarVideo.innerHTML = `<i class="fas fa-video-slash"></i>`;
+        if (pistas.getVideoTracks()[0].enabled) {
+            pistas.getVideoTracks()[0].enabled = false;
+            estadoDeVideo.classList.toggle("pausa");
+            estadoDeVideo.innerHTML = `<i class="fas fa-video-slash"></i>`;
         } else {
-            transmisionLocal.getVideoTracks()[0].enabled = true;
-            generarVideo.classList.toggle("pausa");
-            generarVideo.innerHTML = `<i class="fas fa-video"></i>`;
+            pistas.getVideoTracks()[0].enabled = true;
+            estadoDeVideo.classList.toggle("pausa");
+            estadoDeVideo.innerHTML = `<i class="fas fa-video"></i>`;
         }
     }
     static
     estadoDeAudio() {
-        if (transmisionLocal.getAudioTracks()[0].enabled) {
-            transmisionLocal.getAudioTracks()[0].enabled = false;
-            generarAudio.classList.toggle("pausa");
-            generarAudio.innerHTML = `<i class="fas fa-microphone-slash"></i>`;
+        if (pistas.getAudioTracks()[0].enabled) {
+            pistas.getAudioTracks()[0].enabled = false;
+            estadoDeAudio.classList.toggle("pausa");
+            estadoDeAudio.innerHTML = `<i class="fas fa-microphone-slash"></i>`;
         } else {
-            transmisionLocal.getAudioTracks()[0].enabled = true;
-            generarAudio.classList.toggle("pausa");
-            generarAudio.innerHTML =  `<i class="fas fa-microphone"></i>`;
+            pistas.getAudioTracks()[0].enabled = true;
+            estadoDeAudio.classList.toggle("pausa");
+            estadoDeAudio.innerHTML =  `<i class="fas fa-microphone"></i>`;
         }
     }
 }
@@ -173,10 +176,10 @@ socket.on('user-disconnected', function(nombre) {
 
 /* Disparadores de eventos
 --------------------------------------------------------------------------------*/
-generarVideo.onclick = function() {
-    VideoChat.estadoDeAudio();
+estadoDeVideo.onclick = function() {
+    VideoChat.estadoDeVideo();
 };
-generarAudio.onclick = function() {
+estadoDeAudio.onclick = function() {
     VideoChat.estadoDeAudio();
 };
 enlaceDeSala.onclick = function() {
@@ -200,3 +203,4 @@ mensaje.onkeydown = function(evento) {
 cerrar.onclick = function() {
     window.history.back();
 };
+ 

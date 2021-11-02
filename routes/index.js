@@ -24,8 +24,8 @@ router.post('/i/chat', chat.insertar);
 router.get("/video_chat", (req, res) => {
     res.redirect(`/video_chat/${uuidv4()}`);
 });
-router.get("/video_chat/:room", (req, res) => {
-    res.render("video_chat", { sala: req.params.room });
+router.get("/video_chat/:sala", (req, res) => {
+    res.render("video_chat", { sala: req.params.sala });
 });
 
 module.exports = router;
