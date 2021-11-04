@@ -1,4 +1,4 @@
-var objeto, intervalo, salida, maximo, identificador;  
+let objeto, intervalo, salida, maximo, identificador;  
 
 let insertar      = document.querySelector("#insertar");
 let consulta      = document.querySelector("#consulta");
@@ -15,13 +15,13 @@ let startAndEnd   = document.querySelector("#inicia-y-termina");
 let anterior      = document.querySelector("#anterior");
 let siguiente     = document.querySelector("#siguiente");
 
-var id      = document.querySelector("#id");
-var marca   = document.querySelector("#marca");
-var nombre  = document.querySelector("#nombre");
-var precio  = document.querySelector("#precio");
-var submit  = document.querySelector("#submit");
+let id      = document.querySelector("#id");
+let marca   = document.querySelector("#marca");
+let nombre  = document.querySelector("#nombre");
+let precio  = document.querySelector("#precio");
+let submit  = document.querySelector("#submit");
 
-var concepto = [];
+let concepto = [];
 
 /* Sistema JSON 
 --------------------------------------------------------------------------------*/
@@ -37,7 +37,7 @@ class Sistema {
     set termina(termina)    { this._termina = termina;  }
     get entre()             { return this._entre;       }
     set entre(entre)        { this._entre = entre;      }
-    
+
     static
     colocar() {
         fetch('s_db/l/sistema_json/db.json', {
@@ -52,7 +52,7 @@ class Sistema {
             Sistema.inicia  = 0;
             Sistema.termina = 4;
             Sistema.entre   = 4;
-            
+
             Sistema.paginaciones(maximo, Sistema.entre);
             Sistema.longitud(Sistema.inicia, Sistema.termina);
             Sistema.obtener();
@@ -173,10 +173,10 @@ class Sistema {
     autocompletar(entrada, arreglo) {
         /*the autocomplete function takes two arguments,
          the text field element and an array of possible autocompleted values:*/
-        var enfoque;
+        let enfoque;
         /*execute a function when someone writes in the text field:*/
         entrada.addEventListener('input', function () {
-            var a, b, i, concepto = this.value;
+            let lista, letras, concepto = this.value;
             /*close any already open lists of autocompleted values*/
             cerrarLista();
             
@@ -185,37 +185,37 @@ class Sistema {
             }
             enfoque = -1;
             /*create a DIV element that will contain the items (values):*/
-            a = document.createElement('div');
-            a.setAttribute('id', this.id + 'lista');
-            a.setAttribute('class', 'elementos');
+            lista = document.createElement('div');
+            lista.setAttribute('id', this.id + 'lista');
+            lista.setAttribute('class', 'elementos');
             /*append the DIV element as a child of the autocomplete container:*/
-            this.parentNode.appendChild(a);
+            this.parentNode.appendChild(lista);
             /*for each item in the array...*/
-            for (i = 0; i < arreglo.length; i++) {
+            for (let i = 0; i < arreglo.length; i++) {
                 /*check if the item starts with the same letters as the text field value:*/
                 if (arreglo[i].substr(0, concepto.length).toUpperCase() === concepto.toUpperCase()) {
                     /*create a DIV element for each matching element:*/
-                    b = document.createElement("div");
+                    letras = document.createElement("div");
                     /*make the matching letters bold:*/
-                    b.innerHTML = "<strong>" + arreglo[i].substr(0, concepto.length) + "</strong>";
-                    b.innerHTML += arreglo[i].substr(concepto.length);
+                    letras.innerHTML = "<strong>" + arreglo[i].substr(0, concepto.length) + "</strong>";
+                    letras.innerHTML += arreglo[i].substr(concepto.length);
                     /*insert a input field that will hold the current array item's value:*/
-                    b.innerHTML += "<input type='hidden' value='" + arreglo[i] + "'>";
+                    letras.innerHTML += "<input type='hidden' value='" + arreglo[i] + "'>";
                     /*execute a function when someone clicks on the item value (DIV element):*/
-                    b.addEventListener('click', function (e) {
+                    letras.addEventListener('click', function (e) {
                         /*insert the value for the autocomplete text field:*/
                         entrada.value = this.getElementsByTagName('input')[0].value;
                         /*close the list of autocompleted values,
                          (or any other open lists of autocompleted values:*/
                         cerrarLista();
                     });
-                    a.appendChild(b);
+                    lista.appendChild(letras);
                 }
             }
         });
         /*execute a function presses a key on the keyboard:*/
         entrada.addEventListener('keydown', function (evento) {
-            var tecla = document.getElementById(this.id + 'lista');
+            let tecla = document.getElementById(this.id + 'lista');
             
             if (tecla) {
                 tecla = tecla.getElementsByTagName('div');
@@ -268,11 +268,10 @@ class Sistema {
         }
         function 
         cerrarLista(elemento) {
-            /*close all autocomplete lists in the document,
-             except the one passed as an argument:*/
-            var elementos = document.getElementsByClassName('elementos');
+            /*close all autocomplete lists in the document, except the one passed as an argument:*/
+            let elementos = document.getElementsByClassName('elementos');
             
-            for (var i = 0; i < elementos.length; i++) {
+            for (let i = 0; i < elementos.length; i++) {
                 if (elemento !== elementos[i] && elemento !== entrada) {
                     elementos[i].parentNode.removeChild(elementos[i]);
                 }
@@ -379,31 +378,31 @@ class Sistema {
             objeto.sort(function(a, b) { return a.id - b.id; });
         } else if(por.value === 'fecha') {
             objeto.sort(function (a, b) {
-                var x = a.fecha.toLowerCase();
-                var y = b.fecha.toLowerCase();
+                let x = a.fecha.toLowerCase();
+                let y = b.fecha.toLowerCase();
 
                 if (x < y) { return -1; }
-                if (x > y) { return 1; }
+                if (x > y) { return 1;  }
 
                 return 0;
             });
         } else if (por.value === 'marca') {
             objeto.sort(function (a, b) {
-                var x = a.marca.toLowerCase();
-                var y = b.marca.toLowerCase();
+                let x = a.marca.toLowerCase();
+                let y = b.marca.toLowerCase();
 
                 if (x < y) { return -1; }
-                if (x > y) { return 1; }
+                if (x > y) { return 1;  }
 
                 return 0;
             });
         } else if (por.value === 'nombre') {
             objeto.sort(function (a, b) {
-                var x = a.nombre.toLowerCase();
-                var y = b.nombre.toLowerCase();
+                let x = a.nombre.toLowerCase();
+                let y = b.nombre.toLowerCase();
 
                 if (x < y) { return -1; }
-                if (x > y) { return 1; }
+                if (x > y) { return 1;  }
 
                 return 0;
             });
