@@ -1,25 +1,24 @@
 let objeto, intervalo, salida, maximo, identificador;  
 
-let insertar      = document.querySelector("#insertar");
-let consulta      = document.querySelector("#consulta");
-let res           = document.querySelector("#res");
-let buscar        = document.querySelector("#buscar");
-let busqueda      = document.querySelector("#busqueda");
-let cantidad      = document.querySelector("#cantidad");
-let por           = document.querySelector("#por");
-let ordenar       = document.querySelector("#ordenar");
-let paginacion    = document.querySelector("#paginacion");
-let paginaciones  = document.querySelector("#paginaciones");
-let pagina        = document.querySelector("#pagina");
-let startAndEnd   = document.querySelector("#inicia-y-termina");
-let anterior      = document.querySelector("#anterior");
-let siguiente     = document.querySelector("#siguiente");
-
-let id      = document.querySelector("#id");
-let marca   = document.querySelector("#marca");
-let nombre  = document.querySelector("#nombre");
-let precio  = document.querySelector("#precio");
-let submit  = document.querySelector("#submit");
+let insertar        = document.querySelector('#insertar');
+let consulta        = document.querySelector('#consulta');
+let res             = document.querySelector('#res');
+let buscar          = document.querySelector('#buscar');
+let busqueda        = document.querySelector('#busqueda');
+let cantidad        = document.querySelector('#cantidad');
+let por             = document.querySelector('#por');
+let ordenar         = document.querySelector('#ordenar');
+let paginacion      = document.querySelector('#paginacion');
+let paginaciones    = document.querySelector('#paginaciones');
+let pagina          = document.querySelector('#pagina');
+let startAndEnd     = document.querySelector('#inicia-y-termina');
+let anterior        = document.querySelector('#anterior');
+let siguiente       = document.querySelector('#siguiente');
+let id              = document.querySelector('#id');
+let marca           = document.querySelector('#marca');
+let nombre          = document.querySelector('#nombre');
+let precio          = document.querySelector('#precio');
+let submit          = document.querySelector('#submit');
 
 let concepto = [];
 
@@ -41,7 +40,7 @@ class Sistema {
     static
     colocar() {
         fetch('s_db/l/sistema_json/db.json', {
-            method: "GET",
+            method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         }).then(function(response) {
             if(response.ok) { return response.json(); } 
@@ -126,10 +125,7 @@ class Sistema {
                 objeto[i].nombre.substr(0, valor.length).toUpperCase()  === valor.toUpperCase() ||
                 objeto[i].marca.substr(0, valor.length).toUpperCase()   === valor.toUpperCase() ||
                 objeto[i].nombre                                        === valor               ||
-                objeto[i].marca                                         === valor               ||
-                objeto[i].precio                                        === Number(valor)
-                //objeto[i].precio.toString().substr(0, valor.length).toUpperCase() === valor.toUpperCase()
-                //objeto[i].id        === valor ||
+                objeto[i].marca                                         === valor               
             ) { 
                 Sistema.obtenerBusqueda(objeto[i]); 
             } 
@@ -204,7 +200,7 @@ class Sistema {
                     /*execute a function when someone clicks on the item value (DIV element):*/
                     letras.addEventListener('click', function (e) {
                         /*insert the value for the autocomplete text field:*/
-                        entrada.value = this.getElementsByTagName('input')[0].value;
+                        entrada.value = this.querySelector('input')[0].value;
                         /*close the list of autocompleted values,
                          (or any other open lists of autocompleted values:*/
                         cerrarLista();
@@ -215,10 +211,10 @@ class Sistema {
         });
         /*execute a function presses a key on the keyboard:*/
         entrada.addEventListener('keydown', function (evento) {
-            let tecla = document.getElementById(this.id + 'lista');
+            let tecla = document.querySelector("#" + this.id + "lista");
             
             if (tecla) {
-                tecla = tecla.getElementsByTagName('div');
+                tecla = tecla.querySelector('div');
             }
             
             if (evento.keyCode === 40) {
@@ -269,7 +265,7 @@ class Sistema {
         function 
         cerrarLista(elemento) {
             /*close all autocomplete lists in the document, except the one passed as an argument:*/
-            let elementos = document.getElementsByClassName('elementos');
+            let elementos = document.querySelectorAll('.elementos');
             
             for (let i = 0; i < elementos.length; i++) {
                 if (elemento !== elementos[i] && elemento !== entrada) {
