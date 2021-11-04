@@ -123,10 +123,13 @@ class Sistema {
             if(valor === '') {
                 Sistema.obtener();
             } else if(
-//                objeto[i].id        === valor ||
-                objeto[i].nombre    === valor ||
-                objeto[i].marca     === valor ||
-                objeto[i].precio    === Number(valor)
+                objeto[i].nombre.substr(0, valor.length).toUpperCase()  === valor.toUpperCase() ||
+                objeto[i].marca.substr(0, valor.length).toUpperCase()   === valor.toUpperCase() ||
+                objeto[i].nombre                                        === valor               ||
+                objeto[i].marca                                         === valor               ||
+                objeto[i].precio                                        === Number(valor)
+                //objeto[i].precio.toString().substr(0, valor.length).toUpperCase() === valor.toUpperCase()
+                //objeto[i].id        === valor ||
             ) { 
                 Sistema.obtenerBusqueda(objeto[i]); 
             } 
