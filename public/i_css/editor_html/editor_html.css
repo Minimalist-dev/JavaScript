@@ -2,4 +2,32 @@
     Created on : 4 dic. 2021, 11:23:19 p. m.
     Author     : neury-dev
 */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 
+    position: relative;
+    background-color: var(--n-color);
+    width: calc(100% - 32px);
+    margin: 0px 16px;
+    /*border: 1px solid var(--n-color-dos);*/
+    padding: 8px;
+}
+.menu > button {
+    background-color: var(--n-color);
+    border: 1px solid var(--n-color);
+    border-radius: 4px;
+}
+.menu > button:hover {
+    border: 1px solid var(--n-color-dos);
+}
+iframe {
+    width: calc(100% - 32px);
+    height: 350px;
+    overflow-y: auto;
+    margin: 0px 16px;
+    border: 1px solid var(--n-color-dos);
+    border-radius: 8px;
+    padding: 16px;
+}

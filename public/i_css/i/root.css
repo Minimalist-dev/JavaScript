@@ -40,7 +40,7 @@ input:disabled { cursor: not-allowed; }
 :root {
     --n-fuente:                 "Georgia", Garamond, serif;
     --n-fuente-dos:             "Verdana", Helvetica, Tahoma, sans-serif;
-    --n-fuente-tres:            "Lucida Console", Courier, monospace;
+    --n-fuente-tres:            "Lucida Console", Courier, monospace; /*"Lucida Grande", Helvetica, Arial, sans-serif;*/
     
     --n-color:                  white;/*hsl(0, 0%, 100%)*/
     --n-color-uno-uno:          rgba(255, 255, 255, 0.5);
