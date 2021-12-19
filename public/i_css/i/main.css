@@ -7,10 +7,8 @@
 .n-grid > .area-2 {
     display: flex;
     justify-content: space-between;
-    
-/*    position: absolute;
-    top: 50px;*/
-    margin: 4.50em 3em;
+
+    margin: 5.50em 3em;
 }
 .n-grid > .area-2 > section {
     width: 50%;
@@ -106,12 +104,15 @@
     align-items: flex-end;
     width: 50%;
     height: 320px;
+    /*padding-top: 100px;*/
+    /*max-height: 320px;*/
 }
 .n-grid > .area-2 > .niveles > svg {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
     height: 24vw;
+    margin-top: 10px;
     /*border: 1px solid red;*/
 }
 /*.n-grid > .area-2 > .niveles > svg > path {

@@ -5,8 +5,10 @@ var cookieParser    = require('cookie-parser');
 var logger          = require('morgan');
 //var cors            = require('cors');
 
-var indexRouter         = require('./routes/index');
-var sistemaJSONRouter   = require('./routes/sistema_JSON');
+var inicio      = require('./routes/index');
+var sistemaJSON = require('./routes/sistema_JSON');
+var sistemaTXT  = require('./routes/sistema_TXT');
+var sistemaCSV  = require('./routes/sistema_CSV');
 
 var app = express();
 
@@ -33,8 +35,10 @@ var opciones = {
 };
 app.use(express.static(path.join(__dirname, 'public'), opciones));
 
-app.use('/', indexRouter);
-app.use('/sistema_JSON', sistemaJSONRouter);
+app.use('/', inicio);
+app.use('/sistema_JSON', sistemaJSON);
+app.use('/sistema_TXT', sistemaTXT);
+app.use('/sistema_CSV', sistemaCSV);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

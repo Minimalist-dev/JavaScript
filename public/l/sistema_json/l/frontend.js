@@ -111,6 +111,7 @@ class Sistema {
             concepto.push(conceptos[i].marca);
             concepto.push(conceptos[i].nombre);
         }
+        //Sistema.autocompletar(buscar, concepto);
     }
     static
     busqueda() {

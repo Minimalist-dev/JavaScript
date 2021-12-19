@@ -1,11 +1,8 @@
-- https://developers.google.com/web/ilt/pwa/working-with-the-fetch-api
+- GitHub:
+    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
 
-- Ejemplo de chat para JavaScript:
-    https://socket.io/
-    https://es.javascript.info/websocket
-
-- Events
-    app.on('mount', callback(parent))
+- Fuente de iconos:
+    https://fontello.com/
 
 //
     //Evita el reenvio de información de los formularios al recargar

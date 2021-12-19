@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sistema CSV | Doc. JS. | Neury</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <!-- CSS -->
+    <link rel='stylesheet' href='../i_css/i/root.css' />
+    <link rel="stylesheet" href="../i_css/sistema_json/sistema_JSON.css">
+</head>
+<body>
+    <section class="n-grid">
+        <section class="area-1">
+            <h3>Entrada de datos</h3>
+            <p><!--  ................................  --></p>
+        </section>
+        <section class="area-2">
+            <form method="POST" name="insertar" id="insertar">
+                <!--label for="id">ID</label-->
+                <input type="text" name="id" id="id" disabled="" style="text-align: center;">
+                <label for="marca">Marca</label>
+                    <input type="text" name="marca" id="marca" placeholder="Ingresar marca" required="">
+                <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" placeholder="Ingresar nombre" required="">
+                <label for="precio">Precio</label>
+                    <input type="number" name="precio" id="precio" placeholder="Ingresar precio" required="">
+                <input type="submit" name="submit" id="submit" value="Crear">
+                <input type="reset">
+            </form>
+        </section>
+        <section class="area-3">
+            <div id="res"></div>
+        </section>
+        <section class="area-4">
+            <div>
+            <table>
+                <!--caption><b>Salida de datos</b></caption-->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Marca</th>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Fecha</th>
+                        <th>Hora</th>
+                        <th colspan="2">Gestionar</th>
+                    </tr>
+                </thead>
+                <tbody id="consulta">
+
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="8"></td>
+                    </tr>
+                 </tfoot>
+            </table>
+            </div>
+        </section>
+    </section>
+<script src="../l/sistema_csv/l/frontend.js"></script>
+</body>
+</html>
