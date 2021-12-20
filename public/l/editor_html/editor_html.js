@@ -92,38 +92,3 @@ function
 obtenerCuadroDos() {
     alert(cuadro.contentWindow.document.body.innerHTML);
 }
-
-
-
-
-
-
-
-
-
-/* otros: funciona
---------------------------------------------------------------------------------*/
-//var editorDoc;
-//function 
-//InitEditable() {
-//    var editor      = document.querySelector('#editor');
-//    editorDoc       = editor.contentWindow.document;
-//    var editorBody  = editorDoc.body;
-//    // turn off spellcheck
-//    if ('spellcheck' in editorBody) {    // Firefox
-//        editorBody.spellcheck = false;
-//    }
-//
-//    if ('contentEditable' in editorBody) { // allow contentEditable
-//        editorBody.contentEditable = true;
-//    } else {  // Firefox earlier than version 3
-//        if ('designMode' in editorDoc) { // turn on designMode
-//            editorDoc.designMode = "on";
-//        }
-//    }
-//}
-
-//function 
-//ToggleBold() {
-//    editorDoc.execCommand('bold', false, null);
-//}
