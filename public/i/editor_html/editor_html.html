@@ -14,62 +14,110 @@
 <body>
     
     <div class="menu">
+        <button id="cut"><i class='fas fa-cut'></i></button>
+        <button id="copy"><i class='fas fa-copy'></i></button>
+        <button id="paste"><i class='fas fa-paste'></i></button>
+        <button id="undo" title="undo"><i class='fas fa-undo'></i></button>
+        <button id="redo" title="redo"><i class='fas fa-redo'></i></button>
+        <button id="fontName" title="font-family">ff</button>
+        <label for="cars"></label>
+        <select name="cars" id="cars">
+            <option value="Times New Roman, serif">Times New Roman</option>
+            <option value="Georgia, serif">Georgia</option>
+            <option value="Garamond, serif">Garamond</option>
+            <option value="Arial, sans-serif">Arial</option>
+            <option value="Verdana, sans-serif">Verdana</option>
+            <option value="Helvetica, sans-serif">Helvetica</option>
+            <option value="Courier New, monospace">Courier New</option>
+            <option value="Lucida Console, monospace">Lucida Console</option>
+            <option value="Monaco, monospace">Monaco</option>
+            <option value="Brush Script MT, cursive">Brush Script MT</option>
+            <option value="Lucida Handwriting, cursive">Lucida Handwriting</option>
+        </select>
+        <button id="fontSize" title="font-size">fs</button>
+        <label for="font_size"></label>
+        <select name="font_size" id="font_size">
+            <option value="6px">6</option>
+            <option value="7px">7</option>
+            <option value="8px">8</option>
+            <option value="9px">9</option>
+            <option value="10px">10</option>
+            <option value="11px">11</option>
+            <option value="12px">12</option>
+            <option value="13px">13</option>
+            <option value="14px">14</option>
+            <option value="15px">15</option>
+            <option value="16px">16</option>
+            <option value="18px">18</option>
+            <option value="20px">20</option>
+            <option value="22px">22</option>
+            <option value="24px">24</option>
+            <option value="26px">26</option>
+            <option value="28px">28</option>
+            <option value="32px">32</option>
+            <option value="36px">36</option>
+            <option value="40px">40</option>
+            <option value="44px">44</option>
+            <option value="48px">48</option>
+            <option value="54px">54</option>
+            <option value="60px">60</option>
+            <option value="66px">66</option>
+            <option value="72px">72</option>
+            <option value="80px">80</option>
+            <option value="88px">88</option>
+            <option value="96px">96</option>
+        </select>
         <button id="bold"><i class='fas fa-bold'></i></button>
         <button id="italic"><i class='fas fa-italic'></i></button>
-        <button id="copy"><i class='fas fa-copy'></i></button>
-        <!--button id="copy"><i class='far fa-copy'></i></button-->
-        <button id="cut"><i class='fas fa-cut'></i></button>
-        <!--button id="undo"><i class='fas fa-undo-alt'></i></button-->
-        <button id="undo"><i class='fas fa-undo'></i></button>
-        <!--button id="redo"><i class='fas fa-redo-alt'></i></button-->
-        <button id="redo"><i class='fas fa-redo'></i></button>
+        <button id="underline"><i class='fas fa-underline'></i></button>
+        <button id="strikethrough"><i class='fas fa-strikethrough'></i></button>
+        <button id="superscript"><i class='fas fa-superscript'></i></button>
+        <button id="subscript"><i class='fas fa-subscript'></i></button>
+        <button id="removeFormat"><i class='fas fa-remove-format'></i></button>
+        <button id="foreColor" title="color">c</button>
+        <input type="color" id="color" name="color" value="#000000" style="width: 20px">
+        <label for="color"><i class='fas fa-chevron-down'></i></label>
+        <button id="backColor" title="background-color">bc</button>
+        <input type="color" id="background" name="background" value="#ffffff" style="width: 20px">
+        <label for="background"><i class='fas fa-chevron-down'></i></label>
         <button id="justifyLeft"><i class='fas fa-align-left'></i></button>
         <button id="justifyCenter"><i class='fas fa-align-center'></i></button>
         <button id="justifyRight"><i class='fas fa-align-right'></i></button>
         <button id="justifyFull"><i class='fas fa-align-justify'></i></button>
-        <!--button id="delete"><i class='far fa-trash-alt'></i></button-->
-        <!--button id="delete"><i class='fas fa-trash-alt'></i></button-->
-        <button id="delete"><i class='fas fa-trash'></i></button>
+        <button id="insertOrderedList"><i class='fas fa-list-ol'></i></button>
+        <button id="insertUnorderedList"><i class='fas fa-list-ul'></i></button>
+        <button id="outdent"><i class='fas fa-outdent'></i></button>
+        <button id="indent"><i class='fas fa-indent'></i></button>
         <button id="createLink"><i class='fas fa-link'></i></button>
         <button id="unlink"><i class='fas fa-unlink'></i></button>
-        <button id="fontSize">font-size: selección</button>
-        <button id="fontName">font-family: selección</button>
-        <button id="foreColor">color: selección</button>
-        <button id="backColor">background-color: selección</button>
-        <button id="hiliteColor">background-color: selección: opción 2</button>
         <button id="insertImage"><i class='fas fa-paperclip'></i></button>
+        
+        <!--button id="id"><i class='fas fa-quote-left'></i></button>
+        <button id="id"><i class='fas fa-quote-right'></i></button>
+        <button id="id"><i class='fas fa-text-width'></i></button>
+        <button id="id"><i class='fas fa-text-height'></i></button-->
+        
+        <!--button id="redo"><i class='fas fa-redo-alt'></i></button-->
+        <!--button id="undo"><i class='fas fa-undo-alt'></i></button-->
+        <!--button id="copy"><i class='far fa-copy'></i></button-->
+        <!--button id="delete"><i class='far fa-trash-alt'></i></button-->
+        <!--button id="delete"><i class='fas fa-trash-alt'></i></button-->
+        <!--button id="id"><i class='fas fa-list'></i></button-->
+        <!--button id="id"><i class='fas fa-list-alt'></i></button-->
+        <!--button id="id"><i class='far fa-list-alt'></i></button-->
+        
+        <!--button id="delete"><i class='fas fa-trash'></i></button>
+        <button id="hiliteColor">background-color: selección: opción 2</button>
         <button id="insertHTML">insertHTML: texto</button>
         <button id="insertHorizontalRule">Etiqueta HTML</button>
         <button id="forwardDelete"><i class='far fa-trash-alt'></i></button>
         <button id="formatBlock">Etiqueta HTML: reemplaza la etiqueta existente por otra</button>
         <button id="insertLineBreak">Etiqueta HTML: br</button>
-        <!--button id="id"><i class='fas fa-list'></i></button-->
-        <!--button id="id"><i class='fas fa-list-alt'></i></button-->
-        <!--button id="id"><i class='far fa-list-alt'></i></button-->
         <button id="insertParagraph">Etiquie HTML: p</button>
         <button id="insertText">insertText</button>
-        <button id="insertOrderedList"><i class='fas fa-list-ol'></i></button>
-        <button id="insertUnorderedList"><i class='fas fa-list-ul'></i></button>
-        <button id="outdent"><i class='fas fa-outdent'></i></button>
-        <button id="indent"><i class='fas fa-indent'></i></button>
-        <button id="selectAll">selectAll: seleccionar todo</button>
-        <button id="strikethrough"><i class='fas fa-strikethrough'></i></button>
-        <button id="superscript"><i class='fas fa-superscript'></i></button>
-        <button id="subscript"><i class='fas fa-subscript'></i></button>
-        <button id="removeFormat">Etiqueta HTML: remover todo el formato</button>
-        <button id="underline"><i class='fas fa-underline'></i></button>
-
-        <button id="paste"><i class='fas fa-paste'></i></button>
+        <button id="selectAll">selectAll: seleccionar todo</button-->
         
-        
-        
-        <button id="0"><-i-></button>
-        
-        
-        
-        
-        
-        <button id="id"><i class='fas fa-border-all'></i></button>
+        <!--button id="id"><i class='fas fa-border-all'></i></button>
         <button id="id"><i class='fas fa-border-none'></i></button>
         <button id="id"><i class='fas fa-border-style'></i></button>
         <button id="id"><i class='fas fa-clipboard'></i></button>
@@ -99,13 +147,10 @@
         <button id="id"><i class='fas fa-pen-nib'></i></button>
         <button id="id"><i class='fas fa-pencil-alt'></i></button>
         <button id="id"><i class='fas fa-print'></i></button>
-        <button id="id"><i class='fas fa-quote-left'></i></button>
         <button id="id"><i class='fas fa-wrench'></i></button>
         <button id="id"><i class='fas fa-th-list'></i></button>
         <button id="id"><i class='fas fa-th-large'></i></button>
         <button id="id"><i class='fas fa-th'></i></button>
-        <button id="id"><i class='fas fa-text-width'></i></button>
-        <button id="id"><i class='fas fa-text-height'></i></button>
         <button id="id"><i class='fas fa-tasks'></i></button>
         <button id="id"><i class='fas fa-table'></i></button>
         <button id="id"><i class='fas fa-sync-alt'></i></button>
@@ -114,9 +159,8 @@
         <button id="id"><i class='fas fa-share'></i></button>
         <button id="id"><i class='fas fa-screwdriver'></i></button>
         <button id="id"><i class='fas fa-reply-all'></i></button>
-        <button id="id"><i class='fas fa-reply'></i></button>
-        <button id="id"><i class='fas fa-remove-format'></i></button>
-        <button id="id"><i class='fas fa-quote-right'></i></button>
+        <button id="id"><i class='fas fa-reply'></i></button-->
+        
     </div>
     
     <iframe id="editor" src="cuadro.html"></iframe>
