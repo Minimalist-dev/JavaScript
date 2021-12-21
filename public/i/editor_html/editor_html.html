@@ -19,9 +19,8 @@
         <button id="paste"><i class='fas fa-paste'></i></button>
         <button id="undo" title="undo"><i class='fas fa-undo'></i></button>
         <button id="redo" title="redo"><i class='fas fa-redo'></i></button>
-        <button id="fontName" title="font-family">ff</button>
-        <label for="cars"></label>
-        <select name="cars" id="cars">
+        <!--button id="fontName" title="font-family">ff</button-->
+        <select name="font_family" id="font_family">
             <option value="Times New Roman, serif">Times New Roman</option>
             <option value="Georgia, serif">Georgia</option>
             <option value="Garamond, serif">Garamond</option>
@@ -34,39 +33,18 @@
             <option value="Brush Script MT, cursive">Brush Script MT</option>
             <option value="Lucida Handwriting, cursive">Lucida Handwriting</option>
         </select>
-        <button id="fontSize" title="font-size">fs</button>
-        <label for="font_size"></label>
+        <!--label for="font_family"><i class='fas fa-chevron-down'></i></label-->
+        <!--button id="fontSize" title="font-size">fs</button-->
         <select name="font_size" id="font_size">
-            <option value="6px">6</option>
-            <option value="7px">7</option>
-            <option value="8px">8</option>
-            <option value="9px">9</option>
-            <option value="10px">10</option>
-            <option value="11px">11</option>
-            <option value="12px">12</option>
-            <option value="13px">13</option>
-            <option value="14px">14</option>
-            <option value="15px">15</option>
-            <option value="16px">16</option>
-            <option value="18px">18</option>
-            <option value="20px">20</option>
-            <option value="22px">22</option>
-            <option value="24px">24</option>
-            <option value="26px">26</option>
-            <option value="28px">28</option>
-            <option value="32px">32</option>
-            <option value="36px">36</option>
-            <option value="40px">40</option>
-            <option value="44px">44</option>
-            <option value="48px">48</option>
-            <option value="54px">54</option>
-            <option value="60px">60</option>
-            <option value="66px">66</option>
-            <option value="72px">72</option>
-            <option value="80px">80</option>
-            <option value="88px">88</option>
-            <option value="96px">96</option>
+            <option value="1">10</option>
+            <option value="2">12</option>
+            <option value="3">16</option>
+            <option value="4">18</option>
+            <option value="5">22</option>
+            <option value="6">30</option>
+            <option value="7">40</option>
         </select>
+        <!--label for="font_size"><i class='fas fa-chevron-down'></i></label-->
         <button id="bold"><i class='fas fa-bold'></i></button>
         <button id="italic"><i class='fas fa-italic'></i></button>
         <button id="underline"><i class='fas fa-underline'></i></button>
@@ -74,12 +52,12 @@
         <button id="superscript"><i class='fas fa-superscript'></i></button>
         <button id="subscript"><i class='fas fa-subscript'></i></button>
         <button id="removeFormat"><i class='fas fa-remove-format'></i></button>
-        <button id="foreColor" title="color">c</button>
+        <!--button id="foreColor" title="color">c</button-->
         <input type="color" id="color" name="color" value="#000000" style="width: 20px">
-        <label for="color"><i class='fas fa-chevron-down'></i></label>
-        <button id="backColor" title="background-color">bc</button>
+        <!--label for="color"><i class='fas fa-chevron-down'></i></label-->
+        <!--button id="backColor" title="background-color">bc</button-->
         <input type="color" id="background" name="background" value="#ffffff" style="width: 20px">
-        <label for="background"><i class='fas fa-chevron-down'></i></label>
+        <!--label for="background"><i class='fas fa-chevron-down'></i></label-->
         <button id="justifyLeft"><i class='fas fa-align-left'></i></button>
         <button id="justifyCenter"><i class='fas fa-align-center'></i></button>
         <button id="justifyRight"><i class='fas fa-align-right'></i></button>
@@ -165,9 +143,15 @@
     
     <iframe id="editor" src="cuadro.html"></iframe>
     
+    <section style="text-align: center;">
+        <button id="id1" onclick="Editor.mostrar1()"><i class='fas fa-file'></i></button>
+        <button id="id2" onclick="Editor.mostrar2()"><i class='fas fa-file-alt'></i></button>
+    </section>
+    
     <br />
-        <div id="res"></div>
+        <div id="res" style="margin: 32px;"></div>
     <br />
+    
 <script src="/l/editor_html/editor_html.js"></script>
 </body>
 </html>

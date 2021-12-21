@@ -5,9 +5,12 @@
 
 var editorDoc, editorBody;
 
-let cuadro = document.querySelector('#editor');
-//let res = document.querySelector('#res');
-//let boton = document.querySelector('#boton');
+let cuadro      = document.querySelector('#editor');
+let fontFamily  = document.querySelector('#font_family');
+let fontSize    = document.querySelector('#font_size');
+let color       = document.querySelector('#color');
+let background  = document.querySelector('#background');
+let res = document.querySelector('#res');
 
 class Editor {
     static
@@ -27,7 +30,24 @@ class Editor {
             }
         }
     }
-}var copyText;
+    static
+    mostrar1() {
+        var cuadroBody;
+
+        if (cuadro.contentDocument) { // FF
+            cuadroBody = cuadro.contentDocument.getElementsByTagName('body')[0];
+        } else if (cuadro.contentWindow) { // IE
+            cuadroBody = cuadro.contentWindow.document.getElementsByTagName('body')[0];
+        }
+
+        alert(cuadroBody.innerHTML);
+    }
+    static
+    mostrar2() {
+        res.innerHTML = cuadro.contentWindow.document.body.innerHTML;
+    }
+}
+
 /* Disparadores
 --------------------------------------------------------------------------------*/
 window.onload = function() {
@@ -45,11 +65,11 @@ document.querySelector('#undo').onclick = function() {
 document.querySelector('#redo').onclick = function() {
     editorDoc.execCommand('redo', false, null);
 };
-document.querySelector('#fontName').onclick = function() {
-    editorDoc.execCommand('fontName', false, "Helvetica, sans-serif");
+fontFamily.oninput = function() {
+    editorDoc.execCommand('fontName', false, fontFamily.value);
 };
-document.querySelector('#fontSize').onclick = function() {
-    editorDoc.execCommand('fontSize', false, '100px');
+fontSize.oninput = function() {
+    editorDoc.execCommand('fontSize', false, fontSize.value);
 };
 document.querySelector('#bold').onclick = function() {
     editorDoc.execCommand('bold', false, null);
@@ -72,11 +92,11 @@ document.querySelector('#subscript').onclick = function() {
 document.querySelector('#removeFormat').onclick = function() {
     editorDoc.execCommand('removeFormat', false, null);
 };
-document.querySelector('#foreColor').onclick = function() {
-    editorDoc.execCommand('foreColor', false, 'red');
+color.oninput = function() {
+    editorDoc.execCommand('foreColor', false, color.value);
 };
-document.querySelector('#backColor').onclick = function() {
-    editorDoc.execCommand('backColor', false, 'red');
+background.oninput = function() {
+    editorDoc.execCommand('backColor', false, background.value);
 };
 document.querySelector('#justifyLeft').onclick = function() {
     editorDoc.execCommand('justifyLeft', false, null);
@@ -156,32 +176,3 @@ document.querySelector('#hiliteColor').onclick = function() {
 //};
 
 
-
-
-
-
-
-
-
-
-/* uno: funciona para obtener el contenido del iframe
- --------------------------------------------------------------------------------*/
-function
-getFrameContents() {
-    var cuadroBody;
-
-    if (cuadro.contentDocument) { // FF
-        cuadroBody = cuadro.contentDocument.getElementsByTagName('body')[0];
-    } else if (cuadro.contentWindow) { // IE
-        cuadroBody = cuadro.contentWindow.document.getElementsByTagName('body')[0];
-    }
-
-    alert(cuadroBody.innerHTML);
-}
-
-/* dos: funciona para obtener el contenido del iframe
---------------------------------------------------------------------------------*/
-function
-obtenerCuadroDos() {
-    alert(cuadro.contentWindow.document.body.innerHTML);
-}
