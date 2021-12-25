@@ -1,7 +1,8 @@
-const express   = require('express');
-const router    = express.Router();
-const servidor  = require("../s/identidad/identidad");
-const chat      = require('../s/chat/l/backend');
+const express       = require('express');
+const router        = express.Router();
+const servidor      = require("../s/identidad/identidad");
+const chat          = require('../s/chat/l/backend');
+const generarPDF    = require('../s/generar_pdf/backend');
 
 const {v4: uuidv4} = require("uuid");
 
@@ -27,5 +28,9 @@ router.get("/video_chat", (req, res) => {
 router.get("/video_chat/:sala", (req, res) => {
     res.render("video_chat", { sala: req.params.sala });
 });
+
+/* Generar PDF
+--------------------------------------------------------------------------------*/
+router.get('/i/generar_pdf/:id', generarPDF.guardar);
 
 module.exports = router;

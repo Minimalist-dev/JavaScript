@@ -1,0 +1,30 @@
+/* 
+    Created on : 24 dic. 2021, 6:26:50 p. m.
+    Author     : neury-dev
+*/
+.pdf {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+h1 {
+    font-size: 4em;
+    margin: 0;
+}
+button {
+    background-color: var(--n-color-dos);
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 8px;
+    border: 1px solid var(--n-color-dos);
+    padding: 8px 16px;
+    border-radius: 0.25rem;
+}
+button:focus {
+    border-color: var(--n-color-1);
+    box-shadow: 0 0 12px -4px var(--n-color);
+}
+a { color: var(--n-color); }
