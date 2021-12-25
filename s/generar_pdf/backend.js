@@ -31,6 +31,8 @@ class PDF {
     }
 }
 objeto.guardar = function(req, res) {
+    
+    doc.on('pageAdded', () => doc.text("Pagina PDF"));
 //    doc.addPage({ size: 'A4' });
     
 //    doc.addPage({
