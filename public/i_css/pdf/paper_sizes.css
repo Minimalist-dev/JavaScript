@@ -1,0 +1,46 @@
+/* 
+    Created on : 28 dic. 2021, 11:04:32 a. m.
+    Author     : neury-dev
+*/
+.pdf {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: 0;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+h1 {
+    font-size: 4em;
+    text-align: center;
+    /*margin: 0;*/
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+label {
+    text-align: left;
+}
+select {
+    background-color: var(--n-color);
+    border: 1px solid var(--n-color-dos);
+    border-radius: 4px;
+    padding: 4px;
+}
+button {
+    color: var(--n-color);
+    background-color: var(--n-color-dos);
+    font-size: 1em;
+    font-weight: bold;
+    margin-top: 8px;
+    border: 1px solid var(--n-color-dos);
+    padding: 8px 16px;
+    border-radius: 0.25rem;
+}
+button:focus {
+    border-color: var(--n-color-1);
+    box-shadow: 0 0 12px -4px var(--n-color);
+}
+a { color: var(--n-color); }
+

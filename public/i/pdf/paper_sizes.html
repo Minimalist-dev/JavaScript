@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tamaños de papel | Doc. JS | Neury</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <!-- CSS -->
+    <link rel='stylesheet' href='/i_css/i/root.css' />
+    <link rel='stylesheet' href='/i_css/pdf/paper_sizes.css' />
+</head>
+<body>
+    <h1>Tamaños del papel</h1>
+    <section class="pdf">
+        <form method="POST" name="size" id="size">
+            <label for="formato">Formato</label>
+            <select name="formato" id="formato">
+                <option value=""></option>
+                <option value="Doc">Documento</option>
+                <option value="Table">Tabla</option>
+                <option value="Construct">Documento y Tabla</option>
+            </select>
+            <label for="sizes">Tamaños del papel</label>
+            <select name="sizes" id="sizes">
+                <option value=""></option>
+            </select>
+            <button type="submit">Escoger tamaño</button>
+        </form>
+        <button id="generar" disabled=""></button>
+        <button id="abrir" disabled=""></button>
+        <button id="descargar" disabled=""></button>
+    </section>
+<script src="/l/pdf/paper_sizes.js"></script>
+</body>
+</html>

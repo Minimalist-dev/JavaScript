@@ -22,6 +22,10 @@
     - npm install node-fetch --save
     - npm install form-data
 
+- PDF
+    - npm i pdfkit
+    - npm i pdfkit-table
+
 - Paquetes necesarios para aplicación en tiempo real
     - Referencias
     https://webrtc.org/

@@ -1,0 +1,38 @@
+/* 
+    Created on : 30 dic. 2021, 5:33:56 a. m.
+    Author     : neury-dev
+*/
+.email {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 400px;
+    padding: 8px;
+}
+iframe {
+    width: calc(100% - 32px);
+    height: 350px;
+    overflow-y: auto;
+    margin: 0px 16px;
+    border: 1px solid var(--n-color-dos);
+    border-radius: 8px;
+    padding: 16px;
+}
+button {
+    color: var(--n-color);
+    background-color: var(--n-color-dos);
+    font-weight: bold;
+    width: 150px;
+    border: 1px solid var(--n-color);
+    border-radius: 4px;
+    padding: 8px;
+}
+button:hover {
+    border: 1px solid var(--n-color-dos);
+}

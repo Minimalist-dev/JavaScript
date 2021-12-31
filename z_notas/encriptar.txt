@@ -1,0 +1,15 @@
+- 1:
+    let text = "Hello World!";
+    let encoded = window.btoa(text);
+    let decoded = window.atob(encoded);
+
+- 2:
+    https://www.w3schools.com/nodejs/ref_crypto.asp
+    https://es.wikipedia.org/wiki/Advanced_Encryption_Standard
+    https://blog.logrocket.com/node-js-crypto-module-a-tutorial/
+
+- 3:
+    https://www.npmjs.com/package/bcrypt
+
+- 4:
+    https://www.npmjs.com/package/bcryptjs

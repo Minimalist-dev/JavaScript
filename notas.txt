@@ -1,6 +1,5 @@
 - GitHub:
-    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
-    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
+    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
 
 - Fuente de iconos:
     https://fontello.com/
