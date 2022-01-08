@@ -4,12 +4,9 @@
     let decoded = window.atob(encoded);
 
 - 2:
-    https://www.w3schools.com/nodejs/ref_crypto.asp
-    https://es.wikipedia.org/wiki/Advanced_Encryption_Standard
-    https://blog.logrocket.com/node-js-crypto-module-a-tutorial/
-
-- 3:
-    https://www.npmjs.com/package/bcrypt
-
-- 4:
+    https://www.npmjs.com/package/crypto-js
+    https://cdnjs.com/libraries/crypto-js
+    https://cryptojs.gitbook.io/docs/
+    
+- 3: ara comparación
     https://www.npmjs.com/package/bcryptjs

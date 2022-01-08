@@ -22,7 +22,7 @@
 .n-grid > .area-4 > section > article > div { position: relative; }
 .n-grid > .area-4 > section > article > div > h4 {
     position: relative;
-    color: var(--n-color);
+    color: var(--n-color-1);
     font-size: 0.90em;
     margin: 0;
     user-select: none;
@@ -40,7 +40,7 @@
     text-overflow: ellipsis;
 }
 .n-grid > .area-4 > section > article > div > .cubrir > p > .con {
-    color: var(--n-color);
+    color: var(--n-color-1);
     font-size: 0.90em;
     font-weight: bold;
 }

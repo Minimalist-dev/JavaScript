@@ -2,6 +2,7 @@ var createError     = require('http-errors');
 var express         = require('express');
 var path            = require('path');
 var cookieParser    = require('cookie-parser');
+//let session         = require('express-session');
 var logger          = require('morgan');
 //var cors            = require('cors');
 
@@ -9,6 +10,8 @@ var inicio      = require('./routes/index');
 var sistemaJSON = require('./routes/sistema_JSON');
 var sistemaTXT  = require('./routes/sistema_TXT');
 var sistemaCSV  = require('./routes/sistema_CSV');
+var logup       = require('./routes/logup');
+var logCookie   = require('./routes/log_cookie');
 
 var app = express();
 
@@ -20,6 +23,16 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({extended: false}));
 app.use(cookieParser());
+
+//app.use(session({
+//    secret: 'keyboard cat',
+//    resave: true,
+//    saveUninitialized: true,
+//    cookie: { 
+//        expires: new Date(Date.now() + 3600000),
+//        maxAge: 3600000
+//    }
+//}));
 
 var opciones = {
     dotfiles: 'ignore',
@@ -39,6 +52,8 @@ app.use('/', inicio);
 app.use('/sistema_JSON', sistemaJSON);
 app.use('/sistema_TXT', sistemaTXT);
 app.use('/sistema_CSV', sistemaCSV);
+app.use('/logup', logup);
+app.use('/log_cookie', logCookie);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

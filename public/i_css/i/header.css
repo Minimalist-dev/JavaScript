@@ -16,7 +16,7 @@
 }
 .n-grid > .area-1 > header,
 .n-grid > .area-1 > header > section > section > section {
-    background-color: var(--n-color-dos);
+    background-color: var(--n-color-2);
     z-index: 1;
 }
 .n-grid > .area-1 > header {
@@ -72,7 +72,7 @@
 .n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li > a,
 .n-grid > .area-1 > header > section > .minimo-oculto > .minimo > ul > li > a {
     position: relative;
-    color: var(--n-color);
+    color: var(--n-color-1);
 }
 .n-grid > .area-1 > header > section > ul > li > .cubrir,
 .n-grid > .area-1 > header > section > section > ul > li > .cubrir,
@@ -145,7 +145,7 @@
 }
 @media screen and (max-width: 400px) {
     .n-grid > .area-1 > header > section > .minimo-oculto > a {
-        color: var(--n-color);
+        color: var(--n-color-1);
     }
     /*.n-grid > .area-1 > header > section > .minimo-oculto >*/ 
     .minimo { 
@@ -154,7 +154,7 @@
         top: 62px;
         left: 0;
         right: 0;
-        border: 1px solid var(--n-color);
+        border: 1px solid var(--n-color-1);
         padding: 0em 3em;
         transition: var(--n-transicion);
     }

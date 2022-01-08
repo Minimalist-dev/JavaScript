@@ -3,3 +3,15 @@
 
 - Email:
     https://nodemailer.com/about/
+
+- Cripto-js
+    https://cryptojs.gitbook.io/docs/
+
+- Socket:
+    https://socket.io/
+        https://webrtc.org/
+        https://es.wikipedia.org/wiki/WebRTC
+        https://developer.mozilla.org/es/
+    https://www.npmjs.com/package/peer
+    https://peerjs.com/
+    https://peerjs.com/docs.html#start

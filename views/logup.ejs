@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><% title %></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <!-- CSS -->
+    <link rel='stylesheet' href='/i_css/i/root.css' />
+    <link rel='stylesheet' href='/i_css/login/login.css' />
+    <!-- Iconos -->
+    <script src='https://kit.fontawesome.com/a076d05399.js'></script>
+</head>
+<body>
+    <section class="login">
+        <section class="fila">
+            <header>
+                <h1 id="res">Log Up</h1>
+            </header>
+            <section class="linea">
+                <span>or</span>
+            </section>
+            <section class="columna">
+                <form method="POST" name="in" id="in">
+                    <h3 class="titulo">Iniciar</h3>
+                    <section class="input">
+                        <input type="email" name="correo" id="correo" placeholder="Ingresar correo" required="">
+                    </section>
+                    <section class="input">
+                        <input type="password" name="codigo" id="codigo" placeholder="Ingresar ontraseña" required="">
+                    </section>
+                    <button type="submit">Iniciar</button>
+                </form>
+            </section>
+            <section class="columna">
+                <form method="POST" name="up" id="up">
+                   <h3 class="titulo">Registrarse</h3>
+                    <section class="input">
+                        <i class="fas fa-envelope-open-text"></i>
+                        <input type="email" name="correo" id="correo_up" placeholder="Ingresar correo" required="">
+                    </section>
+                    <section class="input">
+                        <i class="fas fa-key"></i>
+                        <input type="password" name="codigo" id="codigo_up" placeholder="Ingresar contraseña" required="">
+                    </section>
+                   <button type="submit">Registrarse</button>
+                </form>
+            </section>
+        </section>
+    </section>
+    
+<script src="/l/login/logup.js"></script>
+</body>
+</html>
+

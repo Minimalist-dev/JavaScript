@@ -7,9 +7,10 @@
     - npm install --save-dev nodemon
     - npm install nodemon -D
 
-    - npm install mysql
-    - npm install express-myconnection
+    - npm install mysql : arternativa = npm install express-myconnection
     - npm install mongodb
+    - npm install cookie-parser
+    - npm install express-session
 
     - npm install morgan
 
@@ -26,20 +27,9 @@
     - npm i pdfkit
     - npm i pdfkit-table
 
-- Paquetes necesarios para aplicación en tiempo real
-    - Referencias
-    https://webrtc.org/
-    https://es.wikipedia.org/wiki/WebRTC
-    https://developer.mozilla.org/es/
-
+- Socket:
     - npm install socket.io
-    https://socket.io/
-
     - npm install peer
-    https://www.npmjs.com/package/peer
-    https://peerjs.com/
-    https://peerjs.com/docs.html#start
-
-    npm install uuid
+    - npm install uuid
 
     

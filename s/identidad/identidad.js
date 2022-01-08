@@ -3,7 +3,7 @@ var objeto  = {};
 
 objeto.identidad = (req, res) => {
     var usuario = os.userInfo();
-    
+
     res.render('identidad', { 
         title: 'Identidad del dispositivo | Neury', 
         Objeto: [{

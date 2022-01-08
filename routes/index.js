@@ -1,12 +1,26 @@
-const express       = require('express');
-const router        = express.Router();
-const servidor      = require("../s/identidad/identidad");
-const chat          = require('../s/chat/l/backend');
-const generarPDF    = require('../s/pdf/backend');
-const paperSizes    = require('../s/pdf/paper_sizes');
-const email         = require('../s/email/email');
+let express       = require('express');
+let session       = require('express-session');
+let router        = express.Router();
+let servidor      = require('../s/identidad/identidad');
+let chat          = require('../s/chat/l/backend');
+let generarPDF    = require('../s/pdf/backend');
+let paperSizes    = require('../s/pdf/paper_sizes');
+let email         = require('../s/email/email');
+let encriptado    = require('../s/encriptado/encriptado');
+let sesionBack    = require('../s/login/sesion_back');
 
-const {v4: uuidv4} = require("uuid");
+
+router.use(session({
+    secret: 'keyboard cat',
+    resave: true,
+    saveUninitialized: true,
+    cookie: { 
+        expires: new Date(Date.now() + 3600000),
+        maxAge: 3600000
+    }
+}));
+
+let {v4: uuidv4} = require("uuid");
 
 /* GET pages. 
 --------------------------------------------------------------------------------*/
@@ -40,5 +54,39 @@ router.get('/i/pdf/paper_sizes/:id', paperSizes.guardar);
 /* Email
 --------------------------------------------------------------------------------*/
 router.post('/i/email/email', email.enviar);
+
+/* Encriptado
+--------------------------------------------------------------------------------*/
+router.post('/i/encriptado', encriptado.insertar);
+
+/* Log up 
+--------------------------------------------------------------------------------*/
+router.get('/sesion', function (req, res, next) {
+    sesionBack.email !== null ? res.render('sesion') : res.redirect('back');
+});
+//router.get('/sesion/:id', function (req, res, next) {
+//    req.session.destroy(function() {
+//        res.redirect('/');
+//    });
+//});
+
+/* sesion cookie
+--------------------------------------------------------------------------------*/
+router.get('/sesion_cookie', function (req, res, next) {
+    /* req.session.name = sesionBack.email;
+    -----------------------------------------------------------------------------*/
+    console.log("session: " + req.session.name);
+    
+    res.cookie('correo', sesionBack.email, { expire : new Date(Date.now() + 3600000)});
+
+    sesionBack.email !== null ? res.render('sesion_cookie', { correo: sesionBack.email }) : res.redirect('back');
+});
+router.get('/sesion_cookie_1', function (req, res, next) {
+    if(req.cookies.correo === '' || req.cookies.correo === 'j:null' ) { 
+        res.redirect('back');
+    } else {
+        res.render('sesion_cookie_1', { correo: sesionBack.email });
+    }
+});
 
 module.exports = router;

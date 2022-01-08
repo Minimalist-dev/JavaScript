@@ -1,0 +1,26 @@
+/* 
+    Created on : 3 ene. 2022, 5:22:21 p. m.
+    Author     : neury-dev
+*/
+body {
+    display: flex;
+    justify-content: center;
+}
+.sign_in {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+p {
+    margin: 0;
+}
+.sign_in > button {
+    background-color: var(--n-color-1);
+    font-weight: bold;
+    text-decoration: overline underline;
+    border-left: 1px solid var(--n-color-2);
+    border-right: 1px solid var(--n-color-2);
+    border-radius: 8px;
+    padding: 8px;
+}

@@ -1,0 +1,49 @@
+/* 
+    Created on : 2 ene. 2022, 7:53:14 p. m.
+    Author     : neury-dev
+*/
+.encriptado {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 320px;
+}
+
+/* Formulario
+--------------------------------------------------------------------------------*/
+form > input { 
+    width: 100%;
+    margin-bottom: 0.50em; 
+    border: none;
+    border-radius: var(--n-radio);
+    padding: var(--n-relleno);
+}
+form > input:focus {
+    color: var(--n-color);
+    background-color: var(--n-color-tres);
+    outline: none;
+}
+form > input[type='submit'] {
+    color: var(--n-color);
+    background-color: var(--n-color-dos);
+    font-weight: bold;
+    width: 100%;
+    border: none;
+    border-radius: var(--n-radio);
+    padding: var(--n-relleno);
+}
+form > input[type=submit]:hover {
+    color: var(--n-color-dos);
+    background-color: var(--n-color-tres);
+    text-shadow: var(--n-sombra-de-texto);
+}
+
+/* Respuesta
+--------------------------------------------------------------------------------*/
+#res { color: var(--n-color-verde); text-align: center; }
+#res > span { color: var(--n-color-rojo); }

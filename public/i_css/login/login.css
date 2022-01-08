@@ -1,0 +1,93 @@
+/* 
+    Created on : 3 ene. 2022, 2:23:26 a. m.
+    Author     : neury-dev
+*/
+header { text-align: center; width: 100%; }
+header > h1  {
+    color: var(--n-color-2);
+    font-family: var(--n-fuente-tres);
+    font-size: 2.40em;
+    text-shadow: var(--n-sombra-de-texto-dos);
+}
+header > p {
+    color: var(--n-color-rojo);
+    font-weight: bold;
+}
+h3 { 
+    /*font-weight: bold;*/ 
+}
+.login {
+    position: relative;
+    padding: 1.25em 0 1.875em 0;
+} 
+.login > form > .fila:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+.login > .fila > .linea {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+    border: 0.125em solid var(--n-color-2);
+    height: 15em;
+}
+.login > .fila > .linea > span {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: var(--n-color-1);
+    background-color: var(--n-color-2-5);
+    border: 0.10em solid var(--n-color-2);
+    border-radius: 50%;
+    padding: 0.50em 0.625em;
+}
+.login > .fila > .columna > form {
+    float: left;
+    width: 50%;
+    margin: auto;
+    padding: 0 3.125em;
+    margin-top: 0.375em;
+}
+.login > .fila > .columna > form > .input {
+    display: flex;
+    width: 100%;
+    margin-bottom: 0.9375em;
+}
+.login > .fila > .columna > form > .input > input {
+    display: inline-block;
+    width: 100%;
+    border: none;
+    border-radius: var(--n-radio);
+    padding: 0.625em;
+}
+.login > .fila > .columna > form > .input > input:focus {
+    color: var(--n-color-1);
+    background-color: var(--n-color-2-5);
+}
+.login > .fila > .columna > form > .input > i {
+    color: var(--n-color-1);
+    background-color: var(--n-color-2);
+    text-align: center;
+    min-width: 3.125em;
+    border-radius: var(--n-radio);
+    padding: 0.625em;
+}
+.login > .fila > .columna > form > button {
+    color: var(--n-color-1);
+    background-color: var(--n-color-2);
+    font-weight: bold;
+    width: 100%;
+    border-radius: var(--n-radio);
+    padding: var(--n-radio);
+}
+.login > .fila > .columna > form > button:hover {
+    color: var(--n-color-2);
+    background-color: var(--n-color-2-5);
+    text-shadow: var(--n-sombra-de-texto);
+}
+@media screen and (max-width: 650px) {
+    .login > .fila > .columna > form { width: 100%; }
+    .login > .fila > .linea { display: none; }
+}  
+
