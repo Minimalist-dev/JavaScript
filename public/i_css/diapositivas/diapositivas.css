@@ -10,8 +10,6 @@ main {
     
     width: 1000px;
     height: 500px;
-    /*cursor: not-allowed;*/
-    /*cursor: wait*/
 }
 .detener { cursor: not-allowed; }
 .continuar { cursor: wait; }
@@ -20,21 +18,21 @@ main > div > img {
     width: 100%;
     height: 500px;
     vertical-align: middle;
-    border: 1px solid var(--n-color-dos);
-    border-radius: var(--n-radio);
+    border: 1px solid var(--n-color-2);
+    border-radius: var(--n-radio-1);
     object-fit: cover;
 }
 main > button.anterior,
 main > button.siguiente {
     position: absolute;
     top: 13.25em;
-    color: var(--n-color);
+    color: var(--n-color-1);
     background: transparent;
     font-size: 2.50em;
     border: none;
     border-radius: 0em 0.1875em 0.1875em 0em;
     transition: var(--n-transicion);
-    text-shadow: var(--n-sombra-de-texto-dos);
+    text-shadow: var(--n-sombra-de-texto-2);
 }
 main > button.anterior { right: 8.40em; }
 main > button.siguiente { right: 2.10em; }
@@ -49,7 +47,7 @@ main > section.puntos-contenedor {
 }
 main > section.puntos-contenedor > button.punto {
     color: transparent;
-    background-color: var(--n-color-dos-uno);
+    background-color: var(--n-color-2-5);
     font-family: var(--n-fuente-tres);
     font-size: 0.70em;
     border: none;
@@ -60,7 +58,7 @@ main > section.puntos-contenedor > button.punto {
 main > section.puntos-contenedor > button.punto > span.actual { transition: all 2s ease-in-out; }
 .activo, 
 main > section.puntos-contenedor > button.punto:hover {
-    color: var(--n-color);
+    color: var(--n-color-2);
 }
 main > div.desvanecerse {
     -webkit-animation-name: desvanecerse;

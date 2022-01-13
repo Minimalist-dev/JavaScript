@@ -1,7 +1,7 @@
 - Desarrolos
     - https://github.com/florinpop17/app-ideas/
     - Archivos compatibles con el formato de (exel)
-    - Galería para imagenes animadas: http://localhost:3000/s/plantillas/adaptable/lens/index.html
+    - 
 
 - Fuente de iconos:
     https://fontello.com/
