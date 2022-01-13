@@ -32,7 +32,7 @@ class Diapositivas {
             i.addEventListener('click', function() {
                 let posicion = i.classList.item(1);
 
-                Diapositivas.automaticas(indice = posicion.substr(1, 1) - 1);
+                Diapositivas.automaticas(indice = posicion.substr(1, ) - 1);
                 clearTimeout(autoDetener);
             });
         }
@@ -48,18 +48,13 @@ class Diapositivas {
         for (let i = 0; i < punto.length; i++) {
             punto[i].className = punto[i].className.replace(" activo", "");
         }
-//        for (let i = 0; i < punto.length; i++) {
-//            punto[i].className = punto[i].className.replace(" activo", "");
-//        }
 
         indice++;
         
-        if (indice > diapositivas.length) {
-            indice = 1;
-        }    
+        if (indice > diapositivas.length) { indice = 1; }   
+        if (indice < 1)                   { indice = diapositivas.length; }
 
         diapositivas[indice - 1].style.display = "block";  
-        punto[indice - 1].className += " activo";
         punto[indice - 1].className += " activo";
 
         autoDetener = setTimeout(Diapositivas.automaticas, 4000);

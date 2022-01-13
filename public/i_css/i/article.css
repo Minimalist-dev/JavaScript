@@ -16,7 +16,7 @@
     border-radius: 1em;
     margin: 0.50em;
     padding: 1.50em 0em 1.50em 1.50em;
-    box-shadow: var(--n-sombra-de-texto-tres);
+    box-shadow: var(--n-sombra-1-1);
 }
 .n-grid > .area-4 > section > article > * { margin: 0; }
 .n-grid > .area-4 > section > article > div { position: relative; }

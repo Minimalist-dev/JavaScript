@@ -1,0 +1,199 @@
+/* 
+    Created on : 12 ene. 2022, 11:37:21 p. m.
+    Author     : neury-dev
+*/
+header {
+    position: relative;
+    text-align: right;
+    width: 100%;
+    padding: 32px 16px;
+}
+header > :nth-of-type(1), 
+headar > :nth-of-type(2){
+    margin: 0;
+}
+main { 
+    position: fixed;
+    left: 0;
+    width: calc(100% - 250px);
+    height: 100%;;
+}
+main > div > img {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+    max-height: 100%;
+}
+main > div > section {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 9;
+    padding: 32px;
+}
+main > div > section > * {
+    margin: 0;
+}
+aside { 
+    position: fixed;
+    right: 0;
+    width: 250px;
+    height: 100%;;
+    overflow-y: auto;
+}
+aside > section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+aside > section > .ver {
+    color: var(--n-color-1);
+    background-color: var(--n-color-2);
+    text-align: center;
+    width: 216px;
+    margin-bottom: 8px;
+    border: 1px solid var(--n-color-2);
+}
+aside > section > .ver.viendo {
+    color: var(--n-color-2);
+    background-color: var(--n-color-1);
+}
+aside > section > .ver > p {
+    font-size: 0.70em;
+}
+aside > section > .ver > button {
+    color: var(--n-color-2);
+    background-color: var(--n-color-1);
+    width: 50px;
+}
+aside > section > .ver > button.activo {
+    background-color: var(--n-color-3);
+}
+
+/* Animaciones a partir de aqui
+--------------------------------------------------------------------------------*/
+/*
+    top
+*/
+.animate-top { 
+    position: relative;
+    animation: animatetop 1s;
+}
+@keyframes animatetop{
+    from{
+        top: -100%;
+        opacity: 0;
+    } to{
+        top: 0;
+        opacity: 1;
+    }
+}
+/*
+    left
+*/
+.animate-left{
+    position: relative;
+    animation: animateleft 1s;
+}
+@keyframes animateleft {
+    from{
+        left: -100%;
+        opacity: 0
+    } to {
+        left: 0;
+        opacity: 1;
+    }
+}
+/*
+    right
+*/
+.animate-right {
+    position: relative;
+    animation: animateright 1s;
+}
+@keyframes animateright {
+    from {
+        right: -100%;
+        opacity: 0;
+    } to {
+        right: 0;
+        opacity: 1;
+    }
+}
+/*
+    bottom
+*/
+.animate-bottom {
+    position: relative;
+    animation: animatebottom 1s;
+}
+@keyframes animatebottom { 
+    from {
+        bottom: -100%;
+        opacity: 0;
+    } to { 
+        bottom: 0;
+        opacity: 1;
+    }
+}
+/*
+    fading
+*/
+.animate-fading {
+    animation: fading 10s infinite;
+}
+@keyframes fading {
+    0% {
+        opacity: 0;
+    } 50% { 
+        opacity: 1;
+    } 100% {
+        opacity: 0;
+    }
+}
+/*
+    opacity
+*/
+.animate-opacity {
+    animation: opac 1s;
+}
+@keyframes opac {
+    from {
+        opacity: 0; } 
+    to {
+        opacity: 1;
+    }
+}
+/*
+    bottom
+*/
+.animate-zoom {
+    animation: animatezoom 1s;
+}
+@keyframes animatezoom {
+    from {
+        transform: scale(0);
+    } to {
+        transform: scale(1);
+    }
+}
+/*
+    fade: desvanecerse
+*/
+desvanecerse {
+    animation: desvanecerse 1.5s;
+}
+@-webkit-keyframes desvanecerse {
+    from {
+        opacity: .4
+    } to {
+        opacity: 1
+    }
+}
+@keyframes desvanecerse {
+    from {
+        opacity: .4
+    } to {
+        opacity: 1
+    }
+}
