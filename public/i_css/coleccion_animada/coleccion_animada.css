@@ -75,7 +75,7 @@ aside > section > .ver > button.activo {
 /* Animaciones a partir de aqui
 --------------------------------------------------------------------------------*/
 /*
-    top
+    top..........................................................................
 */
 .animate-top { 
     position: relative;
@@ -91,7 +91,7 @@ aside > section > .ver > button.activo {
     }
 }
 /*
-    left
+    left..........................................................................
 */
 .animate-left{
     position: relative;
@@ -107,7 +107,7 @@ aside > section > .ver > button.activo {
     }
 }
 /*
-    right
+    right..........................................................................
 */
 .animate-right {
     position: relative;
@@ -123,7 +123,7 @@ aside > section > .ver > button.activo {
     }
 }
 /*
-    bottom
+    bottom..........................................................................
 */
 .animate-bottom {
     position: relative;
@@ -139,7 +139,7 @@ aside > section > .ver > button.activo {
     }
 }
 /*
-    fading
+    fading..........................................................................
 */
 .animate-fading {
     animation: fading 10s infinite;
@@ -154,7 +154,7 @@ aside > section > .ver > button.activo {
     }
 }
 /*
-    opacity
+    opacity..........................................................................
 */
 .animate-opacity {
     animation: opac 1s;
@@ -167,7 +167,7 @@ aside > section > .ver > button.activo {
     }
 }
 /*
-    bottom
+    bottom..........................................................................
 */
 .animate-zoom {
     animation: animatezoom 1s;
@@ -193,7 +193,7 @@ aside > section > .ver > button.activo {
     }
 }
 /*
-    escalar
+    escalar..........................................................................
 */
 .escalar > img {
     object-fit: cover;
@@ -205,4 +205,70 @@ aside > section > .ver > button.activo {
     } to {
        transform: scale(1.05);
     }
+}
+/*
+    rotar..........................................................................
+*/
+.rotar {
+    animation: rotar 4s;
+}
+@keyframes rotar {
+    0%      { transform: rotateX(0deg);     }
+    8.33%   { transform: rotateX(90deg);    }
+    16.66%  { transform: rotateX(180deg);   }
+    24.99%  { transform: rotateX(360deg);   }
+    33.33%  { transform: rotateY(0deg);     }
+    41.66%  { transform: rotateY(90deg);    }
+    49.99%  { transform: rotateY(180deg);   }
+    58.33%  { transform: rotateY(360deg);   }
+    66.66%  { transform: rotateZ(0deg);     }
+    74.99%  { transform: rotateZ(90deg);    }
+    83.33%  { transform: rotateZ(180deg);   }
+    91.66%  { transform: rotateZ(360deg);   }
+    100%    { 
+        transform: rotateX(360deg);
+        transform: rotateY(360deg);
+        transform: rotateZ(360deg); 
+    }
+}
+/*
+    cajas..........................................................................
+*/
+.boxes {
+    min-width: 108%;
+    min-height: 100%;
+    transition: .4s ease;
+}
+.box {
+    float: left;
+    background-image: url(../i_img/coleccion_animada/0.jpg);
+    background-repeat: no-repeat;
+    transition: .4s ease;
+}
+.boxes.big .box {
+    transform: rotateZ(360deg);
+}
+
+/*
+    olas..........................................................................
+*/
+#olas {
+    cursor: pointer;
+}
+.bloque {
+    position: absolute;
+    top: calc(50vh - 1vh); 
+    /*left: calc(50vw - 1vw);*/
+    left: -100px;
+    /*top: 100vh;*/
+    /*left: 100vw;*/ 
+    z-index: 9;
+    background-image: url(../i_img/coleccion_animada/0.jpg);
+    background-repeat: no-repeat;
+    /*background-size: 100vw 100vh;*/
+    transition: all 1s ease;
+}
+
+.crecer {
+    transform: scale(2);
 }

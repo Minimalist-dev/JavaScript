@@ -1,10 +1,7 @@
 - Desarrolos
     - https://github.com/florinpop17/app-ideas/
     - Archivos compatibles con el formato de (exel)
-    - 
-
-- Fuente de iconos:
-    https://fontello.com/
+    - interfaz de imagen, audio y video
 
 - Redirecionar hacia atras:
     res.redirect('back');
