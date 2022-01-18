@@ -8,8 +8,95 @@ main {
     left: 50%;
     transform: translate(-50%,-50%);
 }
-main > section {
+main h2 {
+    text-align: center;
+}
+main > :nth-child(1) {
     display: flex;
     flex-direction: column;
     align-items: center;    
+}
+main > :nth-child(2) {
+/*    display: flex;
+    flex-direction: row;
+    align-items: flex-start;   
+    
+    float: left;*/
+}
+.personalizado {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    
+    color: var(--n-color-1);
+    background-color: var(--n-color-2);
+    font-size: 1em;
+    width: 100%;
+    height: 30px;
+    border-radius: 16px;
+    padding: 0px 16px 0px 16px;
+}
+.personalizado :nth-child(2){
+    margin: 16px;
+}
+.personalizado > section button {
+    color: var(--n-color-1);
+    background-color: var(--n-color-0);
+    margin-top: 1px;
+}
+.personalizado > .duracion,
+.personalizado > .sonido {
+    width: 200px;
+    margin: 0;
+    padding: 0;
+}
+.personalizado > .duracion > .tiempo {
+    width: 200px;
+}
+.personalizado > .sonido > .volumen {
+    width: 100px;
+}
+.personalizado > .duracion > .tiempo,
+.personalizado > .sonido > .volumen {
+    -webkit-appearance: none;
+    /*width: 100%;*/
+    height: 10px;
+    border-radius: 16px;
+    background-color: var(--n-color-1);
+    outline: none;
+    /*opacity: 0.7;*/
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+.personalizado > .duracion > .tiempo:hover,
+.personalizado > .sonido > .volumen:hover {
+    opacity: 1;
+}
+
+/*.personalizado > .duracion > .tiempo::-webkit-slider-thumb
+.personalizado > .sonido > .volumen::webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--n-color-3);
+    cursor: pointer;
+}*/
+.personalizado > .duracion > .tiempo::-moz-range-thumb,
+.personalizado > .sonido > .volumen::moz-range-thumb {
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--n-color-4);
+    border-radius: 50%;
+    background: var(--n-color-3);
+    cursor: pointer;
+}
+
+.personalizado > section > select {
+    color: var(--n-color-2);
+    background-color: var(--n-color-1);
+    margin-top: 1px;
+    border-radius: 16px;
 }
