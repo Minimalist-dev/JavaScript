@@ -32,4 +32,9 @@
     - npm install peer
     - npm install uuid
 
+- Eliminar todos los modulos
+    - rm -r node_modules
+    - rm node_modules
+    - npm ls -gp --depth=0 | awk -F/ '/node_modules/ && !/\/npm$/ {print $NF}' | xargs npm -g rm
+
     

@@ -43,31 +43,33 @@ Diapositivas.actual();
 
 /* Animaciones
 --------------------------------------------------------------------------------*/
-const boxesContainer = document.getElementById('boxes');
-const btn = document.getElementById('btn');
+const cajasContainer = document.querySelector('#cajas');
+const rotarZ = document.querySelector('#rotarZ');
 
-const anchoDeCaja = Math.ceil(boxesContainer.clientWidth / 4);
-const altoDeCaja  = Math.ceil(boxesContainer.clientHeight / 4);
+const CAJAS = 4;
 
-btn.addEventListener('click', () => {
-    boxesContainer.classList.toggle('big');
-});
+const anchoDeCaja = Math.ceil(cajasContainer.clientWidth / CAJAS);
+const altoDeCaja  = Math.ceil(cajasContainer.clientHeight / CAJAS);
 
 function 
-createBoxes() {
+crearCajas() {
     for (let i = 0; i < 8; i++) {
         for (let j = 0; j < 8; j++) {
-            let box = document.createElement('div');
-            box.classList.add('box');
-            box.style.width = anchoDeCaja + 'px';
-            box.style.height = altoDeCaja + 'px';
-            box.style.backgroundPosition = `${-anchoDeCaja * j}px ${-altoDeCaja * i}px`;
-            boxesContainer.appendChild(box);
+            let caja = document.createElement('div');
+            caja.classList.add('caja');
+            caja.style.width = anchoDeCaja + 'px';
+            caja.style.height = altoDeCaja + 'px';
+            caja.style.backgroundPosition = `${-anchoDeCaja * j}px ${-altoDeCaja * i}px`;
+            cajasContainer.appendChild(caja);
         }
     }
 }
 
-createBoxes();
+crearCajas();
+
+rotarZ.addEventListener('click', function() {
+    cajasContainer.classList.toggle('rotarZ');
+});
 
 /*
     * olas...........................................................................  

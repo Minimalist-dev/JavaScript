@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Audio Interfaz | Doc. JS | Neury</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="../../i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <!-- CSS -->
+    <link rel='stylesheet' href='../../i_css/i/root.css' />
+    <link rel='stylesheet' href='../../i_css/interfaz_multimedia/audio_interfaz.css' />
+</head>
+<body>
+    <main>
+        <section class="original">
+            <p id="res_original"></p>
+            
+            <audio id="original" controls>
+                <source src="../../i_multimedia/interfaz_multimedia/audio.mp3" type="audio/mpeg">
+            </audio>
+            
+            <input type="range" id="duracion" min="0">
+            
+            <button onclick="Audio.reproducir()">Reproducir</button>
+            <button onclick="Audio.pausar()">Pausar</button>
+            <button onclick="Audio.muteSi()">Mute si</button>
+            <button onclick="Audio.muteNo()">Mute no</button>
+            <input type="range" id="volumen" min="0" max="100">
+            <select id="velocidad">
+                <option value="0.25">0.25</option>
+                <option value="0.50">0.50</option>
+                <option value="0.75">0.75</option>
+                <option value="1.0" selected="">Normal</option>
+                <option value="1.25">1.25</option>
+                <option value="1.50">1.50</option>
+                <option value="1.75">1.75</option>
+                <option value="2.0">2.0</option>
+            </select>
+            <button onclick="Audio.repetirSi()">Repetir si</button>
+            <button onclick="Audio.repetirNo()">Repetir no</button>
+            
+        </section>
+        <section class="personalizado">
+            
+        </section>
+    </main>
+                  
+<script src="../../l/interfaz_multimedia/audio_interfaz.js"></script>
+</body>
+</html>

@@ -234,18 +234,21 @@ aside > section > .ver > button.activo {
 /*
     cajas..........................................................................
 */
-.boxes {
+.cajas {
     min-width: 108%;
     min-height: 100%;
     transition: .4s ease;
 }
-.box {
-    float: left;
-    background-image: url(../i_img/coleccion_animada/0.jpg);
+.caja {
+    position: absolute;
+    /*background-image: url('https://p4.wallpaperbetter.com/wallpaper/676/293/313/programmer-wallpaper-preview.jpg');*/
+    /*background-image: url(../../i_img/coleccion_animada/0.jpg) !important;*/
+    background-image: url(../i_img/coleccion_animada/0.jpg) !important;
     background-repeat: no-repeat;
     transition: .4s ease;
+    float: left;
 }
-.boxes.big .box {
+.cajas.rotarZ .caja {
     transform: rotateZ(360deg);
 }
 
@@ -254,21 +257,21 @@ aside > section > .ver > button.activo {
 */
 #olas {
     cursor: pointer;
+    background: var(--n-color-2);
 }
 .bloque {
     position: absolute;
+    /*background-image: linear-gradient(to right, var(--n-color-1), var(--n-color-2));*/
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/676/293/313/programmer-wallpaper-preview.jpg');
+    /*background-image: linear-gradient(to right, var(--n-color-1), var(--n-color-2));*/
+    /*background-image: url(../i_img/coleccion_animada/0.jpg) !important;*/
+    background-repeat: no-repeat;
     top: calc(50vh - 1vh); 
     /*left: calc(50vw - 1vw);*/
-    left: -100px;
-    /*top: 100vh;*/
-    /*left: 100vw;*/ 
-    z-index: 9;
-    background-image: url(../i_img/coleccion_animada/0.jpg);
-    background-repeat: no-repeat;
-    /*background-size: 100vw 100vh;*/
+    left: -100px; 
+    /*z-index: 9;*/
     transition: all 1s ease;
 }
-
 .crecer {
     transform: scale(2);
 }
