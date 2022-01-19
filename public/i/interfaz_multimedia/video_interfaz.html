@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Audio Interfaz | Doc. JS | Neury</title>
+    <title>Video Interfaz | Doc. JS | Neury</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" href="../../i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
     <!-- CSS -->
     <link rel='stylesheet' href='../../i_css/i/root.css' />
-    <link rel='stylesheet' href='../../i_css/interfaz_multimedia/audio_interfaz.css' />
+    <link rel='stylesheet' href='../../i_css/interfaz_multimedia/video_interfaz.css' />
     <!-- Iconos -->
     <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -16,9 +16,9 @@
     <main>
         <section class="original">
             <h2>Original</h2>
-            <audio id="original" controls>
-                <source src="../../i_multimedia/interfaz_multimedia/audio.mp3" type="audio/mpeg">
-            </audio>
+            <video width="400" id="original" controls>
+                <source src="../../i_multimedia/interfaz_multimedia/mov_bbb.mp4" type="video/mp4">
+            </video>
         </section>
         
         <br><h2>Personalizado</h2>
@@ -54,9 +54,12 @@
             <section>
                 <button id="repeticion"><i class="material-icons">repeat</i></button>
             </section>
+            <section>
+                <button id="m">Maximizar</button>
+            </section>
         </section>
     </main>
                   
-<script src="../../l/interfaz_multimedia/audio_interfaz.js"></script>
+<script src="../../l/interfaz_multimedia/video_interfaz.js"></script>
 </body>
 </html>
