@@ -16,11 +16,11 @@
     <main>
         <section class="original">
             <h2>Original</h2>
-            <video width="400" id="original" controls>
+            <video id="original" controls>
                 <source src="../../i_multimedia/interfaz_multimedia/mov_bbb.mp4" type="video/mp4">
             </video>
+            
         </section>
-        
         <br><h2>Personalizado</h2>
         
         <section class="personalizado">
@@ -28,7 +28,7 @@
                 <button id="reproduccion"><i class='fas fa-play'></i></button>
             </section>
             <section class="duracion">
-                <input type="range" id="tiempo" class="tiempo" min="0">
+                <input type="range" value="0" min="0" id="tiempo" class="tiempo">
             </section>
             <section class="res">
                 <span id="res">00:00:00</span>
@@ -37,7 +37,7 @@
                 <button id="mudo"><i class='fas fa-volume-up'></i></button>
             </section>
             <section class="sonido">
-                <input type="range" id="volumen" class="volumen" min="0" max="100">
+                <input type="range" value="100" min="0" max="100" id="volumen" class="volumen">
             </section>
             <section>
                 <select id="velocidad">
@@ -55,7 +55,7 @@
                 <button id="repeticion"><i class="material-icons">repeat</i></button>
             </section>
             <section>
-                <button id="m">Maximizar</button>
+                <button id="maximizar" class="maximizar"><i class='fas fa-expand'></i></button>
             </section>
         </section>
     </main>

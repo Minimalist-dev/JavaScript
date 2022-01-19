@@ -1,3 +1,4 @@
+let pantalla    = document.querySelector('main');
 let audio       = document.querySelector('#original');
 let reproducir  = document.querySelector('#reproduccion');
 let duracion    = document.querySelector('#tiempo');
@@ -6,9 +7,13 @@ let silenciar   = document.querySelector('#mudo');
 let volumen     = document.querySelector('#volumen');
 let velocidad   = document.querySelector('#velocidad');
 let repetir     = document.querySelector('#repeticion');
+let expandir    = document.querySelector('#maximizar');
 
 class Audio {
     constructor() {  
+        audio.controls  = false;
+        audio.poster    = "../../i_img/i/neury-dev.jpg";
+        
         audio.ontimeupdate = function() {
             Audio.pausar();
             
@@ -31,6 +36,23 @@ class Audio {
             reproducir.innerHTML = "<i class='fas fa-play'></i>";
         }
     }
+    static
+    segundos(currentTime) {
+        let tiempoActual    = Math.round(currentTime);
+        let segundosTotales = parseInt(tiempoActual); //convertirlo en entero (opcional)
+        
+        let horas           = Math.floor(segundosTotales / 3600);
+        let minutos         = Math.floor((segundosTotales - (horas * 3600)) / 60);
+        let segundos        = segundosTotales - (horas * 3600) - (minutos * 60);
+
+        if (horas   < 10)   { horas    = "0" + horas;    }
+        if (minutos < 10)   { minutos  = "0" + minutos;  }
+        if (segundos < 10)  { segundos = "0" + segundos; }
+        
+        let tiempo = horas + ':' + minutos + ':' + segundos;
+        
+        return tiempo;
+    } 
     static
     pausar() {
         if(audio.duration === audio.currentTime) {
@@ -58,22 +80,38 @@ class Audio {
         }
     }
     static
-    segundos(currentTime) {
-        let tiempoActual    = Math.round(currentTime);
-        let segundosTotales = parseInt(tiempoActual); //convertirlo en entero (opcional)
+    maximizar() {
+        //        if(expandir.innerHTML === "<i class='fas fa-expand'></i>") {
+//            expandir.innerHTML = "<i class='fas fa-compress'></i>";
+//        } else if(expandir.innerHTML === "<i class='fas fa-compress'></i>") { 
+//            expandir.innerHTML = "<i class='fas fa-expand'></i>";
+//        }
         
-        let horas           = Math.floor(segundosTotales / 3600);
-        let minutos         = Math.floor((segundosTotales - (horas * 3600)) / 60);
-        let segundos        = segundosTotales - (horas * 3600) - (minutos * 60);
+        if (pantalla.requestFullscreen)            { pantalla.requestFullscreen();        } 
+        else if (pantalla.mozRequestFullScreen)    { pantalla.mozRequestFullScreen();     } 
+        else if (pantalla.webkitRequestFullscreen) { pantalla.webkitRequestFullscreen();  } 
+        else if (pantalla.msRequestFullscreen)     { pantalla.msRequestFullscreen();      }
+        
 
-        if (horas   < 10)   { horas    = "0" + horas;    }
-        if (minutos < 10)   { minutos  = "0" + minutos;  }
-        if (segundos < 10)  { segundos = "0" + segundos; }
         
-        let tiempo = horas + ':' + minutos + ':' + segundos;
         
-        return tiempo;
-    } 
+        if (document.exitFullscreen)            { document.exitFullscreen();        } 
+        else if (document.mozCancelFullScreen)  { document.mozCancelFullScreen();   } 
+        else if (document.webkitExitFullscreen) { document.webkitExitFullscreen();  } 
+        else if (document.msExitFullscreen)     { document.msExitFullscreen();      }  
+        
+        if(
+            pantalla.requestFullscreen          ||
+            pantalla.mozRequestFullScreen       ||
+            pantalla.webkitRequestFullscreen    ||
+            pantalla.msRequestFullscreen
+        ) {
+            expandir.innerHTML = "<i class='fas fa-compress'></i>";
+        } else { 
+            expandir.innerHTML = "<i class='fas fa-expand'></i>";
+        }
+    }
+    
 }
 /* Disparadores
 --------------------------------------------------------------------------------*/
@@ -87,4 +125,7 @@ silenciar.onclick = function() {
 };
 repetir.onclick = function() {
     Audio.repeticion();
+};
+expandir.onclick = function() {
+    Audio.maximizar();
 };

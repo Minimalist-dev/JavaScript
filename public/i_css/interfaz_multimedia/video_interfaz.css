@@ -4,9 +4,11 @@
 */
 main {    
     position: absolute;
-    top: 50%;
+/*    top: 50%;
     left: 50%;
-    transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);*/
+    width: 100%;
+    height: 100%;
 }
 main h2 {
     text-align: center;
@@ -23,15 +25,28 @@ main > :nth-child(2) {
     
     float: left;*/
 }
+main > section > video {
+    position: absolute; 
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+}
 .personalizado {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     
+    position: fixed;
+    left: 50%;
+    bottom: 0px;
+    z-index: 9;
+    transform: translateX(-50%);
+    
     color: var(--n-color-1);
     background-color: var(--n-color-2);
     font-size: 1em;
-    width: 100%;
+    /*width: 100%;*/
+    width: 620px;
     height: 30px;
     border-radius: 16px;
     padding: 0px 16px 0px 16px;
@@ -101,7 +116,9 @@ main > :nth-child(2) {
     background: var(--n-color-3);
     cursor: pointer;
 }
-
+.personalizado > section > #mudo {
+    font-size: 1.10em;
+}
 .personalizado > section > select {
     color: var(--n-color-2);
     background-color: var(--n-color-1);
@@ -111,4 +128,7 @@ main > :nth-child(2) {
 }
 .personalizado > section > #repeticion {
     margin: 1px 0px 0px 0px
+}
+.personalizado > section > #expandir {
+    font-size: 1.40em;
 }
