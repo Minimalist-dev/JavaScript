@@ -41,6 +41,7 @@ body {
     position: relative;
     color: var(--n-color-1);
     font-size: 2.80em;
+    text-decoration: overline underline;
     margin: 0;
     user-select: none;
 }

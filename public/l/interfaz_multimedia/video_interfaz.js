@@ -81,37 +81,24 @@ class Audio {
     }
     static
     maximizar() {
-        //        if(expandir.innerHTML === "<i class='fas fa-expand'></i>") {
-//            expandir.innerHTML = "<i class='fas fa-compress'></i>";
-//        } else if(expandir.innerHTML === "<i class='fas fa-compress'></i>") { 
-//            expandir.innerHTML = "<i class='fas fa-expand'></i>";
-//        }
-        
         if (pantalla.requestFullscreen)            { pantalla.requestFullscreen();        } 
         else if (pantalla.mozRequestFullScreen)    { pantalla.mozRequestFullScreen();     } 
         else if (pantalla.webkitRequestFullscreen) { pantalla.webkitRequestFullscreen();  } 
         else if (pantalla.msRequestFullscreen)     { pantalla.msRequestFullscreen();      }
         
-
-        
-        
-        if (document.exitFullscreen)            { document.exitFullscreen();        } 
-        else if (document.mozCancelFullScreen)  { document.mozCancelFullScreen();   } 
-        else if (document.webkitExitFullscreen) { document.webkitExitFullscreen();  } 
-        else if (document.msExitFullscreen)     { document.msExitFullscreen();      }  
-        
-        if(
-            pantalla.requestFullscreen          ||
-            pantalla.mozRequestFullScreen       ||
-            pantalla.webkitRequestFullscreen    ||
-            pantalla.msRequestFullscreen
-        ) {
+        if (document.exitFullscreen)            { document.exitFullscreen();         } 
+        else if (document.mozCancelFullScreen)  { document.mozCancelFullScreen();    } 
+        else if (document.webkitExitFullscreen) { document.webkitExitFullscreen();   } 
+        else if (document.msExitFullscreen)     { document.msExitFullscreen();       }  
+    }
+    static
+    minimizar() {
+        if(expandir.innerHTML == "<i class='fas fa-expand'></i>" || expandir.innerHTML == `<i class="fas fa-expand" aria-hidden="true"></i>`) {
             expandir.innerHTML = "<i class='fas fa-compress'></i>";
-        } else { 
+        } else {
             expandir.innerHTML = "<i class='fas fa-expand'></i>";
         }
     }
-    
 }
 /* Disparadores
 --------------------------------------------------------------------------------*/
@@ -128,4 +115,6 @@ repetir.onclick = function() {
 };
 expandir.onclick = function() {
     Audio.maximizar();
+    Audio.minimizar();
 };
+

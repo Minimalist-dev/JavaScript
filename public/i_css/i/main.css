@@ -8,7 +8,8 @@
     display: flex;
     justify-content: space-between;
 
-    margin: 5.50em 3em;
+    /*margin: 5.50em 3em;*/
+    margin: 150px 48px 50px;
 }
 .n-grid > .area-2 > section {
     width: 50%;
