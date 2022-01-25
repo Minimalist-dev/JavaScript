@@ -1,0 +1,49 @@
+- Configurar el idioma de la PC en ingles antes de instalar.
+- Referencia:
+    https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15
+
+- Instalar:
+    0 - sudo apt-get update
+    1 - wget -qO- https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+    2 - sudo add-apt-repository "$(wget -qO- https://packages.microsoft.com/config/ubuntu/20.04/mssql-server-2019.list)"
+    3 - sudo apt-get update
+    4 - sudo apt-get install -y mssql-server
+    5 - sudo /opt/mssql/bin/mssql-conf setup
+    6 - systemctl status mssql-server --no-pager
+
+- Instalar herramientas de linea de comandos:
+    0 - sudo apt-get update  y sudo apt install curl
+    1 - curl https://packages.microsoft.com/keys/microsoft.asc | sudo apt-key add -
+    2 - curl https://packages.microsoft.com/config/ubuntu/20.04/prod.list | sudo tee /etc/apt/sources.list.d/msprod.list
+    3 - sudo apt-get update 
+    4 - sudo apt-get install mssql-tools unixodbc-dev
+    5 - sudo apt-get update 
+    6 - sudo apt-get install mssql-tools
+    7 - echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bash_profile
+    8 - echo 'export PATH="$PATH:/opt/mssql-tools/bin"' >> ~/.bashrc
+    9 - source ~/.bashrc
+
+- Terminal:
+    0 - https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15#create-a-new-database
+    1 - sqlcmd -S localhost -U SA -P 'Neury123'
+    2 - CREATE DATABASE TestDB
+    3 - SELECT Name from sys.Databases
+    4 - GO (se utilizar para ejecutar la sentencia)
+    5 - USE TestDB (se usa para especificar la base de datos)
+    6 - CREATE TABLE Inventory (id INT, name NVARCHAR(50), quantity INT)
+    7 - INSERT INTO Inventory VALUES (1, 'banana', 150); INSERT INTO Inventory VALUES (2, 'orange', 154);
+    8 - GO
+    9 - SELECT * FROM Inventory WHERE quantity > 152;
+    10 - GO
+    11 - QUIT (se utilizar para cerrar la sesion)
+
+- Correr:
+    - systemctl status mssql-server
+    - sudo systemctl start mssql-server o sudo systemctl enable mssql-server
+    - sudo systemctl stop mssql-server o sudo systemctl disable mssql-server
+    - sudo systemctl restart mssql-launchpadd o systemctl restart mssql-server.service
+
+- Interfaz: Azure Data Studio:
+    https://docs.microsoft.com/en-us/sql/azure-data-studio/?view=sql-server-ver15
+
+    - username: sa

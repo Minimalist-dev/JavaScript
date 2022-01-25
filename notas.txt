@@ -1,10 +1,7 @@
-- Desarrolos
-    - https://github.com/florinpop17/app-ideas/
+- Desarrolos:
     - Archivos compatibles con el formato de (exel)
-    - interfaz de imagen, audio y video
-        - https://www.w3schools.com/jsref/dom_obj_audio.asp
-        - https://www.w3schools.com/tags/ref_av_dom.asp
-            - Velocidad: https://www.w3schools.com/jsref/prop_audio_playbackrate.asp
+    - interfaz de imagen
+    - https://github.com/florinpop17/app-ideas/
 
 - Redirecionar hacia atras:
     res.redirect('back');

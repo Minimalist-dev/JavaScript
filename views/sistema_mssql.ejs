@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><%= title %></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel='stylesheet' href='/i_css/i/root.css' />
+    <link rel='stylesheet' href='/i_css/sistema_mssql/sistema_mssql.css' />
+</head>
+<body>
+<section class="n-grid">
+<section class="area_1">
+<!------------------------------------------------------------------------------
+nav
+------------------------------------------------------------------------------->
+</section>
+<section class="area_2">
+    <h2>Entrada de datos</h2>
+    <form method="POST" name="ia" id="ia">
+        <label for="id" hidden="">
+            <input type="text" name="id" id="id" value="0" required="">
+        </label>
+        <label for="nombre">Nombre</label>
+            <input type="text" name="nombre" id="nombre" placeholder="Ingresar nombre" required="">
+        <label for="marca">Marca</label>
+            <input type="text" name="marca" id="marca" placeholder="Ingresar marca"  required="">
+        <label for="precio">Precio</label>
+            <input type="number" name="precio" id="precio" placeholder="Ingresar precio" required="">
+        <input type="submit" name="submit" id="submit" value="Insertar">
+    </form>
+</section>
+<section class="area_3">
+    <form method="POST" name="busqueda" id="busqueda">
+        <input type="search" name="buscar" id="buscar" placeholder="Ingresar termino de busqueda...">
+    </form>
+    <!--h2>Salida de datos</h2-->
+    <p id="res"></p>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Hora</th>
+                    <th>Marca</th>
+                    <th>Nombre</th>
+                    <th>Precio</th>
+                    <th colspan="2">Gestionar</th>
+                </tr>
+            </thead>
+            <tbody id="consulta">
+
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="8">
+                        <form method="POST" name="por" id="por">
+                            <label for="himOrHer">Por</label>
+                            <select id="himOrHer" name="himOrHer">
+                                <option value="">...</option>
+                                <option value="nombre">Nombre</option>
+                                <option value="marca">Marca</option>
+                                <option value="precio">Precio</option>
+                            </select>
+                        </form>
+                        <form method="POST" name="orden" id="orden">
+                            <label for="ordenar">Ordenar</label>
+                            <select id="ordenar" name="ordenar">
+                                <option value="">...</option>
+                                <option value="ASC">Acendente</option>
+                                <option value="DESC">Decendente</option>
+                            </select>
+                        </form>
+                    </td>
+                </tr>
+                 <tr>
+                    <td colspan="8">
+                        <button id="anterior" style="visibility: hidden;">Anterior</button>
+                        <form method="POST" id="paginacion">
+                            <label for="inicia-y-termina" hidden="">
+                                <input type="number" id="inicia-y-termina" value="0" min="0" >
+                                <input type="number" id="pagina" value="1" min="1" >
+                            </label>
+                        </form>
+                        <span id="paginaciones"></span>
+                        <button id="siguiente">Siguiente</button>
+                    </td>
+                </tr>
+             </tfoot>
+        </table>
+    </div>
+</section>
+</section>
+<script src="l/sistema_mssql/frontend.js"></script>
+</body>
+</html>
+

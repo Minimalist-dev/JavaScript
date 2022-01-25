@@ -235,16 +235,23 @@ aside > section > .ver > button.activo {
     cajas..........................................................................
 */
 .cajas {
-    min-width: 108%;
-    min-height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-around;
+    justify-content: space-around;
+    
+    position: relative;
+    width: 100%;
+    height: 100%;
     transition: .4s ease;
+    cursor: pointer;
 }
 .caja {
-    position: absolute;
-    /*background-image: url('https://p4.wallpaperbetter.com/wallpaper/676/293/313/programmer-wallpaper-preview.jpg');*/
-    /*background-image: url(../../i_img/coleccion_animada/0.jpg) !important;*/
-    background-image: url(../i_img/coleccion_animada/0.jpg) !important;
+    position: relative;
+    background-image: url('https://p4.wallpaperbetter.com/wallpaper/676/293/313/programmer-wallpaper-preview.jpg');
+    /*background-image: url('/i_img/coleccion_animada/0.jpg');*/
     background-repeat: no-repeat;
+    /*background-size: 500px 500px;*/
     transition: .4s ease;
     float: left;
 }
@@ -255,22 +262,36 @@ aside > section > .ver > button.activo {
 /*
     olas..........................................................................
 */
-#olas {
+.olas {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: space-around;
+    justify-content: space-around;
+    
+    position: relative;
+    /*float: left;*/
+    width: 500px;
+    height: 500px;
+    transition: .4s ease;
     cursor: pointer;
-    background: var(--n-color-2);
 }
+/*img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}*/
 .bloque {
-    position: absolute;
-    /*background-image: linear-gradient(to right, var(--n-color-1), var(--n-color-2));*/
+    position: relative;
     background-image: url('https://p4.wallpaperbetter.com/wallpaper/676/293/313/programmer-wallpaper-preview.jpg');
-    /*background-image: linear-gradient(to right, var(--n-color-1), var(--n-color-2));*/
     /*background-image: url(../i_img/coleccion_animada/0.jpg) !important;*/
     background-repeat: no-repeat;
-    top: calc(50vh - 1vh); 
+    background-size: 500px 500px;
+    /*top: calc(50vh - 1vh);*/ 
     /*left: calc(50vw - 1vw);*/
-    left: -100px; 
+    /*left: -100px;*/ 
     /*z-index: 9;*/
     transition: all 1s ease;
+    /*float: left;*/
 }
 .crecer {
     transform: scale(2);

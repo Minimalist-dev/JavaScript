@@ -10,6 +10,7 @@ var inicio      = require('./routes/index');
 var sistemaJSON = require('./routes/sistema_JSON');
 var sistemaTXT  = require('./routes/sistema_TXT');
 var sistemaCSV  = require('./routes/sistema_CSV');
+var sistemaMSSQL  = require('./routes/sistema_mssql');
 var logup       = require('./routes/logup');
 var logCookie   = require('./routes/log_cookie');
 
@@ -52,6 +53,7 @@ app.use('/', inicio);
 app.use('/sistema_JSON', sistemaJSON);
 app.use('/sistema_TXT', sistemaTXT);
 app.use('/sistema_CSV', sistemaCSV);
+app.use('/sistema_mssql', sistemaMSSQL);
 app.use('/logup', logup);
 app.use('/log_cookie', logCookie);
 

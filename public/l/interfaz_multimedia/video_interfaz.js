@@ -15,7 +15,7 @@ class Audio {
         audio.poster    = "../../i_img/i/neury-dev.jpg";
         
         audio.ontimeupdate = function() {
-            Audio.pausar();
+            Audio.pausado();
             
             duracion.max    = audio.duration;
             duracion.value  = audio.currentTime;
@@ -54,7 +54,7 @@ class Audio {
         return tiempo;
     } 
     static
-    pausar() {
+    pausado() {
         if(audio.duration === audio.currentTime) {
             reproducir.innerHTML = "<i class='fas fa-play'></i>";
         } 
@@ -81,6 +81,12 @@ class Audio {
     }
     static
     maximizar() {
+        if(expandir.innerHTML === `<i class="fas fa-expand" aria-hidden="true"></i>`) {
+            expandir.innerHTML = `<i class="fas fa-compress" aria-hidden="true"></i>`;
+        } else {
+            expandir.innerHTML = `<i class="fas fa-expand" aria-hidden="true"></i>`;
+        }
+        
         if (pantalla.requestFullscreen)            { pantalla.requestFullscreen();        } 
         else if (pantalla.mozRequestFullScreen)    { pantalla.mozRequestFullScreen();     } 
         else if (pantalla.webkitRequestFullscreen) { pantalla.webkitRequestFullscreen();  } 
@@ -90,14 +96,6 @@ class Audio {
         else if (document.mozCancelFullScreen)  { document.mozCancelFullScreen();    } 
         else if (document.webkitExitFullscreen) { document.webkitExitFullscreen();   } 
         else if (document.msExitFullscreen)     { document.msExitFullscreen();       }  
-    }
-    static
-    minimizar() {
-        if(expandir.innerHTML == "<i class='fas fa-expand'></i>" || expandir.innerHTML == `<i class="fas fa-expand" aria-hidden="true"></i>`) {
-            expandir.innerHTML = "<i class='fas fa-compress'></i>";
-        } else {
-            expandir.innerHTML = "<i class='fas fa-expand'></i>";
-        }
     }
 }
 /* Disparadores
@@ -115,6 +113,5 @@ repetir.onclick = function() {
 };
 expandir.onclick = function() {
     Audio.maximizar();
-    Audio.minimizar();
 };
 

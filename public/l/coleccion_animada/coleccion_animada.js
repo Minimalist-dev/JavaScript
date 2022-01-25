@@ -46,16 +46,16 @@ Diapositivas.actual();
 const cajasContainer = document.querySelector('#cajas');
 const rotarZ = document.querySelector('#rotarZ');
 
-const CAJAS = 4;
+const CAJAS = 8;
 
 const anchoDeCaja = Math.ceil(cajasContainer.clientWidth / CAJAS);
 const altoDeCaja  = Math.ceil(cajasContainer.clientHeight / CAJAS);
 
 function 
 crearCajas() {
-    for (let i = 0; i < 8; i++) {
-        for (let j = 0; j < 8; j++) {
-            let caja = document.createElement('div');
+    for (let i = 0; i < CAJAS; i++) {
+        for (let j = 0; j < CAJAS; j++) {
+            const caja = document.createElement('div');
             caja.classList.add('caja');
             caja.style.width = anchoDeCaja + 'px';
             caja.style.height = altoDeCaja + 'px';
@@ -74,23 +74,112 @@ rotarZ.addEventListener('click', function() {
 /*
     * olas...........................................................................  
 */
+//let olasID = document.querySelector('#olas');
+//let oleada  = document.querySelector('#oleada');
+//
+//const BLOQUES = 4;
+//let bloques   = [];
+//let ola       = [];
+//
+//let ancho = Math.ceil(olasID.clientWidth / BLOQUES);
+//let alto  = Math.ceil(olasID.clientHeight / BLOQUES);
+//
+//oleada.onclick = function() {
+////    olaDetenida();
+//    crearBloques();
+//};
+//
+//function 
+//crearBloques() {
+//    for (let i = 0; i < BLOQUES; i++) {
+//        let agregarBloque   = [];
+//        ola[i]              = [];
+//        
+//        for (let j = 0; j < BLOQUES; j++) {
+//            const bloque = document.createElement('div');
+//
+//            bloque.classList.add('bloque');
+//
+//            bloque.style.width = ancho + 'px';
+//            bloque.style.height = alto + 'px';
+//            bloque.style.backgroundPosition = `${-ancho * j}px ${-alto * i}px`;
+//            olasID.appendChild(bloque);
+//            
+//            agregarBloque.push(bloque);
+//            ola[i].push(bloque);
+//        }
+//        
+//        bloques.push(agregarBloque);
+//    }
+//}
+//
+////crearBloques();
+//
+///* Eliminar olasID
+//--------------------------------------------------------------------------------*/
+////function 
+////olaDetenida() {
+////    ola = [];
+////    
+////    bloques.forEach((function(bloque, i) {
+////        bloque.forEach(function(bloque, j) {
+////            bloque.remove();
+////        });
+////    }));
+////
+////    bloques.splice(0, bloques.length);
+////}
+//
+////window.onload = function() {
+////    olaEscalada(Math.floor(Math.random() * BLOQUES), Math.floor(Math.random() * BLOQUES));
+////};
+//
+//ola.forEach(function(bloque, i) {
+//    bloque.forEach(function(bloque, j) {
+//        bloque.onclick = function() {
+//            olaEscalada(i, j);
+//        };
+//    });
+//});
+//
+//function 
+//olaEscalada(i, j) {
+//    if (ola[i] && ola[i][j]) {
+//        if (!ola[i][j].classList.contains('crecer')) {
+//            ola[i][j].classList.add('crecer');
+//            
+//            setTimeout(function() {
+//                olaEscalada(i - 1, j);
+//                olaEscalada(i + 1, j);
+//                olaEscalada(i, j - 1);
+//                olaEscalada(i, j + 1);
+//            }, 100);
+//
+//            setTimeout(function(){
+//                ola[i][j].classList.remove('crecer');
+//            }, 300);
+//        }
+//    }
+//}
 const olasID        = document.querySelector('#olas');
 const oleada        = document.querySelector('#oleada');
 
 const BLOQUES   = 20;
 let bloques     = [];
+let ola         = [];
 
 const anchoDeBloque = Math.ceil(olasID.clientWidth / BLOQUES);
 const altoDeBloque  = Math.ceil(olasID.clientHeight / BLOQUES);
 
 oleada.onclick = function() {
-    limpiarBloques();
+//    limpiarBloques();
     crearBloques();
 };
 function 
 crearBloques() {
     for (let i = 0; i < BLOQUES; i++) {
         let agregarBloque = [];
+        ola[i]              = [];
 
         for (let j = 0; j < BLOQUES; j++) {
             let bloque = document.createElement('div');
@@ -100,32 +189,46 @@ crearBloques() {
             bloque.style.height = altoDeBloque + 'px';
             bloque.style.backgroundPosition = `${-anchoDeBloque * j}px ${-altoDeBloque * i}px`;
             
-            agregarBloque.push(bloque);
+            
             olasID.appendChild(bloque);
+            agregarBloque.push(bloque);
+            ola[i].push(bloque);
         }
         
         bloques.push(agregarBloque);
     }
 
-    setTimeout(function() {
-        animarBloques();
-    }, 1000);
+//    setTimeout(function() {
+//        animarBloques();
+//    }, 1000);
 }
-function 
-animarBloques() {
-    bloques.forEach(function(agregarBloque, i) {
-        agregarBloque.forEach(function(bloque, j) {
-            bloque.style.top = (altoDeBloque * i) + 'px';
-            bloque.style.left = (anchoDeBloque * j) + 'px';
 
-            escalarBloques(Math.floor(Math.random() * 20), Math.floor(Math.random() * 20));
-            
-            bloque.onclick = function() {
-                escalarBloques(i, j);
-            };
-        });
+crearBloques();
+//
+//function 
+//animarBloques() {
+//    bloques.forEach(function(agregarBloque, i) {
+//        agregarBloque.forEach(function(bloque, j) {
+//            bloque.style.top = (altoDeBloque * i) + 'px';
+//            bloque.style.left = (anchoDeBloque * j) + 'px';
+//
+////            escalarBloques(Math.floor(Math.random() * BLOQUES), Math.floor(Math.random() * BLOQUES));
+//            
+////            bloque.onclick = function() {
+////                escalarBloques(i, j);
+////            };
+//        });
+//    });
+//}
+
+ola.forEach(function(caja, i) {
+    caja.forEach(function(caja, j) {
+        caja.onclick = function() {
+            olaEscalada(i, j);
+        };
     });
-}
+});
+
 function 
 limpiarBloques() {
     bloques.forEach(function(agregarBloque, i) {

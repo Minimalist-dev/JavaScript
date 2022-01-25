@@ -9,8 +9,10 @@
 
     - npm install mysql : arternativa = npm install express-myconnection
     - npm install mongodb
+    - npm install mssql
     - npm install cookie-parser
     - npm install express-session
+    - npm install dotenv --save (para definir variables de entorno)
 
     - npm install morgan
 
