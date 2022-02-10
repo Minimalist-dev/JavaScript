@@ -1,6 +1,8 @@
 - Configurar el idioma de la PC en ingles antes de instalar.
 - Referencia:
     https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15
+    - Referencia de Transact-SQL (motor de base de datos): 
+        https://docs.microsoft.com/es-es/sql/t-sql/language-reference?view=sql-server-ver15
 
 - Instalar:
     0 - sudo apt-get update

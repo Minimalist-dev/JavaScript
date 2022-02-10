@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Foto dinamica | Doc. JS | Neury</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <!-- CSS -->
+    <link rel='stylesheet' href='/i_css/i/root.css' />
+    <link rel='stylesheet' href='/i_css/fotos_del_perfil/foto_dinamica.css' />
+</head>
+<body>
+<section class="perfil">
+    <section> 
+        <div draggable="true" id="lente" class="lente" title="Has click"></div>
+        <img id="img" src="/i_img/coleccion_animada/0.jpg" width="300" height="240">
+    </section> 
+    <section class="perfil_final">
+        <div id="imgfinal" class="img_final" style="width: 100px;height: 100px;"></div>
+        <p>Te veras así.</p>
+        <div>
+            <form action="/action_page.php" method="get">
+                <input type="range" name="talla" id="talla" value="0" min="100" max="200">
+                <input type="file" id="foto" name="foto" />
+            </form>
+        </div>
+    </section>
+</section>
+<script src="/l/fotos_del_perfil/foto_dinamica.js"></script>
+</body>
+</html>

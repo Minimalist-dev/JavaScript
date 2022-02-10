@@ -1,0 +1,39 @@
+/* 
+    Created on : 7 feb. 2022, 3:33:05 a. m.
+    Author     : neury-dev
+*/
+.perfil {
+    display: flex;
+    flex-direction: row;
+    
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.lente {
+    position: absolute;
+    z-index: 9;
+    border: 1px solid var(--n-color-1);
+    width: 100px;
+    height: 100px;
+}
+.perfil_final {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    margin-left: 16px;
+}
+.img_final {
+    background-repeat: no-repeat;
+    margin: 10px;
+    border-radius: var(--n-radio-2);
+}
+form { 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+    width: 100%; 
+}

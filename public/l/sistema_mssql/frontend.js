@@ -92,14 +92,15 @@ class Sistema {
         let salida = '';
 
         for(let i in objeto) {
+            let fecha      = new Date(objeto[i].fecha);
+        
             salida += `
                 <tr>
                     <td>${objeto[i].id}</td>
-                    <td>${objeto[i].fecha}</td>
-                    <td>${objeto[i].fecha}</td>
-                    <td>${objeto[i].marca}</td>
                     <td>${objeto[i].nombre}</td>
+                    <td>${objeto[i].marca}</td>
                     <td>${objeto[i].precio}</td>
+                    <td>${new Intl.DateTimeFormat('es').format(fecha)}</td>
                     <td>
                         <button type='submit' onclick="Sistema.editar(${objeto[i].id})">Editar</button>
                     </td> 
@@ -107,27 +108,7 @@ class Sistema {
                         <button type='button' onclick="Sistema.eliminar(${objeto[i].id})">Eliminar</button>
                     </td>  
                 </tr>
-            `; 
-        
-//            let fecha = new Date(objeto[i].fecha);
-//
-//            salida += `
-//                <tr>
-//                    <td>${objeto[i].id}</td>
-//                    <td title="${objeto[i].nombre}">${objeto[i].nombre}</td>
-//                    <td title="${objeto[i].clasificaciones}">${objeto[i].clasificaciones}</td>
-//                    <td title="${objeto[i].tematicas}">${objeto[i].tematicas}</td>
-//                    <td>${objeto[i].nivel}</td>
-//                    <td title="${objeto[i].enlace}"><a href="${objeto[i].enlace}" target="_blank">Abrir</a></td>
-//                    <td>${new Intl.DateTimeFormat('es').format(fecha)}</td>
-//                    <td>
-//                        <button type='submit' onclick="Sistema.editar(${objeto[i].id})">Editar</button>
-//                    </td> 
-//                    <td>
-//                        <button type='button' onclick="Sistema.eliminar(${objeto[i].id})">Eliminar</button>
-//                    </td>  
-//                </tr>
-//            `;  
+            `;  
         }
 
         if(salida !== '') {

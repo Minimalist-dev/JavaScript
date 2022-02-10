@@ -25,6 +25,10 @@
     color: var(--n-color-1);
     font-size: 0.90em;
     margin: 0;
+    white-space: nowrap;
+    width: 120px;
+    overflow: hidden;
+    text-overflow: ellipsis;
     user-select: none;
 }
 .n-grid > .area-4 > section > article > div > .cubrir {

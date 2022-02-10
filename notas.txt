@@ -1,7 +1,9 @@
 - Desarrolos:
     - Archivos compatibles con el formato de (exel)
-    - interfaz de imagen
-    - https://github.com/florinpop17/app-ideas/
+    - cache
+
+- SQL: entorno online de las diferentes bases de datos:
+    https://dbfiddle.uk/
 
 - Redirecionar hacia atras:
     res.redirect('back');

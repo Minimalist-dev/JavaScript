@@ -28,30 +28,30 @@
 .n-grid > .area-3 > form input { 
     margin-bottom: 0.50em; 
     border: none;
-    border-radius: var(--n-radio);
+    border-radius: var(--n-radio-1);
     padding: var(--n-relleno);
 }
 .n-grid > .area-2 > form > input:focus, 
 .n-grid > .area-3 > form input:focus {
-    color: var(--n-color);
-    background-color: var(--n-color-tres);
+    color: var(--n-color-1);
+    background-color: var(--n-color-2-8);
     outline: none;
 }
 .n-grid > .area-2 > form > input[type='submit'],
 .n-grid > .area-2 > form > input[type='reset'] {
-    color: var(--n-color);
-    background-color: var(--n-color-dos);
+    color: var(--n-color-1);
+    background-color: var(--n-color-2);
     font-weight: bold;
     width: 100%;
     border: none;
-    border-radius: var(--n-radio);
+    border-radius: var(--n-radio-1);
     padding: var(--n-relleno);
     cursor: pointer;
 }
 .n-grid > .area-2 > form > input[type=submit]:hover,
 .n-grid > .area-2 > form > input[type=reset]:hover {
-    color: var(--n-color-dos);
-    background-color: var(--n-color-tres);
+    color: var(--n-color-2);
+    background-color: var(--n-color-2-8);
     text-shadow: var(--n-sombra-de-texto);
 }
 
@@ -72,21 +72,21 @@
     right: 0;
     border-width: 0px 1px;
     border-style: solid;
-    border-color: var(--n-color-dos);;
+    border-color: var(--n-color-2);;
 }
 .n-grid > .area-3 > form .elementos div {
-    background-color: var(--n-color);
-    border-bottom: 1px solid var(--n-color-dos);
+    background-color: var(--n-color-1);
+    border-bottom: 1px solid var(--n-color-2);
     padding: 10px;
     cursor: pointer;
 }
 .n-grid > .area-3 > form .elementos div:hover {
-    color: var(--n-color);
-    background-color: var(--n-color-tres);
+    color: var(--n-color-1);
+    background-color: var(--n-color-2-8);
 }
 .n-grid > .area-3 > form .activo {
-    color: var(--n-color);
-    background-color: var(--n-color-tres) !important;
+    color: var(--n-color-1);
+    background-color: var(--n-color-2-8) !important;
 }
 
 /* Respuesta
@@ -104,15 +104,15 @@ table {
 }
 /*caption { text-align: center; font-weight: bold; }*/
 th {
-    color: var(--n-color);
-    background-color: var(--n-color-dos);
+    color: var(--n-color-1);
+    background-color: var(--n-color-2);
     height: 2.50em;
-    border: 0.0625em solid var(--n-color-dos);
+    border: 0.0625em solid var(--n-color-2);
     vertical-align: middle;
 }
 th, td { padding: var(--n-relleno); }
 tr:nth-child(even) { background-color: #f2f2f2; }
-tr:hover { color: var(--n-color); background-color: var(--n-color-tres); }
+tr:hover { color: var(--n-color-1); background-color: var(--n-color-2-8); }
 td {
     text-align: center;
     vertical-align: middle;
@@ -124,62 +124,62 @@ td:nth-child(5) {
 } 
 td:nth-child(6) { text-align: right; }
 table > tbody > tr > td > button {
-    background-color: var(--n-color);
+    background-color: var(--n-color-1);
     font-weight: bold;
     width: 100%;
     border: none;
-    border: 0.10em solid var(--n-color);
-    border-radius: var(--n-radio);
+    border: 0.10em solid var(--n-color-1);
+    border-radius: var(--n-radio-1);
     padding: var(--n-relleno);
 }
 table > tbody > tr > td > button:hover {
-    color: var(--n-color-dos);
-    background-color: var(--n-color-tres);
+    color: var(--n-color-2);
+    background-color: var(--n-color-2-8);
     text-shadow: var(--n-sombra-de-texto);
 }
 tfoot > tr > td {
-    background-color: var(--n-color-dos);
+    background-color: var(--n-color-2);
     height: 2em;
     margin: 0;
     padding: 0;
 }
-tfoot> tr > td { height: 3em; border-top: 0.10em solid var(--n-color); }
+tfoot> tr > td { height: 3em; border-top: 0.10em solid var(--n-color-1); }
 tfoot> tr > td > form {
     display: inline-block;
     vertical-align: middle;
     padding: 0.50em 0em 0.50em 0em;
 }
-tfoot> tr > td > form  > label { color: var(--n-color); }
+tfoot> tr > td > form  > label { color: var(--n-color-1); }
 tfoot> tr > td > form  > select {
-    color: var(--n-color);
-    background-color: var(--n-color-dos);
-    border: 0.10em solid var(--n-color) !important;
-    border-radius: var(--n-radio);
+    color: var(--n-color-1);
+    background-color: var(--n-color-2);
+    border: 0.10em solid var(--n-color-1) !important;
+    border-radius: var(--n-radio-1);
     padding: var(--n-relleno);
 }
 /*tfoot> tr > td > label,*/
 tfoot> tr > td > span { 
-    color: var(--n-color);
+    color: var(--n-color-1);
 }
 tfoot> tr > td > button#ordenar {
-    color: var(--n-color);
-    background-color: var(--n-color-dos);
+    color: var(--n-color-1);
+    background-color: var(--n-color-2);
     font-weight: normal;
     margin: 0em;
-    border: 0.10em solid var(--n-color);
+    border: 0.10em solid var(--n-color-1);
 }
 tfoot> tr > td > button {
     display: inline-block;
-    background-color: var(--n-color);
+    background-color: var(--n-color-1);
     font-weight: bold;
     margin: 0.30em 0em 0.30em 0em;
     border: none;
-    border: 0.10em solid var(--n-color-dos);
-    border-radius: var(--n-radio);
+    border: 0.10em solid var(--n-color-2);
+    border-radius: var(--n-radio-1);
     padding: var(--n-relleno);
 }
 tfoot> tr > td > button:hover {
-    color: var(--n-color);
-    background-color: var(--n-color-tres);
-    border: 0.10em solid var(--n-color);
+    color: var(--n-color-1);
+    background-color: var(--n-color-2-8);
+    border: 0.10em solid var(--n-color-1);
 }

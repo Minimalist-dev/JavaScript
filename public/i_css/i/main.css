@@ -26,18 +26,19 @@
     height: 300px;
     border-right: 1px dotted var(--n-color-1);
     border-radius: 50%;
-    padding: 2em 0em 0em 0.50em;
+    padding: 48px 0px 0px 16px;
     clip-path: circle(50% at 50% 50%);
     shape-outside: circle(50% at 50% 50%);
 }
 .n-grid > .area-2 > section > main > .skills > h2 {
-    color: var(--n-color-2);
+    /*color: var(--n-color-2);*/
+    color: var(--n-color-1);
     font-size: 6em;
     font-family: var(--n-fuente);
-    filter: 
+/*    filter: 
         drop-shadow(-3px -3px 2px rgba(255, 255, 255, 0.3)) 
         drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2))
-        drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));
+        drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.2));*/
 }
 .n-grid > .area-2 > section > main > .skills > div,
 .n-grid > .area-2 > section > main > .skills > p { 

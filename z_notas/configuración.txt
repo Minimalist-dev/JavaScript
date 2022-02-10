@@ -1,5 +1,8 @@
 - Paquetes necesarios
     - npm install express --save
+        - Eliminar errores de proxy:
+            - npm config rm proxy
+            - npm config rm https-proxy
         - npm install express --no-save
     - sudo npm install express-generator -g
     - express --view=ejs

@@ -40,9 +40,12 @@
     list-style: none;
     padding: 0;
 }
-.n-grid > .area-1 > header > section > ul > :nth-child(1),
+/*.n-grid > .area-1 > header > section > ul > :nth-child(1),
 .n-grid > .area-1 > header > section > section > ul > :nth-child(1),
 .n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > :nth-child(1) {
+    padding-left: 0.70em;
+}*/
+.n-grid > .area-1 > header > section ul {
     padding-left: 0.70em;
 }
 .n-grid > .area-1 > header > section > ul > li, 
@@ -50,6 +53,7 @@
 .n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li {
     display: inline;
     font-weight: bold;
+    padding-left: 32px;
 }
 .n-grid > .area-1 > header > section > .minimo-oculto > .minimo > ul > li {
     font-weight: bold;
@@ -58,8 +62,8 @@
 .n-grid > .area-1 > header > section > ul > li+li:before, 
 .n-grid > .area-1 > header > section > section > ul > li+li:before,
 .n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li+li:before {
-    color: var(--n-color-tres);
-    content: "/\00a0";
+    color: var(--n-color-1-5);
+    /*content: "/\00a0";*/
 }
 .n-grid > .area-1 > header > section > ul > li,
 .n-grid > .area-1 > header > section > section > ul > li,
@@ -78,8 +82,10 @@
 .n-grid > .area-1 > header > section > section > ul > li > .cubrir,
 .n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li > .cubrir {
     position: absolute;
-    left: 0.70em;
-    bottom: 1.20em;
+    /*left: 0.70em;*/
+    left: 2.56em;
+    /*bottom: 1.20em;*/
+    bottom: 1.14em;
     overflow: hidden;
     height: 0;
 }
@@ -93,7 +99,7 @@
 .n-grid > .area-1 > header > section > section > ul >  li > .cubrir > .con,
 .n-grid > .area-1 > header > section > .mediano-oculto > .mediano > ul > li > .cubrir > .con,
 .n-grid > .area-1 > header > section > .minimo-oculto > .minimo > ul > li > .cubrir > .con {
-    color: var(--n-color-tres);
+    color: var(--n-color-1-5);
 }
 .n-grid > .area-1 > header > section > ul > li:hover .cubrir,
 .n-grid > .area-1 > header > section > section > ul > li:hover .cubrir,
@@ -120,11 +126,11 @@
     25%  { opacity: 0.50;               }
     50%  { opacity: 0.25;               }
     75%  { opacity: 0.00;               }
-    100% { color: var(--n-color-tres);  }
+    100% { color: var(--n-color-1-5);   }
 }
 /* Maquetado
 --------------------------------------------------------------------------------*/
-@media screen and (miwidth: 1200px) {
+@media screen and (min-width: 1200px) {
     /*............................*/
 }
 @media screen and (min-width: 600px) and (max-width: 1199px) {
@@ -138,9 +144,8 @@
         left: 0;
         right: 0;
         width: 100%;
-        border-bottom: 1px solid var(--n-color-tres);
+        border-bottom: 1px solid var(--n-color-1-5);
         padding: 0em 3em;
-        transition: var(--n-transicion);
     }
 }
 @media screen and (max-width: 400px) {
@@ -156,7 +161,6 @@
         right: 0;
         border: 1px solid var(--n-color-1);
         padding: 0em 3em;
-        transition: var(--n-transicion);
     }
 }
 @media screen and (min-width: 400px) { .minimo-oculto { display: none; } }
