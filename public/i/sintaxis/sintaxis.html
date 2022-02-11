@@ -18,7 +18,333 @@
     <!--button class="circle">Circle</button>
     <button class="square">Square</button>
     <button class="triangle">Triangle</button-->
+<!------------------------------------------------------------------------------
 
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol id="clase_api">
+    
+</ol> 
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+/* archivo: clase_api_exportada.js
+----------------------------------*/
+class ApiExportada {
+    constructor(listId) {
+        this.listId = listId;
+    }
+
+    metodoApiInstancia() { 
+        let list = document.querySelector("#" + this.listId);
+        let listItem = document.createElement("li");
+        
+        listItem.textContent = "metodo api instancia";
+        list.appendChild(listItem);
+    }
+    static
+    metodoApiEstatico(id) { 
+        let list = document.querySelector("#" + id);
+        let listItem = document.createElement("li");
+        
+        listItem.textContent = "metodo api estatico";
+        list.appendChild(listItem);
+    }
+    metodoApiArray() {
+        let list = document.querySelector("#" + this.listId);
+        let listar = ["uno", "dos", "tres"]; 
+        
+        for(let i = 0; i < listar.length; i++) {
+            var listItem = document.createElement("li");
+            
+            listItem.textContent = listar[i];
+            list.appendChild(listItem);
+        }
+    }
+    metodoRetornar() {
+        let lista = ["uno 1", "dos 2", "tres 3"];
+        return lista;
+    }
+}
+
+
+export { ApiExportada };
+
+/* archivo: clase_api.js
+------------------------*/
+class ApiExportada {
+    static
+    metodoEstatico() { 
+        import('./export/clase_api_exportada.js').then(function(API) {
+            let apiExportada = new API.ApiExportada("clase_api");
+            apiExportada.constructor;
+            apiExportada.metodoApiInstancia();
+            API.ApiExportada.metodoApiEstatico("clase_api");
+            apiExportada.metodoApiArray();
+            console.log(apiExportada.metodoRetornar());
+        }); 
+    }
+}
+
+ApiExportada.metodoEstatico();
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="clase_extendido_de_js"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+class ExtensionJS extends Array {
+    constructor() {
+        super();
+    }
+
+    apellido() {
+        return this[this.length - 1];
+    }
+    
+    nombreCompleto() {
+        return this[0] + " " + this[1];
+    }
+}
+
+var extensionJS = new ExtensionJS();
+extensionJS.push('hello');
+extensionJS.push('world');
+
+document.querySelector("#clase_extendido_de_js").innerHTML = extensionJS.length + " : " + extensionJS.apellido() + " : " + extensionJS.nombreCompleto() + " : clase (Array) extendida de JavaScript";
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="metodo_estatico_extendido_de_exportacion"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+/* archivo: clase_exportada.js
+------------------------------*/
+class ClaseExportada {
+    static
+    metodoEstaticoExtendido() { 
+        return "metodo estatico extendido de exportación"; 
+    }
+}
+
+export default ClaseExportada;
+
+/* archivo: clase.js
+--------------------*/
+import ClaseExportada from './export/clase_exportada.js';
+
+class Clase extends ClaseExportada {
+    static
+    metodoEstaticoImportado() {
+        return super.metodoEstaticoExtendido();
+    }
+}
+
+document.querySelector("#metodo_estatico_extendido_de_exportacion").innerHTML = Clase.metodoEstaticoImportado();
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="metodo_instancia_extendido_de_exportacion"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+/* archivo: clase_exportada.js
+------------------------------*/
+class ClaseExportada {
+    metodoInstanciaExtendido() { 
+        return "metodo instancia extendido de exportación"; 
+    }
+}
+
+export default ClaseExportada;
+
+/* archivo: clase.js
+--------------------*/
+import ClaseExportada from './export/clase_exportada.js';
+
+class Clase extends ClaseExportada {
+    metodoInstanciaImportado() {
+        return super.metodoInstanciaExtendido();
+    }
+}
+
+let sintaxis = new Clase();
+document.querySelector("#metodo_instancia_extendido_de_exportacion").innerHTML = sintaxis.metodoInstanciaImportado();
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="metodo_estatico_exportado"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+/* archivo: clase_exportada.js
+------------------------------*/
+class ClaseExportada {
+    static
+    metodoEstaticoExportado() { 
+        return "metodo estatico exportado"; 
+    }
+}
+
+export default ClaseExportada;
+
+/* archivo: clase.js
+--------------------*/
+import ClaseExportada from './export/clase_exportada.js';
+
+document.querySelector("#metodo_estatico_exportado").innerHTML = ClaseExportada.campoEstaticoExportado;
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="campo_estatico_exportado"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+/* archivo: clase_exportada.js
+------------------------------*/
+class ClaseExportada {
+    static campoEstaticoExportado = "campo estatico exportado";
+}
+
+export default ClaseExportada;
+
+/* archivo: clase.js
+--------------------*/
+import ClaseExportada from './export/clase_exportada.js';
+
+document.querySelector("#campo_estatico_exportado").innerHTML = ClaseExportada.campoEstaticoExportado;
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="clase_importada"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+/* archivo: clase_exportada.js
+------------------------------*/
+class ClaseExportada {
+    constructor(clase, exportada) {
+        this.clase = clase;
+        this.exportada = exportada;
+    }
+    static get clase()      { return this._clase;       }
+    static set clase(x)     { this._clase = x;          }
+    static get exportada()  { return this._exportada;   }
+    static set exportada(x) { this._exportada = x;      }
+}
+
+ClaseExportada.clase        = "clase";
+ClaseExportada.exportada    = "exportada";
+
+export default ClaseExportada;
+
+/* archivo: clase.js
+--------------------*/
+import ClaseExportada from './export/clase_exportada.js';
+
+ClaseExportada.exportada = "importada";
+document.querySelector("#clase_importada").innerHTML = ClaseExportada.clase + " " + ClaseExportada.exportada;
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="clase_exportada"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+/* archivo: clase_exportada.js
+------------------------------*/
+class ClaseExportada {
+    constructor(clase, exportada) {
+        this.clase = clase;
+        this.exportada = exportada;
+    }
+    static get clase()      { return this._clase;       }
+    static set clase(x)     { this._clase = x;          }
+    static get exportada()  { return this._exportada;   }
+    static set exportada(x) { this._exportada = x;      }
+}
+
+ClaseExportada.clase        = "clase";
+ClaseExportada.exportada    = "exportada";
+
+export default ClaseExportada;
+
+/* archivo: clase.js
+--------------------*/
+import ClaseExportada from './export/clase_exportada.js';
+
+document.querySelector("#clase_exportada").innerHTML = ClaseExportada.clase + " " + ClaseExportada.exportada;
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
 <!------------------------------------------------------------------------------
 
 ------------------------------------------------------------------------------->
@@ -35,7 +361,6 @@ class Clase {
     static #CONSTANTE_PRIVADA = "Metodo de constante privada";
     
     static metodoConstantePrivada() {
-        Clase.#CONSTANTE_PRIVADA = 42;
         return Clase.#CONSTANTE_PRIVADA;
     }
 }
@@ -300,8 +625,10 @@ document.querySelector("#clase").innerHTML = sintaxis.clase;
     </pre>
 </div>
 
-<script src="clase.js" defer=""></script>
+<script type="module" src="clase.js" defer=""></script>
+<script type="module" src="clase_api.js" defer=""></script>
+<!--script src="clase_api.js" defer=""></script-->
 <script src="full_stack.js" defer=""></script>
-<!--script type="module" src="sintaxis.js" defer=""></script-->
+
 </body>
 </html>
