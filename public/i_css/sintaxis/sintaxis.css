@@ -2,6 +2,9 @@
     Created on : 10 feb. 2022, 8:11:27 p. m.
     Author     : neury-dev
 */
+body {
+    padding: 32px;
+}
 .sintaxis {
     color: var(--n-color-2);
     font-weight: bold;

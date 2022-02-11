@@ -24,6 +24,92 @@
 ------------------------------------------------------------------------------->
 <p class="sintaxis">Res:</p>
 <ol>
+    <li id="metodo_constante_privada"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+class Clase {
+    static #CONSTANTE_PRIVADA = "Metodo de constante privada";
+    
+    static metodoConstantePrivada() {
+        Clase.#CONSTANTE_PRIVADA = 42;
+        return Clase.#CONSTANTE_PRIVADA;
+    }
+}
+
+document.querySelector("#metodo_constante_privada").innerHTML = Clase.metodoConstantePrivada();
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="metodo_instanciado_metodo"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+class Clase {
+    metodoInstacia() { 
+        return "Metodo instacia"; 
+    }
+}
+
+class ClaseHereda extends Clase {
+    metodoInstacia() {
+        return super.metodoInstacia();
+    }
+};
+
+let sintaxis = new Clase();
+let sintaxisHereda = new ClaseHereda();
+document.querySelector("#metodo_instanciado_metodo").innerHTML = sintaxisHereda.metodoInstacia() + " : Heredado por metodo";
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="metodo_instanciado"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+class Clase {
+    metodoInstacia() { 
+        return "Metodo instacia"; 
+    }
+}
+
+class ClaseHereda extends Clase {
+    metodoInstancido = super.metodoInstacia();
+};
+
+let sintaxis = new Clase();
+let sintaxisHereda = new ClaseHereda();
+document.querySelector("#metodo_instanciado").innerHTML = sintaxisHereda.metodoInstancido + " : Heredado por campo";
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
     <li id="set_and_get_static"></li>
 </ol>
 <p class="sintaxis">Sintaxis:</p>
