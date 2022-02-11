@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sintaxis | Doc. JS | Neury</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- CSS -->
+    <link rel='stylesheet' href='/i_css/i/root.css' />
+    <link rel='stylesheet' href='/i_css/sintaxis/sintaxis.css' />
+    <style>
+        canvas {
+            border: 1px solid black;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <!--button class="circle">Circle</button>
+    <button class="square">Square</button>
+    <button class="triangle">Triangle</button-->
+
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="set_and_get_static"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+class Clase {
+    static get setAndGetStatic() {
+        return this._setAndGetStatic;
+    }
+    static set setAndGetStatic(x) {
+        this._setAndGetStatic = x;
+    }
+}
+
+Clase.setAndGetStatic = "Set and Get Static";
+document.querySelector("#set_and_get_static").innerHTML = Clase.setAndGetStatic;
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="set_and_get"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+class Clase {
+    get setAndGet() {
+        return this._setAndGet;
+    }
+    set setAndGet(x) {
+        this._setAndGet = x;
+    }
+}
+
+let sintaxis = new Clase("Clase");
+sintaxis.setAndGet = "Set and Get";
+document.querySelector("#set_and_get").innerHTML = sintaxis.setAndGet;
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="metodo_estatico"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+class Clase {
+    static
+    metodoEstatico() { 
+        return "Metodo estatico"; 
+    }
+}
+
+document.querySelector("#metodo_estatico").innerHTML = Clase.metodoEstatico();
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="metodo_instacia"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+class Clase {
+    metodoInstacia() { 
+        return "Metodo instacia"; 
+    }
+}
+
+let sintaxis = new Clase("Clase");
+document.querySelector("#metodo_instacia").innerHTML = sintaxis.metodoInstacia();
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="campo_prefijo"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+const PREFIJO = 'Prefijo';
+
+class Clase {
+    [`campo${PREFIJO}`] = "campo prefijo";
+}
+
+let sintaxis = new Clase("Clase");
+document.querySelector("#campo_prefijo").innerHTML = sintaxis.campoPrefijo;
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="campo_estatico"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+class Clase {
+    static campoEstatico = "campo estatico";
+}
+
+document.querySelector("#campo_estatico").innerHTML = Clase.campoEstatico;
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="campo_instacia"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+class Clase {
+    campoInstacia = "campo instacia";
+}
+
+let sintaxis = new Clase("Clase");
+document.querySelector("#campo_instacia").innerHTML = sintaxis.campoInstacia;
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+<!------------------------------------------------------------------------------
+
+------------------------------------------------------------------------------->
+<p class="sintaxis">Res:</p>
+<ol>
+    <li id="clase"></li>
+</ol>
+<p class="sintaxis">Sintaxis:</p>
+<div class="n-full-stack">
+    <pre>
+        <code>
+&lt;script&gt;
+class Clase {
+    constructor(clase) {
+        this.clase = clase;
+    }
+}
+
+let sintaxis = new Clase("Clase");
+document.querySelector("#clase").innerHTML = sintaxis.clase;
+&lt;/script&gt;
+        </code>
+    </pre>
+</div>
+
+<script src="clase.js" defer=""></script>
+<script src="full_stack.js" defer=""></script>
+<!--script type="module" src="sintaxis.js" defer=""></script-->
+</body>
+</html>
