@@ -1,0 +1,8 @@
+- Desarrollador PayPal
+https://developer.paypal.com/home
+https://developer.paypal.com/demo/checkout/#/pattern/client
+https://www.paypal.com/buttons/
+https://www.sandbox.paypal.com/
+
+- Producción PayPal
+https://www.paypal.com;
