@@ -16,3 +16,14 @@
 
 IBgf4W784lb_gwAIFtzlTWFCZv4qRIYi
 -R2n8QXfsk_3FbM-2ZnozS0nFvdoWMCt
+
+A menudo verás más banderas añadidas a este comando:
+    --save-dev instala y agrega la entrada al archivo package.json devDependencies
+    --no-save instala pero no agrega la entrada a las dependencias del archivo package.json
+    --save-opcional instala y agrega la entrada al archivo package.json opcionalDependencias
+    --no-opcional evitará que se instalen dependencias opcionales 
+
+Shorthands of the flags can also be used:
+    -S: --save
+    -D: --save-dev
+    -O: --save-optional

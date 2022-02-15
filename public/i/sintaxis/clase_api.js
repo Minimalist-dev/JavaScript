@@ -1,7 +1,6 @@
-//var res =  require('../clase_api_servidor.js');
-//var res =  require('../../clase_api_servidor.js');
-//var res =  require('../../../clase_api_servidor.js');
-//res.metodoRetornar();
+/* import(): 
+evita tener que utilizar type="module"
+--------------------------------------------------------------------------------*/
  
 class ApiExportada {
     static

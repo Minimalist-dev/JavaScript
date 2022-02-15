@@ -1,4 +1,4 @@
-var fullStack = document.querySelectorAll("div.n-full-stack > pre > code");
+var fullStack = document.querySelectorAll("div.codigo > pre > code");
 
 fullStack.forEach(function(bucle) {
     w3CodeColor(bucle); 

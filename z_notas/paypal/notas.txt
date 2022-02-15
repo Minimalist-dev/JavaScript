@@ -4,5 +4,9 @@ https://developer.paypal.com/demo/checkout/#/pattern/client
 https://www.paypal.com/buttons/
 https://www.sandbox.paypal.com/
 
+- Cuenta sandbox:
+sb-tn4uw13654183@personal.example.com
+>/6@edMy
+
 - Producción PayPal
 https://www.paypal.com;

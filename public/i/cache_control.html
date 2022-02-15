@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cache Control | Doc. JS | Neury</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/i_img/i/neury-dev.jpg" type="image/jpg" sizes="16x16">
+    <!-- CSS -->
+    <link rel='stylesheet' href='/i_css/i/root.css' />
+    <link rel='stylesheet' href='/i_css/cache_control/cache_control.css' />
+</head>
+<body>
+    <div class="cache_control">
+        <h1>Cache Control</h1>
+        <button id="cambiar">Cambiar estilo</button>
+    </div>
+    <div class="mostrar_codigo">
+        <p class="sintaxis">Sintaxis:</p>
+        <div class="codigo">
+            <pre>
+                <code>
+        &lt;script&gt;
+        /* use: configuración del cache de archivos front-end y back-end en el archivo app.js
+        --------------------------------------------------------------------------------------*/
+        app.use(function(req, res, next) {
+            if(
+                req.url === "/i/cache_control"                               ||
+                req.url.includes("/i_css/cache_control/cache_control.css") ||
+                req.url.match("/l/cache_control/cache_control.js")
+            ){
+                const tiempoDeCache = 36000;/* el valor que desees para esta ruta */
+
+                res.set({
+                    'Cache-Control': `max-age=${tiempoDeCache}`
+                });
+            } else {
+                res.set({
+                    'Cache-Control': 'no-cache, no-store, must-revalidate'
+                });
+            }
+
+            next();
+        });
+
+        /* use: configuración del cache de archivos front-end en el archivo app.js
+        --------------------------------------------------------------------------------------*/
+        var opciones = {
+            dotfiles: 'ignore',
+            etag: false,
+            extensions: ['htm', 'html'],
+            index: false,
+            lastModified: true,
+            maxAge: '1d',
+            redirect: false,
+            setHeaders: function(res, path, stat) {
+                res.set({
+                    'x-timestamp' : Date.now(),
+                    'Cache-Control' : 'no-cache, no-store, must-revalidate'
+                });
+            }
+        };
+        app.use(express.static(path.join(__dirname, 'public'), opciones));
+        &lt;/script&gt;
+                </code>
+            </pre>
+        </div>
+    </div>
+<script src="/l/cache_control/cache_control.js"></script>
+<script src="sintaxis/codigo.js" defer=""></script>
+</body>
+</html>

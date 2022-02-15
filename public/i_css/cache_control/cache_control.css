@@ -1,0 +1,25 @@
+/* 
+    Created on : 14 feb. 2022, 10:33:46 p. m.
+    Author     : neury-dev
+*/
+body {
+    display: flex;
+    flex-direction: column;
+}
+.cache_control {
+    text-align: center;
+    margin-top: 32px;
+}
+#cambiar {
+    color: var(--n-color-1);
+    background-color: var(--n-color-2);
+    font-weight: bold;
+    border-radius: var(--n-radio-1);
+    padding: 8px;
+}
+.mostrar_codigo {
+    margin: 32px;
+}
+.sintaxis {
+    font-weight: bold;
+}
